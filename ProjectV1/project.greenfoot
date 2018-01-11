@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Jan 11 08:02:31 PST 2018
+#Thu Jan 11 08:03:56 PST 2018
 target1.type=ClassTarget
 project.charset=UTF-8
 mainWindow.height=600
@@ -11,14 +11,12 @@ readme.height=58
 class.PlayScreen.image=background2.png
 class.StartScreen.image=background2.png
 target1.typeParameters=
->>>>>>>=ce88279df90085daf5d5d1f9d65d14a456906e2d
 simulation.speed=50
-target1.height=50
 world.lastInstantiated=PlayScreen
-<<<<<<<=HEAD
-target1.width=80
-mainWindow.y=40
+target1.height=50
 editor.fx.0.y=0
+mainWindow.y=40
+target1.width=80
 mainWindow.x=40
 editor.fx.0.x=0
 readme.width=47
@@ -28,9 +26,9 @@ target1.y=0
 target1.x=0
 package.numTargets=1
 mainWindow.width=850
-target1.name=PlayScreen
+target1.name=MyWorld
 target1.showInterface=false
 readme.name=@README
-=\=\=\=\=\=\=
-class.StartScreen.superclass=greenfoot.World
+class.Deer.superclass=greenfoot.Actor
 class.PlayScreen.superclass=greenfoot.World
+class.StartScreen.superclass=greenfoot.World
