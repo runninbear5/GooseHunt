@@ -1,4 +1,5 @@
 #Greenfoot properties
+<<<<<<< HEAD
 #Thu Jan 11 08:21:13 PST 2018
 class.StartScreen.superclass=greenfoot.World
 readme.name=@README
@@ -11,14 +12,38 @@ target1.type=ClassTarget
 target2.y=0
 package.numTargets=2
 target2.x=0
+=======
+#Thu Jan 11 08:19:26 PST 2018
+class.StartScreen.superclass=greenfoot.World
+readme.name=@README
+target2.name=cat
+simulation.speed=50
+class.PlayScreen.superclass=greenfoot.World
+<<<<<<<=HEAD
+target2.showInterface=false
+class.StartScreen.image=background2.png
+class.PlayScreen.image=background2.png
+target1.type=ClassTarget
+target2.y=0
+target2.x=0
+package.numTargets=2
+>>>>>>> ab5a520604518c49ac29b9c2146ab6e56530dabe
 target1.height=50
 target1.y=0
 target2.height=50
 target1.x=0
+<<<<<<< HEAD
 editor.fx.0.height=738
 target1.showInterface=false
 target1.name=PlayScreen
 editor.fx.0.width=816
+=======
+editor.fx.0.height=0
+>>>>>>>=ce88279df90085daf5d5d1f9d65d14a456906e2d
+target1.showInterface=false
+target1.name=PlayScreen
+editor.fx.0.width=0
+>>>>>>> ab5a520604518c49ac29b9c2146ab6e56530dabe
 target2.typeParameters=
 readme.y=10
 readme.x=10
@@ -29,8 +54,14 @@ mainWindow.y=-8
 target1.width=80
 mainWindow.height=1056
 mainWindow.x=-8
+<<<<<<< HEAD
 editor.fx.0.y=101
 editor.fx.0.x=552
+=======
+class.cat.superclass=greenfoot.Actor
+editor.fx.0.y=0
+editor.fx.0.x=0
+>>>>>>> ab5a520604518c49ac29b9c2146ab6e56530dabe
 readme.width=47
 target2.type=ClassTarget
 world.lastInstantiated=PlayScreen
@@ -38,3 +69,8 @@ version=3.0.0
 package.numDependencies=0
 project.charset=UTF-8
 readme.height=58
+<<<<<<< HEAD
+=======
+class.cat.image=cat7.fw.png
+=\=\=\=\=\=\=
+>>>>>>> ab5a520604518c49ac29b9c2146ab6e56530dabe
