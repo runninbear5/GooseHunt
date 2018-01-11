@@ -16,20 +16,13 @@ public class cat extends Actor
     int y = 100;
     public void act() 
     {
-       
+       walk();
     }
-    public void setLocation(int x, int y)
-    {
-      x = 0;
-      y = 100;
-    }
-  
-    public void walk() 
-    {
-      for (int i =0; i < 1280; i++) 
-      {
-        x += i;
-        }
+    public void walk() {
+       int x = getX(); 
+        int y = getY(); 
+        x+=10; 
+        setLocation(x, y); 
     }
     public int getScore(int score) 
     {
