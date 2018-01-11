@@ -20,9 +20,9 @@ public class cat extends Actor
     }
     public void walk() {
        int x = getX(); 
-        int y = getY(); 
-        x+=10; 
-        setLocation(x, y); 
+       int y = getY(); 
+       x+=5; 
+       setLocation(x, y); 
     }
     public int getScore(int score) 
     {
