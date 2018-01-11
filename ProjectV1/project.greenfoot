@@ -1,113 +1,45 @@
-#Greenfoot properties
-<<<<<<< HEAD
-#Thu Jan 11 08:19:38 PST 2018
-target1.type=ClassTarget
-project.charset=UTF-8
-mainWindow.height=600
-=======
-<<<<<<< HEAD
-#Thu Jan 11 08:21:13 PST 2018
-class.StartScreen.superclass=greenfoot.World
-readme.name=@README
-target2.name=StartScreen
-simulation.speed=50
-class.PlayScreen.superclass=greenfoot.World
-target2.showInterface=false
+#Greenfoot project file
+class.Deer.image=Antler9.fw.png
+class.Deer.superclass=greenfoot.Actor
 class.PlayScreen.image=background2.png
-target1.type=ClassTarget
-target2.y=0
-package.numTargets=2
-target2.x=0
-=======
-#Thu Jan 11 08:19:26 PST 2018
-class.StartScreen.superclass=greenfoot.World
-readme.name=@README
-target2.name=cat
-simulation.speed=50
 class.PlayScreen.superclass=greenfoot.World
-<<<<<<<=HEAD
-target2.showInterface=false
 class.StartScreen.image=background2.png
-class.PlayScreen.image=background2.png
-target1.type=ClassTarget
-target2.y=0
-target2.x=0
+class.StartScreen.superclass=greenfoot.World
+dependency1.from=PlayScreen
+dependency1.to=Deer
+dependency1.type=UsesDependency
+editor.fx.0.height=738
+editor.fx.0.width=816
+editor.fx.0.x=971
+editor.fx.0.y=72
+mainWindow.height=1056
+mainWindow.width=1936
+mainWindow.x=-8
+mainWindow.y=-8
+package.numDependencies=1
 package.numTargets=2
->>>>>>> ab5a520604518c49ac29b9c2146ab6e56530dabe
+project.charset=UTF-8
+readme.height=58
+readme.name=@README
+readme.width=47
+readme.x=10
+readme.y=10
+simulation.speed=50
 target1.height=50
+target1.name=PlayScreen
+target1.showInterface=false
+target1.type=ClassTarget
+target1.typeParameters=
+target1.width=80
+target1.x=0
 target1.y=0
 target2.height=50
-target1.x=0
-<<<<<<< HEAD
-editor.fx.0.height=738
-target1.showInterface=false
-target1.name=PlayScreen
-editor.fx.0.width=816
-=======
-editor.fx.0.height=0
->>>>>>>=ce88279df90085daf5d5d1f9d65d14a456906e2d
-target1.showInterface=false
-target1.name=PlayScreen
->>>>>>> 4e690ac7ad3e40f134a1d88ff3b79522dff2ebc1
-editor.fx.0.width=0
->>>>>>> ab5a520604518c49ac29b9c2146ab6e56530dabe
-target2.typeParameters=
-readme.y=10
-readme.x=10
-<<<<<<< HEAD
-version=3.0.0
-readme.height=58
-class.PlayScreen.image=background2.png
-class.StartScreen.image=background2.png
-target1.typeParameters=
-simulation.speed=50
-world.lastInstantiated=PlayScreen
-target1.height=50
-editor.fx.0.y=0
-mainWindow.y=40
-target1.width=80
-mainWindow.x=40
-editor.fx.0.x=0
-class.Deer.image=Antler9.fw.png
-=======
-mainWindow.width=1936
-target1.typeParameters=
-target2.width=80
-mainWindow.y=-8
-target1.width=80
-mainWindow.height=1056
-mainWindow.x=-8
-<<<<<<< HEAD
-editor.fx.0.y=101
-editor.fx.0.x=552
-=======
-class.cat.superclass=greenfoot.Actor
-editor.fx.0.y=0
-editor.fx.0.x=0
->>>>>>> ab5a520604518c49ac29b9c2146ab6e56530dabe
->>>>>>> 4e690ac7ad3e40f134a1d88ff3b79522dff2ebc1
-readme.width=47
+target2.name=Deer
+target2.showInterface=false
 target2.type=ClassTarget
-world.lastInstantiated=PlayScreen
+target2.typeParameters=
+target2.width=80
+target2.x=0
+target2.y=0
 version=3.0.0
-package.numDependencies=0
-<<<<<<< HEAD
-target1.y=0
-target1.x=0
-package.numTargets=1
-mainWindow.width=850
-target1.name=MyWorld
-target1.showInterface=false
-readme.name=@README
-class.Deer.superclass=greenfoot.Actor
-class.PlayScreen.superclass=greenfoot.World
-class.StartScreen.superclass=greenfoot.World
-=======
-project.charset=UTF-8
-readme.height=58
-<<<<<<< HEAD
-=======
-class.cat.image=cat7.fw.png
-=\=\=\=\=\=\=
->>>>>>> ab5a520604518c49ac29b9c2146ab6e56530dabe
->>>>>>> 4e690ac7ad3e40f134a1d88ff3b79522dff2ebc1
+world.lastInstantiated=PlayScreen
