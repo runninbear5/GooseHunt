@@ -20,7 +20,7 @@ public class Deer extends Actor
     public void walk () { //move deer across the screen 
         int x = getX(); 
         int y = getY(); 
-        x+=10; 
+        x+=1; //add level multiplier  
         setLocation(x, y); 
     }
     public void giveScore () {} 
