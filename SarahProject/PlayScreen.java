@@ -17,5 +17,7 @@ public class PlayScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1280, 769, 1); 
+        addObject(new Deer(), 10, 475); 
+        addObject(new Unicorn(), 10, 300); 
     }
 }
