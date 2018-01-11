@@ -1,5 +1,17 @@
 #Greenfoot properties
+<<<<<<< HEAD
 #Thu Jan 11 08:03:56 PST 2018
+=======
+<<<<<<< HEAD
+#Thu Jan 11 08:04:02 PST 2018
+=======
+<<<<<<< HEAD
+#Thu Jan 11 08:03:52 PST 2018
+=======
+#Thu Jan 11 08:02:31 PST 2018
+>>>>>>> ac2db65bffcdb550daa5a8993ae3c1bae3188c35
+>>>>>>> e430d3983b9baf7fd1e15ce14f766d7e53eb7e0c
+>>>>>>> 808d84f5296d6fd04f451cf91d754c8332b225bd
 target1.type=ClassTarget
 project.charset=UTF-8
 mainWindow.height=600
@@ -9,26 +21,73 @@ readme.x=10
 version=3.0.0
 readme.height=58
 class.PlayScreen.image=background2.png
-class.StartScreen.image=background2.png
+class.Dog.superclass=greenfoot.Actor
 target1.typeParameters=
 simulation.speed=50
+<<<<<<< HEAD
 world.lastInstantiated=PlayScreen
 target1.height=50
 editor.fx.0.y=0
 mainWindow.y=40
 target1.width=80
+=======
+<<<<<<< HEAD
+=======
+target1.height=50
+<<<<<<< HEAD
+editor.fx.0.y=0
+mainWindow.y=40
+target1.width=80
+=======
+>>>>>>> e430d3983b9baf7fd1e15ce14f766d7e53eb7e0c
+world.lastInstantiated=PlayScreen
+target1.height=50
+<<<<<<<=HEAD
+class.cat.superclass=greenfoot.Actor
+editor.fx.0.y=0
+<<<<<<< HEAD
+mainWindow.y=40
+target1.width=80
+=======
+>>>>>>> ac2db65bffcdb550daa5a8993ae3c1bae3188c35
+>>>>>>> 808d84f5296d6fd04f451cf91d754c8332b225bd
 mainWindow.x=40
+>>>>>>> e430d3983b9baf7fd1e15ce14f766d7e53eb7e0c
 editor.fx.0.x=0
+mainWindow.x=40
 readme.width=47
 editor.fx.0.height=0
 package.numDependencies=0
 target1.y=0
 target1.x=0
-package.numTargets=1
 mainWindow.width=850
+<<<<<<< HEAD
 target1.name=MyWorld
 target1.showInterface=false
 readme.name=@README
 class.Deer.superclass=greenfoot.Actor
 class.PlayScreen.superclass=greenfoot.World
 class.StartScreen.superclass=greenfoot.World
+=======
+<<<<<<< HEAD
+package.numTargets=1
+target1.name=PlayScreen
+target1.showInterface=false
+readme.name=@README
+=======
+<<<<<<< HEAD
+target1.name=MyWorld
+target1.showInterface=false
+readme.name=@README
+=======
+target1.name=PlayScreen
+target1.showInterface=false
+readme.name=@README
+=\=\=\=\=\=\=
+class.StartScreen.superclass=greenfoot.World
+>>>>>>> ac2db65bffcdb550daa5a8993ae3c1bae3188c35
+>>>>>>> e430d3983b9baf7fd1e15ce14f766d7e53eb7e0c
+class.PlayScreen.superclass=greenfoot.World
+class.StartScreen.superclass=greenfoot.World
+=\=\=\=\=\=\=
+>>>>>>> 808d84f5296d6fd04f451cf91d754c8332b225bd
