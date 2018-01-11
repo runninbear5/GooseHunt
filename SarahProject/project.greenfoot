@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Jan 11 08:50:09 PST 2018
+#Thu Jan 11 09:13:23 PST 2018
 readme.name=@README
 class.Deer.superclass=greenfoot.Actor
 target2.name=Deer
@@ -15,6 +15,7 @@ target1.height=50
 target1.y=0
 target2.height=50
 target1.x=0
+class.Unicorn.superclass=greenfoot.Actor
 dependency1.to=Deer
 editor.fx.0.height=0
 target1.showInterface=false
@@ -36,6 +37,7 @@ editor.fx.0.x=0
 readme.width=47
 target2.type=ClassTarget
 world.lastInstantiated=PlayScreen
+class.Unicorn.image=Unicorn1.fw.png
 dependency1.type=UsesDependency
 version=3.0.0
 package.numDependencies=1
