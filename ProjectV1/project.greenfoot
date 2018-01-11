@@ -1,96 +1,62 @@
-#Greenfoot properties
-<<<<<<< HEAD
-#Thu Jan 11 08:21:59 PST 2018
-=======
-#Thu Jan 11 08:23:22 PST 2018
->>>>>>> 51dfc1e68c377fc27403e96b5d29f0452d24f738
-class.StartScreen.superclass=greenfoot.World
-readme.name=@README
-class.Deer.superclass=greenfoot.Actor
-target2.name=StartScreen
-simulation.speed=50
-target4.y=0
-class.PlayScreen.superclass=greenfoot.World
-<<<<<<< HEAD
-target4.y=0
-target4.x=0
-target4.name=Deer
+#Greenfoot project file
+=\=\=\=\=\=\=
 <<<<<<<=HEAD
-=======
-target4.x=0
-target4.name=Deer
->>>>>>> 51dfc1e68c377fc27403e96b5d29f0452d24f738
-target2.showInterface=false
-class.PlayScreen.image=background2.png
-target3.y=0
-target3.x=0
-target1.type=ClassTarget
-target3.type=ClassTarget
-target2.y=0
-package.numTargets=4
-target2.x=0
-<<<<<<< HEAD
-=======
-package.numTargets=4
->>>>>>> 51dfc1e68c377fc27403e96b5d29f0452d24f738
-target1.height=50
-target4.showInterface=false
-target1.y=0
-target2.height=50
-target1.x=0
-target4.typeParameters=
-<<<<<<< HEAD
-editor.fx.0.height=738
-target3.height=50
 >>>>>>>=ce88279df90085daf5d5d1f9d65d14a456906e2d
-target1.showInterface=false
-target3.typeParameters=
-target1.name=PlayScreen
-editor.fx.0.width=816
-target4.height=50
-=======
-target3.height=50
-editor.fx.0.height=0
-target1.showInterface=false
-target3.typeParameters=
-target1.name=PlayScreen
-editor.fx.0.width=0
-target4.height=50
-target3.name=cat
-target2.typeParameters=
->>>>>>> 51dfc1e68c377fc27403e96b5d29f0452d24f738
-readme.y=10
-target2.typeParameters=
-target3.name=cat
-readme.x=10
-target1.typeParameters=
-mainWindow.width=1936
-target2.width=80
-<<<<<<< HEAD
-mainWindow.height=1056
-target1.width=80
-mainWindow.y=-8
-target4.width=80
-=======
-target4.width=80
-mainWindow.y=-8
-target1.width=80
-mainWindow.height=1056
-target3.width=80
-mainWindow.x=-8
->>>>>>> 51dfc1e68c377fc27403e96b5d29f0452d24f738
+class.Deer.superclass=greenfoot.Actor
+class.PlayScreen.image=background2.png
+class.PlayScreen.superclass=greenfoot.World
+class.StartScreen.image=background2.png
+class.StartScreen.superclass=greenfoot.World
+class.cat.image=cat7.fw.png
 class.cat.superclass=greenfoot.Actor
-mainWindow.x=-8
-target3.width=80
-editor.fx.0.y=101
+editor.fx.0.height=738
+editor.fx.0.width=816
 editor.fx.0.x=552
-readme.width=47
-target3.showInterface=false
-target2.type=ClassTarget
-target3.showInterface=false
-world.lastInstantiated=PlayScreen
-target4.type=ClassTarget
-version=3.0.0
+editor.fx.0.y=101
+mainWindow.height=1056
+mainWindow.width=1936
+mainWindow.x=-8
+mainWindow.y=-8
 package.numDependencies=0
+package.numTargets=4
 project.charset=UTF-8
 readme.height=58
+readme.name=@README
+readme.width=47
+readme.x=10
+readme.y=10
+simulation.speed=50
+target1.height=50
+target1.name=PlayScreen
+target1.showInterface=false
+target1.type=ClassTarget
+target1.typeParameters=
+target1.width=80
+target1.x=0
+target1.y=0
+target2.height=50
+target2.name=StartScreen
+target2.showInterface=false
+target2.type=ClassTarget
+target2.typeParameters=
+target2.width=80
+target2.x=0
+target2.y=0
+target3.height=50
+target3.name=cat
+target3.showInterface=false
+target3.type=ClassTarget
+target3.typeParameters=
+target3.width=80
+target3.x=0
+target3.y=0
+target4.height=50
+target4.name=Deer
+target4.showInterface=false
+target4.type=ClassTarget
+target4.typeParameters=
+target4.width=80
+target4.x=0
+target4.y=0
+version=3.0.0
+world.lastInstantiated=PlayScreen
