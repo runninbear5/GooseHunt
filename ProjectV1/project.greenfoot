@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Greenfoot project file
 class.PlayScreen.superclass=greenfoot.World
 class.StartScreen.image=background2.png
@@ -5,6 +6,24 @@ class.StartScreen.superclass=greenfoot.World
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
+=======
+#Greenfoot properties
+#Thu Jan 11 08:00:54 PST 2018
+target1.type=ClassTarget
+project.charset=UTF-8
+mainWindow.height=600
+editor.fx.0.width=0
+readme.y=10
+readme.x=10
+version=3.0.0
+readme.height=58
+class.PlayScreen.image=background2.png
+class.StartScreen.image=background2.png
+target1.typeParameters=
+simulation.speed=50
+world.lastInstantiated=PlayScreen
+target1.height=50
+>>>>>>> ce88279df90085daf5d5d1f9d65d14a456906e2d
 editor.fx.0.y=0
 mainWindow.height=600
 mainWindow.width=850
@@ -15,6 +34,7 @@ package.numTargets=1
 project.charset=UTF-8
 readme.height=58
 readme.name=@README
+<<<<<<< HEAD
 readme.width=47
 readme.x=10
 readme.y=10
@@ -29,3 +49,7 @@ target1.x=0
 target1.y=0
 version=3.0.0
 world.lastInstantiated=PlayScreen
+=======
+class.PlayScreen.superclass=greenfoot.World
+class.StartScreen.superclass=greenfoot.World
+>>>>>>> ce88279df90085daf5d5d1f9d65d14a456906e2d
