@@ -24,6 +24,7 @@ public class dog extends Actor
     public void walk() {
        int x = getX(); 
        int y = getY(); 
+       position++;
         if (position < 100) 
        { x += 5;
         }
@@ -50,9 +51,9 @@ public class dog extends Actor
         if (position > 100) 
     {
        currentImage++;
-       if (currentImage == 8) 
+       if (currentImage == 12) 
         {
-          currentImage = 4;
+          currentImage = 8;
         }   
         setImage("dog" + currentImage + ".fw.png");
       }
