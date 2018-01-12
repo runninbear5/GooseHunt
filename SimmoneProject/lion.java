@@ -43,4 +43,8 @@ public class lion extends Actor
     {
        return score;
     }
+    public boolean gameOver() 
+    {
+      return true;  
+    }
 }

@@ -13,6 +13,7 @@ public class cat extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */;
     int currentImage = 7;
+    int position = 0;
     int counter = 0;
     int x =0;
     int y = 100;
@@ -23,7 +24,13 @@ public class cat extends Actor
     public void walk() {
        int x = getX(); 
        int y = getY(); 
-       x+=5; 
+       position++;
+       if (position < 100) 
+       { x += 5;
+        }
+       if (position > 100) 
+       { x -= 5;
+        }
        setLocation(x, y); 
        counter++;
        if (counter == 10) 
@@ -32,15 +39,27 @@ public class cat extends Actor
         }
     }
     public void setImage() 
-    {  currentImage++;
+    {  if (position < 100) {
+        currentImage++;
         if (currentImage == 10) 
        {currentImage = 7;
         }       
        setImage("cat" + currentImage + ".fw.png");
+      }
+      if (position > 100) 
+      {
+       currentImage++;
+       if (currentImage == 8) 
+        {
+          currentImage = 4;
+        }   
+        setImage("cat" + currentImage + ".fw.png");
+      }
     }
+  
     public int getScore(int score) 
     {
-       return score;
+       return score - 100;
     }
     
 }
