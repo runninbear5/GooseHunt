@@ -10,6 +10,9 @@ public class Deer extends Actor
 {
     int currentImage = 1; 
     int counter = 0; 
+    int x; 
+    int y; 
+    int stop; 
     /**
      * Act - do whatever the Deer wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,8 +20,25 @@ public class Deer extends Actor
     public void act() 
     {
         // Add your action code here.
-        walk(); 
+        // Add your action code here.
+        x = getX(); 
+        y = getY();
+        
+        if (x == stop) {
+            long cTime = System.currentTimeMillis(); 
+            System.out.println("CTIME: " + cTime); 
+            long endPause = cTime + 2000; 
+            while (System.currentTimeMillis() != endPause){
+                setImage("Antler1.fw.png"); 
+            }//pause 
+        } 
+        if (Greenfoot.mouseClicked(this)){
+        }
+        walk();  
     }   
+    public void Unicorn () {
+        stop = 260; 
+    } 
     public void walk () { //move deer across the screen 
         int x = getX(); 
         int y = getY(); 
@@ -28,6 +48,9 @@ public class Deer extends Actor
             setImage(); 
             counter = 0; 
         }
+        if (x == 1280) {
+            ((PlayScreen)getWorld()).removeObject(this); 
+        } 
         setLocation(x, y); 
     }
     public int giveScore () { //score per deer is 10
