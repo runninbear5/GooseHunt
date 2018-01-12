@@ -21,6 +21,7 @@ public class cat extends Actor
     {
        walk();
     }
+    
     public void walk() {
        int x = getX(); 
        int y = getY(); 
@@ -37,16 +38,20 @@ public class cat extends Actor
        {setImage();
         counter = 0;
         }
+       if ( x >= 0 && x <= 0+30) 
+        { makeDissapear();
+        }
     }
+    
     public void setImage() 
-    {  if (position < 100) {
+    {  if (position < 200) {
         currentImage++;
         if (currentImage == 10) 
        {currentImage = 7;
         }       
        setImage("cat" + currentImage + ".fw.png");
       }
-      if (position > 100) 
+      if (position > 200)
       {
        currentImage++;
        if (currentImage == 8) 
@@ -56,7 +61,13 @@ public class cat extends Actor
         setImage("cat" + currentImage + ".fw.png");
       }
     }
-  
+    
+    public void makeDissapear() 
+    {
+      int x = getX();
+      int y = getY();  
+      ((PlayScreen)getWorld()).removeObject(this);
+    }
     public int getScore(int score) 
     {
        return score - 100;

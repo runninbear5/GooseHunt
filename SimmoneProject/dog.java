@@ -17,18 +17,27 @@ public class dog extends Actor
     int position = 0;
     int x =0;
     int y = 100;
+    boolean walk  = true; 
+    boolean jump = false;
+    long timeJumpedCalled = 0;
     public void act() 
-    {
-       walk();
+   {
+        if(walk){
+         walk();   
+        }
+        if(jump){
+            jumpOver(false);
+        }
     }
     public void walk() {
        int x = getX(); 
        int y = getY(); 
+       int jumpPosition = 640;
        position++;
-        if (position < 100) 
+      if (x < 800) 
        { x += 5;
         }
-       if (position > 100) 
+      if (x >= 800) 
        { x -= 5;
         }
        setLocation(x, y); 
@@ -37,19 +46,24 @@ public class dog extends Actor
       {  setImage();
          counter = 0;
       }
-     
-    }
+       if (x <= jumpPosition+30 && x>= jumpPosition-30) {
+       walk = false;
+       jump = true;
+       timeJumpedCalled = System.currentTimeMillis();
+       jumpOver(true);
+      }
+   }
     public void setImage() 
     {
-       if ( position < 100) {
+       if ( position < 800) {
         currentImage++;
         if (currentImage == 5) 
        {currentImage = 1;
         }       
        setImage("dog" + currentImage + ".fw.png");
-    }
-        if (position > 100) 
-    {
+      }
+        if (position > 800) 
+      {
        currentImage++;
        if (currentImage == 12) 
         {
@@ -57,6 +71,25 @@ public class dog extends Actor
         }   
         setImage("dog" + currentImage + ".fw.png");
       }
+   }
+    
+    public void jumpOver(boolean first)
+    {
+      int x = getX();
+      int y = getY();
+      setJumpImage();
+      if(first){
+          setLocation(x, y - 50);
+        }
+      
+      if(timeJumpedCalled + 300 <= System.currentTimeMillis()){
+          ((PlayScreen)getWorld()).removeObject(this);
+          jump = false;
+      }
+   }
+    public void setJumpImage() {
+      currentImage = 6;
+      setImage("dog" + currentImage + ".fw.png");
     }
   
     public int getScore(int score) 
