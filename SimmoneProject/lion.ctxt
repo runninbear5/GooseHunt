@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ setImage()
 comment4.params=score
 comment4.target=int\ getScore(int)
-numComments=5
+comment5.params=
+comment5.target=boolean\ gameOver()
+numComments=6
