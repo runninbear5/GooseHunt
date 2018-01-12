@@ -14,31 +14,84 @@ public class dog extends Actor
      */
     int counter = 0;
     int currentImage = 1;
+    int position = 0;
     int x =0;
     int y = 100;
+    boolean walk  = true; 
+    boolean jump = false;
+    long timeJumpedCalled = 0;
     public void act() 
-    {
-       walk();
+   {
+        if(walk){
+         walk();   
+        }
+        if(jump){
+            jumpOver(false);
+        }
     }
     public void walk() {
        int x = getX(); 
        int y = getY(); 
-       x+=5; 
+       int jumpPosition = 640;
+       position++;
+      if (x < 800) 
+       { x += 5;
+        }
+      if (x >= 800) 
+       { x -= 5;
+        }
        setLocation(x, y); 
        counter++;
        if (counter == 10) 
       {  setImage();
          counter = 0;
       }
-    }
+       if (x <= jumpPosition+30 && x>= jumpPosition-30) {
+       walk = false;
+       jump = true;
+       timeJumpedCalled = System.currentTimeMillis();
+       jumpOver(true);
+      }
+   }
     public void setImage() 
     {
-       currentImage++;
-        if (currentImage == 6) 
+       if ( position < 800) {
+        currentImage++;
+        if (currentImage == 5) 
        {currentImage = 1;
         }       
-       setImage("dog" + currentImage + ".fw.png");  
+       setImage("dog" + currentImage + ".fw.png");
+      }
+        if (position > 800) 
+      {
+       currentImage++;
+       if (currentImage == 12) 
+        {
+          currentImage = 8;
+        }   
+        setImage("dog" + currentImage + ".fw.png");
+      }
+   }
+    
+    public void jumpOver(boolean first)
+    {
+      int x = getX();
+      int y = getY();
+      setJumpImage();
+      if(first){
+          setLocation(x, y - 50);
+        }
+      
+      if(timeJumpedCalled + 300 <= System.currentTimeMillis()){
+          ((PlayScreen)getWorld()).removeObject(this);
+          jump = false;
+      }
+   }
+    public void setJumpImage() {
+      currentImage = 6;
+      setImage("dog" + currentImage + ".fw.png");
     }
+  
     public int getScore(int score) 
     {
        return score;
