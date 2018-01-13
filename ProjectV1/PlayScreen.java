@@ -19,6 +19,7 @@ public class PlayScreen  extends World
     String[] badAnimals = {"lion", "goose", "cat"};
     Score playerScore = new Score(0);
     Round roundCount = new Round();
+    long lastTime = 0;
     public PlayScreen()
     {
         super(1280, 769, 1, false);
@@ -27,7 +28,6 @@ public class PlayScreen  extends World
         ChangeMouseImage(image, 15,15);
         addObject(playerScore, 1150, 700);
         addObject(roundCount, 44, 712);
-        addObject(new cat(), 500, 500);
     }
 
     public void act()
@@ -40,8 +40,35 @@ public class PlayScreen  extends World
         if(Greenfoot.mouseClicked(this)){
             removeBalloon();
         }
-        if(balloons.size() == 0){
-            //Go to game over screen
+        if(balloons.size() == 0 && animalHitCounters.size() != 10){
+            Greenfoot.setWorld(new GameOver());
+        }
+        if(lastTime+5000 <= System.currentTimeMillis()){
+            if(animalsInRound.size() != 0){
+                if(animalsInRound.get(0).equals("cat")){
+                    addObject(new Cat(), 500, 500);
+                    System.out.println("Cat");
+                    lastTime = System.currentTimeMillis();
+                }else if(animalsInRound.get(0).equals("deer")){
+                    addObject(new Cat(), 500, 500);
+                    lastTime = System.currentTimeMillis();
+                }else if(animalsInRound.get(0).equals("goose")){
+                    addObject(new Cat(), 500, 500);
+                    System.out.println("Goose");
+                    lastTime = System.currentTimeMillis();
+                }else if(animalsInRound.get(0).equals("horse")){
+                    addObject(new Cat(), 500, 500);
+                    lastTime = System.currentTimeMillis();
+                }else if(animalsInRound.get(0).equals("duck")){
+                    addObject(new Cat(), 500, 500);
+                    lastTime = System.currentTimeMillis();
+                }else if(animalsInRound.get(0).equals("lion")){
+                    addObject(new Cat(), 500, 500);
+                    System.out.println("Lion");
+                    lastTime = System.currentTimeMillis();
+                }
+                animalsInRound.remove(0);
+            }
         }
     }
         
@@ -55,10 +82,12 @@ public class PlayScreen  extends World
         for(int i=0; i<10; i++){
             int animal = (int)(Math.random() * 3);
             animalsInRound.add(badAnimals[animal]);
+            //animalsInRound.add("cat");
             balloons.add(new Balloon());
         }
         placeBalloons();
         roundCount.increaseRound();
+        lastTime = System.currentTimeMillis();
     }
     
     /** Or you use this Method: 

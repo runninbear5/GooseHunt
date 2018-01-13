@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Simmone Stearn) 
  * @version (a version number or a date)
  */
-public class cat extends Actor
+public class Cat extends Actor
 {
     /**
      * Act - do whatever the cat wants to do. This method is called whenever
@@ -17,9 +17,14 @@ public class cat extends Actor
     int counter = 0;
     int x =0;
     int y = 100;
+    
+    public Cat(){
+        setImage();
+    }
+    
     public void act() 
     {
-       //walk();
+       walk();
        if(Greenfoot.mouseClicked(this)){
             ((PlayScreen)getWorld()).animalHit("cat");
             makeDissapear();
@@ -50,19 +55,23 @@ public class cat extends Actor
     public void setImage() 
     {  if (position < 200) {
         currentImage++;
-        if (currentImage == 10) 
+        if (currentImage >= 10) 
        {currentImage = 7;
-        }       
-       setImage("cat" + currentImage + ".fw.png");
+        }   
+       GreenfootImage catPic = new GreenfootImage("cat" + currentImage + ".fw.png");
+       catPic.scale(100,100);
+       setImage(catPic);
       }
       if (position > 200)
       {
        currentImage++;
-       if (currentImage == 8) 
+       if (currentImage >= 8) 
         {
           currentImage = 4;
         }   
-        setImage("cat" + currentImage + ".fw.png");
+       GreenfootImage catPic = new GreenfootImage("cat" + currentImage + ".fw.png");
+       catPic.scale(100,100);
+       setImage(catPic);
       }
     }
     
