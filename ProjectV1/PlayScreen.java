@@ -16,7 +16,7 @@ public class PlayScreen  extends World
     ArrayList animalHitCounters = new ArrayList<AnimalCounter>();
     ArrayList balloons = new ArrayList<Balloon>();
     String[] goodAnimals = {"duck", "horse", "deer"};
-    String[] badAnimals = {"lion", "goose", "cat"};
+    String[] badAnimals = {"goose","cat", "lion"};
     Score playerScore = new Score(0);
     Round roundCount = new Round();
     long lastTime = 0;
@@ -34,7 +34,7 @@ public class PlayScreen  extends World
     {
         /** Sets the Cursor Image to the New Cursor */
         Pan.setCursor(NewCursor);
-        if(animalHitCounters.size() == 10){
+        if(animalHitCounters.size() == 10 ||(animalsInRound.size() == 0 && animalHitCounters.size()>5)){
             newRound();
         }
         if(Greenfoot.mouseClicked(this)){
@@ -70,6 +70,9 @@ public class PlayScreen  extends World
                 animalsInRound.remove(0);
             }
         }
+        if(animalsInRound.size() == 0 && animalHitCounters.size() <=5){
+            Greenfoot.setWorld(new GameOver());
+        }
     }
         
     public void newRound(){
@@ -80,8 +83,14 @@ public class PlayScreen  extends World
         animalsInRound.clear();
         animalHitCounters.clear();
         for(int i=0; i<10; i++){
-            int animal = (int)(Math.random() * 3);
-            animalsInRound.add(badAnimals[animal]);
+            int animal = (int)(Math.random() * 11);
+            if(animal <= 5){
+                animalsInRound.add(badAnimals[0]);
+            }else if(animal >= 8){
+                animalsInRound.add(badAnimals[1]);
+            }else if (animal == 6 || animal == 7){
+                animalsInRound.add(badAnimals[2]);
+            }
             //animalsInRound.add("cat");
             balloons.add(new Balloon());
         }
