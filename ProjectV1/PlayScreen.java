@@ -12,6 +12,7 @@ public class PlayScreen  extends World
     /** The new Cursor */
     Cursor NewCursor;
     int roundNumber = 0;
+    int timeBetweenAnimals = 5000;
     ArrayList animalsInRound = new ArrayList<String>();
     ArrayList animalHitCounters = new ArrayList<AnimalCounter>();
     ArrayList balloons = new ArrayList<Balloon>();
@@ -19,6 +20,8 @@ public class PlayScreen  extends World
     String[] badAnimals = {"goose","cat", "lion"};
     Score playerScore = new Score(0);
     Round roundCount = new Round();
+    boolean lionUsed = false;
+    boolean lastAnimalShot = false;
     long lastTime = 0;
     public PlayScreen()
     {
@@ -34,16 +37,17 @@ public class PlayScreen  extends World
     {
         /** Sets the Cursor Image to the New Cursor */
         Pan.setCursor(NewCursor);
-        if(animalHitCounters.size() == 10 ||(animalsInRound.size() == 0 && animalHitCounters.size()>5)){
+        int secondsTakenOff = 150*(roundCount.getRoundNumber()-1);
+        if(animalHitCounters.size() == 10 ||(animalsInRound.size() == 0 && animalHitCounters.size()>5 && lastAnimalShot)){
             newRound();
         }
         if(Greenfoot.mouseClicked(this)){
             removeBalloon();
         }
-        if(balloons.size() == 0 && animalHitCounters.size() != 10){
+        if(balloons.size() == 0 && animalHitCounters.size() <= 5){
             Greenfoot.setWorld(new GameOver());
         }
-        if(lastTime+5000 <= System.currentTimeMillis()){
+        if(lastTime+(timeBetweenAnimals-secondsTakenOff) <= System.currentTimeMillis()){
             if(animalsInRound.size() != 0){
                 if(animalsInRound.get(0).equals("cat")){
                     addObject(new Cat(), 500, 500);
@@ -76,6 +80,8 @@ public class PlayScreen  extends World
     }
         
     public void newRound(){
+        lionUsed = false;
+        lastAnimalShot = false;
         for(int i=0; i<animalHitCounters.size(); i++){
             AnimalCounter counter = (AnimalCounter)(AnimalCounter)animalHitCounters.get(i);
             counter.removeObject();
@@ -88,8 +94,11 @@ public class PlayScreen  extends World
                 animalsInRound.add(badAnimals[0]);
             }else if(animal >= 8){
                 animalsInRound.add(badAnimals[1]);
-            }else if (animal == 6 || animal == 7){
+            }else if ((animal == 6 || animal == 7) && !lionUsed){
                 animalsInRound.add(badAnimals[2]);
+                lionUsed = true;
+            }else if (animal == 6 || animal == 7){
+                animalsInRound.add(badAnimals[0]);
             }
             //animalsInRound.add("cat");
             balloons.add(new Balloon());
@@ -126,6 +135,9 @@ public class PlayScreen  extends World
             playerScore.addTotal(50);
         }else{
             playerScore.addTotal(-50);
+        }
+        if(animalsInRound.size() == 0){
+            lastAnimalShot = true;
         }
         removeBalloon();
         addHitCount();

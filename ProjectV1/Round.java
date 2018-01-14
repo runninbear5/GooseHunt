@@ -12,7 +12,7 @@ public class Round extends Actor
      * Act - do whatever the PlayerTotal wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int round = 0;
+    int round = 30;
     public Round(){
         setImage(new GreenfootImage("R="+round, 50, greenfoot.Color.GREEN, greenfoot.Color.BLACK));
     }
@@ -22,4 +22,7 @@ public class Round extends Actor
         round ++;
         setImage(new GreenfootImage("R="+round, 50, greenfoot.Color.GREEN, greenfoot.Color.BLACK));
     }      
+    public int getRoundNumber(){
+        return round;
+    }
 }
