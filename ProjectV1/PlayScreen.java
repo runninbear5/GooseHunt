@@ -12,8 +12,10 @@ public class PlayScreen  extends World
     /** The new Cursor */
     Cursor NewCursor;
     int roundNumber = 0;
-    int timeBetweenAnimals = 5000;
-    ArrayList animalsInRound = new ArrayList<String>();
+    int timeBetweenBadAnimals = 5000;
+    int timeBetweenGoodAnimals = 10000;
+    ArrayList badAnimalsInRoundanimalsInRound = new ArrayList<String>();
+    ArrayList goodAnimalsInRoundanimalsInRound = new ArrayList<String>();
     ArrayList animalHitCounters = new ArrayList<AnimalCounter>();
     ArrayList balloons = new ArrayList<Balloon>();
     String[] goodAnimals = {"duck", "horse", "deer"};
@@ -22,7 +24,8 @@ public class PlayScreen  extends World
     Round roundCount = new Round();
     boolean lionUsed = false;
     boolean lastAnimalShot = false;
-    long lastTime = 0;
+    long lastTimeBadAnimalPlaced = 0;
+    long lastTimeGoodAnimalPlaced = 0;
     public PlayScreen()
     {
         super(1280, 769, 1, false);
@@ -38,7 +41,7 @@ public class PlayScreen  extends World
         /** Sets the Cursor Image to the New Cursor */
         Pan.setCursor(NewCursor);
         int secondsTakenOff = 150*(roundCount.getRoundNumber()-1);
-        if(animalHitCounters.size() == 10 ||(animalsInRound.size() == 0 && animalHitCounters.size()>5 && lastAnimalShot)){
+        if(animalHitCounters.size() == 10 ||(badAnimalsInRoundanimalsInRound.size() == 0 && animalHitCounters.size()>5 && lastAnimalShot)){
             newRound();
         }
         if(Greenfoot.mouseClicked(this)){
@@ -47,34 +50,49 @@ public class PlayScreen  extends World
         if(balloons.size() == 0 && animalHitCounters.size() <= 5){
             Greenfoot.setWorld(new GameOver());
         }
-        if(lastTime+(timeBetweenAnimals-secondsTakenOff) <= System.currentTimeMillis()){
-            if(animalsInRound.size() != 0){
-                if(animalsInRound.get(0).equals("cat")){
-                    addObject(new Cat(), 500, 500);
+        if(lastTimeBadAnimalPlaced+(timeBetweenBadAnimals-secondsTakenOff) <= System.currentTimeMillis()){
+            int x = ((int)(Math.random() * 2)) + 1;
+            if(x == 1) x = 50 ;
+            else if(x == 2) x = 1280;
+            if(badAnimalsInRoundanimalsInRound.size() != 0){
+                if(badAnimalsInRoundanimalsInRound.get(0).equals("cat")){
+                    addObject(new Cat(), x, 500);
                     System.out.println("Cat");
-                    lastTime = System.currentTimeMillis();
-                }else if(animalsInRound.get(0).equals("deer")){
-                    addObject(new Cat(), 500, 500);
-                    lastTime = System.currentTimeMillis();
-                }else if(animalsInRound.get(0).equals("goose")){
-                    addObject(new Cat(), 500, 500);
+                    lastTimeBadAnimalPlaced = System.currentTimeMillis();
+                }else if(badAnimalsInRoundanimalsInRound.get(0).equals("goose")){
+                    addObject(new Cat(), x, 500);
                     System.out.println("Goose");
-                    lastTime = System.currentTimeMillis();
-                }else if(animalsInRound.get(0).equals("horse")){
-                    addObject(new Cat(), 500, 500);
-                    lastTime = System.currentTimeMillis();
-                }else if(animalsInRound.get(0).equals("duck")){
-                    addObject(new Cat(), 500, 500);
-                    lastTime = System.currentTimeMillis();
-                }else if(animalsInRound.get(0).equals("lion")){
-                    addObject(new Cat(), 500, 500);
+                    lastTimeBadAnimalPlaced = System.currentTimeMillis();
+                }else if(badAnimalsInRoundanimalsInRound.get(0).equals("lion")){
+                    addObject(new Cat(), x, 500);
                     System.out.println("Lion");
-                    lastTime = System.currentTimeMillis();
+                    lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }
-                animalsInRound.remove(0);
+                badAnimalsInRoundanimalsInRound.remove(0);
             }
         }
-        if(animalsInRound.size() == 0 && animalHitCounters.size() <=5){
+        if(lastTimeGoodAnimalPlaced+(timeBetweenGoodAnimals-secondsTakenOff) <= System.currentTimeMillis()){
+            int x = ((int)(Math.random() * 2)) + 1;
+            if(x == 1) x = 50 ;
+            else if(x == 2) x = 1280;
+            if(goodAnimalsInRoundanimalsInRound.size() != 0){
+                if(goodAnimalsInRoundanimalsInRound.get(0).equals("deer")){
+                    addObject(new Cat(), x, 500);
+                    System.out.println("deer");
+                    lastTimeGoodAnimalPlaced = System.currentTimeMillis();
+                }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("horse")){
+                    addObject(new Cat(), x, 500);
+                    System.out.println("horse");
+                    lastTimeGoodAnimalPlaced = System.currentTimeMillis();
+                }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("duck")){
+                    addObject(new Cat(), x, 500);
+                    System.out.println("duck");
+                    lastTimeGoodAnimalPlaced = System.currentTimeMillis();
+                }
+                goodAnimalsInRoundanimalsInRound.remove(0);
+            }
+        }
+        if(badAnimalsInRoundanimalsInRound.size() == 0 && animalHitCounters.size() <=5){
             Greenfoot.setWorld(new GameOver());
         }
     }
@@ -86,26 +104,36 @@ public class PlayScreen  extends World
             AnimalCounter counter = (AnimalCounter)(AnimalCounter)animalHitCounters.get(i);
             counter.removeObject();
         }
-        animalsInRound.clear();
+        badAnimalsInRoundanimalsInRound.clear();
         animalHitCounters.clear();
         for(int i=0; i<10; i++){
-            int animal = (int)(Math.random() * 11);
-            if(animal <= 5){
-                animalsInRound.add(badAnimals[0]);
-            }else if(animal >= 8){
-                animalsInRound.add(badAnimals[1]);
-            }else if ((animal == 6 || animal == 7) && !lionUsed){
-                animalsInRound.add(badAnimals[2]);
+            int badAnimal = (int)(Math.random() * 11);
+            int goodAnimal = (int)(Math.random() * 3);
+            if(badAnimal <= 5){
+                badAnimalsInRoundanimalsInRound.add(badAnimals[0]);
+            }else if(badAnimal >= 8){
+                badAnimalsInRoundanimalsInRound.add(badAnimals[1]);
+            }else if ((badAnimal == 6 || badAnimal == 7) && !lionUsed){
+                badAnimalsInRoundanimalsInRound.add(badAnimals[2]);
                 lionUsed = true;
-            }else if (animal == 6 || animal == 7){
-                animalsInRound.add(badAnimals[0]);
+            }else if (badAnimal == 6 || badAnimal == 7){
+                badAnimalsInRoundanimalsInRound.add(badAnimals[0]);
             }
-            //animalsInRound.add("cat");
+            
+            if(goodAnimal == 0){
+                goodAnimalsInRoundanimalsInRound.add(goodAnimals[0]);
+            }else if(goodAnimal == 1){
+                goodAnimalsInRoundanimalsInRound.add(goodAnimals[1]);
+            }else if ((goodAnimal == 2)){
+                goodAnimalsInRoundanimalsInRound.add(goodAnimals[2]);
+            }
+            //badAnimalsInRoundanimalsInRound.add("cat");
             balloons.add(new Balloon());
         }
         placeBalloons();
         roundCount.increaseRound();
-        lastTime = System.currentTimeMillis();
+        lastTimeBadAnimalPlaced = System.currentTimeMillis();
+        lastTimeGoodAnimalPlaced = System.currentTimeMillis();
     }
     
     /** Or you use this Method: 
@@ -136,7 +164,7 @@ public class PlayScreen  extends World
         }else{
             playerScore.addTotal(-50);
         }
-        if(animalsInRound.size() == 0){
+        if(badAnimalsInRoundanimalsInRound.size() == 0){
             lastAnimalShot = true;
         }
         removeBalloon();
