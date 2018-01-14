@@ -200,4 +200,13 @@ public class PlayScreen  extends World
         balloons.remove(balloons.size()-1);
         placeBalloons();
     }
+    
+    public void attacked(String animal){
+        if(animal.equals("cat")){
+            balloons.remove(balloons.size());
+            balloons.remove(balloons.size());
+        }else if(animal.equals("lion")){
+            Greenfoot.setWorld(new GameOver());
+        }
+    }
 }

@@ -17,4 +17,6 @@ comment7.params=
 comment7.target=void\ placeBalloons()
 comment8.params=
 comment8.target=void\ removeBalloon()
-numComments=9
+comment9.params=animal
+comment9.target=void\ attacked(java.lang.String)
+numComments=10
