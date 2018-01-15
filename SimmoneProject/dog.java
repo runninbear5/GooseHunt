@@ -22,13 +22,14 @@ public class dog extends Actor
     long timeJumpedCalled = 0;
     public void act() 
    {
-        if(walk){
+      if(walk){
          walk();   
         }
-        if(jump){
+      if(jump){
             jumpOver(false);
         }
     }
+    
     public void walk() {
        int x = getX(); 
        int y = getY(); 
@@ -53,6 +54,7 @@ public class dog extends Actor
        jumpOver(true);
       }
    }
+   
     public void setImage() 
     {
        if ( position < 800) {
@@ -87,12 +89,13 @@ public class dog extends Actor
           jump = false;
       }
    }
-    public void setJumpImage() {
+   
+   public void setJumpImage() {
       currentImage = 6;
       setImage("dog" + currentImage + ".fw.png");
     }
   
-    public int getScore(int score) 
+   public int getScore(int score) 
     {
        return score;
     }
