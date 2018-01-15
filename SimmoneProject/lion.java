@@ -95,7 +95,7 @@ public class lion extends Actor
    
    public void setStareImage()
      {
-      int width1 = 150;
+      int width1 = 151;
       int height1 = 210;
       currentImage++;
       if (currentImage == 4) 

@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon Jan 15 14:29:48 PST 2018
+#Mon Jan 15 14:33:44 PST 2018
 target4.type=ClassTarget
 dependency3.from=lion
 target3.height=50
@@ -29,7 +29,6 @@ class.PlayScreen.image=background2.png
 target7.width=80
 dependency5.from=dog
 dependency2.to=PlayScreen
-<<<<<<< HEAD
 target1.width=80
 class.cat.superclass=greenfoot.Actor
 dependency5.type=UsesDependency
@@ -42,27 +41,6 @@ target6.name=dog
 dependency4.to=PlayScreen
 target7.showInterface=false
 dependency5.to=PlayScreen
-=======
-dependency2.type=UsesDependency
-editor.fx.0.height=1048
-editor.fx.0.width=1938
-editor.fx.0.x=-9
-editor.fx.0.y=-9
-mainWindow.height=949
-mainWindow.width=1544
-mainWindow.x=307
-mainWindow.y=24
-package.numDependencies=2
-package.numTargets=4
-project.charset=UTF-8
-readme.height=58
-readme.name=@README
-readme.width=47
-readme.x=10
-readme.y=10
-target1.height=50
-target1.name=PlayScreen
->>>>>>> f05d1d3f9d7550434a67c3e52fa91e82355cb53e
 target1.showInterface=false
 target5.showInterface=false
 target7.type=ClassTarget
@@ -112,7 +90,7 @@ class.dog.superclass=greenfoot.Actor
 dependency2.type=UsesDependency
 target5.typeParameters=
 world.lastInstantiated=PlayScreen
-mainWindow.height=825
+mainWindow.height=826
 target2.showInterface=false
 target3.name=dog
 target7.height=50
