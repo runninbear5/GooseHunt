@@ -14,6 +14,7 @@ public class Unicorn extends Actor
     int stop = 0; 
     int x; 
     int y; 
+    boolean right; 
     /**
      * Act - do whatever the Deer wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,7 +24,7 @@ public class Unicorn extends Actor
         // Add your action code here.
         x = getX(); 
         y = getY();
-        
+
         if ((x - 10 <= stop)&&(x + 10 >= stop)) {
             setImage("Unicorn11.fw.png"); 
             if(timeStop + 1500 <= System.currentTimeMillis()){
@@ -36,35 +37,68 @@ public class Unicorn extends Actor
         if (Greenfoot.mouseClicked(this)){
             //((PlayScreen)getWorld().animalHit("Antler")); 
         }
+
     }   
+
     public Unicorn () {
         stop = (int)(Math.random() * 1280); 
+        right = x > 640; 
+        
         //System.out.println(stop); 
     }
+
     public void walk () { //move deer across the screen 
-        x+=5; //add level multiplier 
-        counter++;
-        if (counter == 5) { 
-            setImage(); 
-            counter = 0; 
+        if(!right){
+            x+=5; //add level multiplier 
+            counter++;
+            if (counter == 5) { 
+                setImageLeft(); 
+                counter = 0; 
+            }
+            if (x >= 1270) {
+                makeDissapear(); 
+            } 
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
+                timeStop = System.currentTimeMillis(); 
+                setImage("Unicorn1.fw.png"); 
+            } 
+            setLocation(x, y); 
+        } else {
+            x-=5; 
+            counter++; 
+            if (counter == 5) { 
+                setImageLeft(); 
+                counter = 0; 
+            }
+            if (x <= 10) {
+                makeDissapear(); 
+            } 
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
+                timeStop = System.currentTimeMillis(); 
+                setImage("Unicorn11.fw.png"); 
+                getImage().mirrorHorizontally(); 
+            } 
+            setLocation(x, y); 
         }
-        if (x >= 1270) {
-            makeDissapear(); 
-        } 
-        if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
-            timeStop = System.currentTimeMillis(); 
-            setImage("Unicorn1.fw.png"); 
-        } 
-        setLocation(x, y); 
     }
+
     public void makeDissapear () {
         ((PlayScreen)getWorld()).removeObject(this); 
     }
-    public void setImage() { //change image to create moving gif
+
+    public void setImageLeft() { //change image to create moving gif
         currentImage++; //increment image
         if (currentImage == 12) { //loop through graphics 
             currentImage = 1; 
         } 
         setImage("Unicorn" + currentImage + ".fw.png"); //call antler file
     } 
+    public void setImageRight () { 
+        currentImage++; //increment image
+        if (currentImage == 12) { //loop through graphics 
+            currentImage = 1; 
+        } 
+        setImage("Unicorn" + currentImage + ".fw.png"); //call antler file
+        getImage().mirrorHorizontally(); 
+    }
 }
