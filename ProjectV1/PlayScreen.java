@@ -19,7 +19,7 @@ public class PlayScreen  extends World
     ArrayList animalHitCounters = new ArrayList<AnimalCounter>();
     ArrayList balloons = new ArrayList<Balloon>();
     String[] goodAnimals = {"Duck", "Unicorn", "Antler"};
-    String[] badAnimals = {"Goose","Car", "Lion"};
+    String[] badAnimals = {"Goose","Cat", "Lion"};
     Score playerScore = new Score(0);
     Round roundCount = new Round();
     boolean lionUsed = false;
@@ -77,15 +77,15 @@ public class PlayScreen  extends World
             if(x == 1) x = 50 ;
             else if(x == 2) x = 1280;
             if(goodAnimalsInRoundanimalsInRound.size() != 0){
-                if(goodAnimalsInRoundanimalsInRound.get(0).equals("deer")){
+                if(goodAnimalsInRoundanimalsInRound.get(0).equals("Deer")){
                     addObject(new Antler(), x, 500);
                     System.out.println("Antler");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
-                }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("horse")){
-                    addObject(new Unicorn(), x, 500);
+                }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("Unicorn")){
+                    addObject(new Unicorn(x==1280), x, 500);
                     System.out.println("Unicorn");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
-                }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("duck")){
+                }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("Duck")){
                     addObject(new Cat(), x, 500);
                     System.out.println("Duck");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();

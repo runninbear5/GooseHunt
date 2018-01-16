@@ -24,7 +24,7 @@ public class Cat extends Actor
      setImage();
      if(Greenfoot.mouseClicked(this)){
             ((PlayScreen)getWorld()).animalHit("Cat");//chnage to help screen when created
-        }
+     }
     }
     
    public void size()
