@@ -6,22 +6,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Simmone Stearn) 
  * @version (a version number or a date)
  */
-public class lion extends Actor
+public class Lion extends Actor
 {
     /**
      * Act - do whatever the cat wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int counter = 0;
-    int currentImage = 0;
-    int position = 0;
-    int x = 0;
-    int y = 0;
-    boolean walk = true;
-    boolean hunt = false;
-    boolean image1 = true;
-    boolean image2 = false;
-    boolean image3 = false;
+   int counter = 0;
+   int currentImage = 1;
+   int position = 0;
+   int x = 0;
+   int y = 0;
+   boolean walk = true;
+   boolean hunt = false;
+   boolean comeBack = false;
+   long timeJumpCalled = 0;
+    
+   public Lion()
+    {
+      setImage();  
+    }
     
    public void size(int width, int height)
     {
@@ -42,27 +46,35 @@ public class lion extends Actor
     }
     
     public void walk() {
-       int x = getX(); 
-       int y = getY(); 
-       int width2 = 210;
-       int height2 = 180;
-       size(width2++, height2++);
-       int starePosition = 640;
-       position++;
-      if (x < 681) 
+      int x = getX(); 
+      int y = getY(); 
+      int width2 = 210;
+      int height2 = 180;
+      int starePosition = 640;
+      position++;
+      if (position < 190) 
        { x += 5;
         }
+        
+      if (position >= 190)
+      { x -= 5;
+        }
       
-       setLocation(x, y); 
-       counter++;
+      setLocation(x, y); 
+      counter++;
        if (counter == 10) 
       {  setImage();
          counter = 0;
       }
+       
+      if (x >= 800 && x <= 850) 
+      { comeBack = true;
+        }
       
-      if (x >= starePosition - 30 && x <= starePosition + 30) 
+      if ((comeBack == true) && (x >= starePosition - 30 && x <= starePosition + 30))
       { walk = false;
         hunt = true;
+        timeJumpCalled = System.currentTimeMillis();
         startStaring(true);
         }
    }
@@ -75,6 +87,16 @@ public class lion extends Actor
        {currentImage = 1;
         }       
        setImage("LionRight" + currentImage + ".fw.png");
+       size(210, 180);
+      }
+      
+      if ( position >= 190) {
+        currentImage++;
+        if (currentImage == 4) 
+       {currentImage = 1;
+        }       
+       setImage("LionLeft" + currentImage + ".fw.png");
+       size(210, 180);
       }
     }
   
@@ -82,8 +104,8 @@ public class lion extends Actor
    {
       int x = getX();
       int y = getY();
-      
       counter++;
+      
       if (counter == 10) 
       { setStareImage();
         counter = 0;
@@ -91,12 +113,17 @@ public class lion extends Actor
       if (first) 
       { setLocation(x, y + 30);
           }
+          
+      if(timeJumpCalled + 1000 <= System.currentTimeMillis()){
+          hunt = false;
+          setGameOverImage();
+      }
     }
    
    public void setStareImage()
      {
-      int width1 = 151;
-      int height1 = 210;
+      int width1 = 180;
+      int height1 = 250;
       currentImage++;
       if (currentImage == 4) 
       { currentImage = 1;
@@ -104,6 +131,16 @@ public class lion extends Actor
       setImage("LionFront" + currentImage + ".fw.png"); 
       size(width1 ++, height1 ++);
     }
+    
+   public void setGameOverImage()
+   {
+     setImage("lionmouthcorrect");
+     size(1280, 769);
+     setLocation (640, 385);
+     if(timeJumpCalled + 300 <= System.currentTimeMillis()){
+          ((PlayScreen)getWorld()).animalHit("Lion");
+      }
+   }
     
    public int getScore(int score) 
     {
