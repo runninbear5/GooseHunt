@@ -18,10 +18,13 @@ public class Cat extends Actor
     int x = 0;
     int y = 0;
     boolean change;
+    boolean right;
+    boolean comeBack = false;
     
-    public Cat()
+   public Cat()
     {
      setImage();
+     right = this.right;
     }
     
    public void size()
@@ -36,9 +39,11 @@ public class Cat extends Actor
     }
     
     public void walk() {
-       int x = getX(); 
-       int y = getY(); 
-       position++;
+      if (right) {
+      int x = getX(); 
+      int y = getY(); 
+      int starePosition = 640;
+      position++;
        
       if (position < 190) 
        { x += 5;
@@ -57,13 +62,58 @@ public class Cat extends Actor
          counter = 0;
       }
       
+      if (x >= 800 && x <= 850) 
+      { comeBack = true;
+        }
+      
        if (x <= 50 && x >= 0) {
        makeDissapear();
       }
+     }
+     else {
+     
+       int x = getX(); 
+       int y = getY(); 
+       position++;
+       
+      if (position < 190) 
+       { x -= 5;
+         change = false;
+        }
+      if (position >= 190) 
+       { x += 5;
+         change = true;
+        }
+        
+       setLocation(x, y); 
+       counter++;
+       
+       if (counter == 10) 
+      {  setImage();
+         getImage().mirrorHorizontally();
+         counter = 0;
+      }
+      
+      if (x >= 800 && x <= 850) 
+      { comeBack = true;
+        }
+      
+      if ((comeBack == true) && (x >= starePosition - 30 && x <= starePosition + 30))
+      { walk = false;
+        hunt = true;
+        timeJumpCalled = System.currentTimeMillis();
+        startStaring(true);
+        }
+        
+       if (x <= 50 && x >= 0) {
+       makeDissapear();
+      }
+     }
    }
    
+   
     public void setImage() 
-    {
+    { if (right) {
       if (position < 190) 
        {
         currentImage++;
@@ -86,7 +136,33 @@ public class Cat extends Actor
         setImage("cat" + currentImage + ".fw.png"); 
         size();
       }
+     }
+     else {
+      if (position < 190) 
+       {
+        currentImage++;
+        if (currentImage == 10) 
+       {
+          currentImage = 7;
+        }       
+       setImage("cat" + currentImage + ".fw.png");
+       getImage().mirrorHorizontally();
+       size();
+      }
       
+      
+        if (position >= 190) 
+      {
+        currentImage++;
+       if (currentImage == 13) 
+        {
+          currentImage = 10;
+        }   
+        setImage("cat" + currentImage + ".fw.png"); 
+        getImage().mirrorHorizontally();
+        size();
+      }
+     }
    }
    
     
