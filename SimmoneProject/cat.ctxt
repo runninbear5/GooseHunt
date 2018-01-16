@@ -1,5 +1,9 @@
 #BlueJ class context
+<<<<<<< HEAD
+comment0.target=cat
+=======
 comment0.target=Cat
+>>>>>>> 50856212a89320a9b59ff87b415434cc4f934711
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ cat\ here.\r\n\ \r\n\ @author\ (Simmone\ Stearn)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Cat()
