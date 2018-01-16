@@ -34,7 +34,7 @@ public class PlayScreen  extends World
         ChangeMouseImage(image, 15,15);
         addObject(playerScore, 1150, 700);
         addObject(roundCount, 44, 712);
-        addObject(new Dog(), 10, 500);
+        //addObject(new Dog(), 10, 500);
     }
 
     public void act()
@@ -78,11 +78,11 @@ public class PlayScreen  extends World
             else if(x == 2) x = 1280;
             if(goodAnimalsInRoundanimalsInRound.size() != 0){
                 if(goodAnimalsInRoundanimalsInRound.get(0).equals("deer")){
-                    addObject(new Cat(), x, 500);
+                    addObject(new Antler(), x, 500);
                     System.out.println("Antler");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("horse")){
-                    addObject(new Cat(), x, 500);
+                    addObject(new Unicorn(), x, 500);
                     System.out.println("Unicorn");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("duck")){
