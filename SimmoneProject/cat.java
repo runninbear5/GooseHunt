@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Simmone Stearn) 
  * @version (a version number or a date)
  */
-public class cat extends Actor
+public class Cat extends Actor
 {
     /**
      * Act - do whatever the cat wants to do. This method is called whenever
@@ -18,6 +18,11 @@ public class cat extends Actor
     int x = 0;
     int y = 0;
     boolean change;
+    
+    public Cat()
+    {
+     setImage();
+    }
     
    public void size()
     {
@@ -33,7 +38,6 @@ public class cat extends Actor
     public void walk() {
        int x = getX(); 
        int y = getY(); 
-       size();
        position++;
        
       if (position < 190) 
@@ -68,6 +72,7 @@ public class cat extends Actor
           currentImage = 7;
         }       
        setImage("cat" + currentImage + ".fw.png");
+       size();
       }
       
       
@@ -79,6 +84,7 @@ public class cat extends Actor
           currentImage = 10;
         }   
         setImage("cat" + currentImage + ".fw.png"); 
+        size();
       }
       
    }

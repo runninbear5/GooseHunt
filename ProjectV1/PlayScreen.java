@@ -18,8 +18,8 @@ public class PlayScreen  extends World
     ArrayList goodAnimalsInRoundanimalsInRound = new ArrayList<String>();
     ArrayList animalHitCounters = new ArrayList<AnimalCounter>();
     ArrayList balloons = new ArrayList<Balloon>();
-    String[] goodAnimals = {"duck", "horse", "deer"};
-    String[] badAnimals = {"goose","cat", "lion"};
+    String[] goodAnimals = {"Duck", "Unicorn", "Antler"};
+    String[] badAnimals = {"Goose","Car", "Lion"};
     Score playerScore = new Score(0);
     Round roundCount = new Round();
     boolean lionUsed = false;
@@ -78,15 +78,15 @@ public class PlayScreen  extends World
             if(goodAnimalsInRoundanimalsInRound.size() != 0){
                 if(goodAnimalsInRoundanimalsInRound.get(0).equals("deer")){
                     addObject(new Cat(), x, 500);
-                    System.out.println("deer");
+                    System.out.println("Antler");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("horse")){
                     addObject(new Cat(), x, 500);
-                    System.out.println("horse");
+                    System.out.println("Unicorn");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("duck")){
                     addObject(new Cat(), x, 500);
-                    System.out.println("duck");
+                    System.out.println("Duck");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }
                 goodAnimalsInRoundanimalsInRound.remove(0);
@@ -151,15 +151,15 @@ public class PlayScreen  extends World
     }
     
     public void animalHit(String animal){
-        if(animal.equals("goose")){
+        if(animal.equals("Goose")){
             playerScore.addTotal(100);
-        }else if(animal.equals("duck")){
+        }else if(animal.equals("Duck")){
             playerScore.addTotal(-100);
-        }else if(animal.equals("lion")){
+        }else if(animal.equals("Lion")){
             playerScore.addTotal(75);
-        }else if(animal.equals("deer")){
+        }else if(animal.equals("Antler")){
             playerScore.addTotal(-75);
-        }else if(animal.equals("cat")){
+        }else if(animal.equals("Cat")){
             playerScore.addTotal(50);
         }else{
             playerScore.addTotal(-50);
@@ -202,10 +202,10 @@ public class PlayScreen  extends World
     }
     
     public void attacked(String animal){
-        if(animal.equals("cat")){
+        if(animal.equals("Cat")){
             balloons.remove(balloons.size());
             balloons.remove(balloons.size());
-        }else if(animal.equals("lion")){
+        }else if(animal.equals("Lion")){
             Greenfoot.setWorld(new GameOver());
         }
     }
