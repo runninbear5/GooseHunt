@@ -37,11 +37,12 @@ public class Unicorn extends Actor
         if (Greenfoot.mouseClicked(this)){
             //((PlayScreen)getWorld().animalHit("Antler")); 
         }
-
     }   
 
-    public Unicorn () {
+    public Unicorn (boolean right) {
+        right = this.right; 
         stop = (int)(Math.random() * 1280); 
+        x = getX(); 
         right = x > 640; 
         
         //System.out.println(stop); 
