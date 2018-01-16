@@ -94,18 +94,28 @@ dependency26.type=UsesDependency
 dependency27.from=Lion
 dependency27.to=PlayScreen
 dependency27.type=UsesDependency
+<<<<<<< HEAD
 dependency28.from=Antler
 dependency28.to=PlayScreen
 dependency28.type=UsesDependency
 dependency29.from=Dog
+=======
+dependency28.from=Cat
+dependency28.to=HelpScreen
+dependency28.type=UsesDependency
+dependency29.from=Lion
+>>>>>>> 3a3bea8a5aeb0d238e7b41fd84dfe3a02eec49cb
 dependency29.to=PlayScreen
 dependency29.type=UsesDependency
 dependency3.from=PlayScreen
 dependency3.to=Round
 dependency3.type=UsesDependency
-dependency30.from=Dog
+dependency30.from=Antler
 dependency30.to=PlayScreen
 dependency30.type=UsesDependency
+dependency31.from=Dog
+dependency31.to=PlayScreen
+dependency31.type=UsesDependency
 dependency4.from=PlayScreen
 dependency4.to=Balloon
 dependency4.type=UsesDependency
@@ -124,15 +134,39 @@ dependency8.type=UsesDependency
 dependency9.from=PlayScreen
 dependency9.to=Unicorn
 dependency9.type=UsesDependency
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3a3bea8a5aeb0d238e7b41fd84dfe3a02eec49cb
 editor.fx.0.height=738
 editor.fx.0.width=816
 editor.fx.0.x=552
 editor.fx.0.y=101
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+=======
+editor.fx.0.height=1056
+editor.fx.0.width=1936
+editor.fx.0.x=-8
+editor.fx.0.y=-8
+>>>>>>> ef025ed7134643e8aaee9b83e1d9c1670bd0d647
+>>>>>>> 4ccc420e307ba2e07cafa8f2379639e0f184faab
+>>>>>>> 3a3bea8a5aeb0d238e7b41fd84dfe3a02eec49cb
 mainWindow.height=1048
 mainWindow.width=1938
 mainWindow.x=-9
 mainWindow.y=-9
+<<<<<<< HEAD
 package.numDependencies=29
+=======
+package.numDependencies=31
+>>>>>>> 3a3bea8a5aeb0d238e7b41fd84dfe3a02eec49cb
 package.numTargets=20
 project.charset=UTF-8
 readme.height=58
