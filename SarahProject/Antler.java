@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Unicorn here.
+ * Write a description of class Deer here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Unicorn extends Actor
+public class Antler extends Actor
 {
     int currentImage = 1; 
     int counter = 0; 
@@ -25,7 +25,7 @@ public class Unicorn extends Actor
         y = getY();
         
         if ((x - 10 <= stop)&&(x + 10 >= stop)) {
-            setImage("Unicorn11.fw.png"); 
+            setImage("Antler1.fw.png"); 
             if(timeStop + 1500 <= System.currentTimeMillis()){
                 x = stop + 11;  
                 walk(); 
@@ -37,7 +37,7 @@ public class Unicorn extends Actor
             //((PlayScreen)getWorld().animalHit("Antler")); 
         }
     }   
-    public Unicorn () {
+    public Antler () {
         stop = (int)(Math.random() * 1280); 
         //System.out.println(stop); 
     }
@@ -53,7 +53,7 @@ public class Unicorn extends Actor
         } 
         if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
             timeStop = System.currentTimeMillis(); 
-            setImage("Unicorn1.fw.png"); 
+            setImage("Antler1.fw.png"); 
         } 
         setLocation(x, y); 
     }
@@ -65,6 +65,6 @@ public class Unicorn extends Actor
         if (currentImage == 12) { //loop through graphics 
             currentImage = 1; 
         } 
-        setImage("Unicorn" + currentImage + ".fw.png"); //call antler file
+        setImage("Antler" + currentImage + ".fw.png"); //call antler file
     } 
 }

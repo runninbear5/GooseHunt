@@ -1,9 +1,5 @@
 #BlueJ class context
-<<<<<<< HEAD
-comment0.target=dog
-=======
 comment0.target=Dog
->>>>>>> 50856212a89320a9b59ff87b415434cc4f934711
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ cat\ here.\r\n\ \r\n\ @author\ (Simmone\ Stearn)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
@@ -13,12 +9,8 @@ comment3.params=
 comment3.target=void\ setImage()
 comment4.params=first
 comment4.target=void\ jumpOver(boolean)
-comment5.params=second
-comment5.target=void\ startLaugh(boolean)
-comment6.params=
-comment6.target=void\ setJumpImage()
-comment7.params=
-comment7.target=void\ setLaughImage()
-comment8.params=score
-comment8.target=int\ getScore(int)
-numComments=9
+comment5.params=
+comment5.target=void\ setJumpImage()
+comment6.params=score
+comment6.target=int\ getScore(int)
+numComments=7

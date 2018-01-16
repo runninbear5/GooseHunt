@@ -1,18 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Deer here.
+ * Write a description of class Unicorn here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Deer extends Actor
+public class Unicorn extends Actor
 {
     int currentImage = 1; 
     int counter = 0; 
+    long timeStop = 0; 
+    int stop = 0; 
     int x; 
     int y; 
-    int stop; 
     /**
      * Act - do whatever the Deer wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,47 +21,50 @@ public class Deer extends Actor
     public void act() 
     {
         // Add your action code here.
-        // Add your action code here.
         x = getX(); 
         y = getY();
         
-        if (x == stop) {
-            long cTime = System.currentTimeMillis(); 
-            System.out.println("CTIME: " + cTime); 
-            long endPause = cTime + 2000; 
-            while (System.currentTimeMillis() != endPause){
-                setImage("Antler1.fw.png"); 
-            }//pause 
+        if ((x - 10 <= stop)&&(x + 10 >= stop)) {
+            setImage("Unicorn11.fw.png"); 
+            if(timeStop + 1500 <= System.currentTimeMillis()){
+                x = stop + 11;  
+                walk(); 
+            }
+        } else {
+            walk(); 
         } 
         if (Greenfoot.mouseClicked(this)){
+            //((PlayScreen)getWorld().animalHit("Antler")); 
         }
-        walk();  
     }   
-    public void Unicorn () {
-        stop = 260; 
-    } 
+    public Unicorn () {
+        stop = (int)(Math.random() * 1280); 
+        //System.out.println(stop); 
+    }
     public void walk () { //move deer across the screen 
-        int x = getX(); 
-        int y = getY(); 
         x+=5; //add level multiplier 
-        counter++; 
+        counter++;
         if (counter == 5) { 
             setImage(); 
             counter = 0; 
         }
-        if (x == 1280) {
-            ((PlayScreen)getWorld()).removeObject(this); 
+        if (x >= 1270) {
+            makeDissapear(); 
+        } 
+        if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
+            timeStop = System.currentTimeMillis(); 
+            setImage("Unicorn1.fw.png"); 
         } 
         setLocation(x, y); 
     }
-    public int giveScore () { //score per deer is 10
-        return 10; 
-    } 
+    public void makeDissapear () {
+        ((PlayScreen)getWorld()).removeObject(this); 
+    }
     public void setImage() { //change image to create moving gif
         currentImage++; //increment image
         if (currentImage == 12) { //loop through graphics 
             currentImage = 1; 
         } 
-        setImage("Antler" + currentImage + ".fw.png"); //call antler file
+        setImage("Unicorn" + currentImage + ".fw.png"); //call antler file
     } 
 }
