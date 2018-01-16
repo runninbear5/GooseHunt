@@ -123,10 +123,17 @@ dependency8.type=UsesDependency
 dependency9.from=PlayScreen
 dependency9.to=Antler
 dependency9.type=UsesDependency
+<<<<<<< HEAD
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+=======
 editor.fx.0.height=1056
 editor.fx.0.width=1936
 editor.fx.0.x=-8
 editor.fx.0.y=-8
+>>>>>>> ef025ed7134643e8aaee9b83e1d9c1670bd0d647
 mainWindow.height=1048
 mainWindow.width=1938
 mainWindow.x=-9

@@ -11,34 +11,41 @@ class.lion.superclass=greenfoot.Actor
 dependency1.from=cat
 =======
 #Greenfoot properties
-#Tue Jan 16 08:04:03 PST 2018
+#Tue Jan 16 08:43:15 PST 2018
 target4.type=ClassTarget
-dependency3.from=lion
+dependency3.from=Lion
 class.Dog.image=dog1.fw.png
 target3.height=50
 target5.height=50
 readme.y=10
 dependency3.type=UsesDependency
 readme.x=10
-target4.name=lion
+target4.name=Dog
 class.Cat.superclass=greenfoot.Actor
 target4.typeParameters=
 readme.width=47
-editor.fx.0.width=0
+editor.fx.0.width=816
 target1.height=50
 target5.type=ClassTarget
 target3.typeParameters=
-dependency4.from=dog2
-mainWindow.width=1440
+dependency4.from=Dog
+mainWindow.width=1936
 dependency4.type=UsesDependency
 target2.width=80
 target5.name=dog2
 version=3.0.0
 target6.type=ClassTarget
+<<<<<<< HEAD
+dependency1.to=Cat
+class.PlayScreen.image=background2.png
+target7.width=80
+dependency5.from=dog
+=======
 >>>>>>> 50856212a89320a9b59ff87b415434cc4f934711
 dependency1.to=PlayScreen
 dependency1.type=UsesDependency
 dependency2.from=dog
+>>>>>>> ef025ed7134643e8aaee9b83e1d9c1670bd0d647
 dependency2.to=PlayScreen
 <<<<<<< HEAD
 dependency2.type=UsesDependency
@@ -46,8 +53,8 @@ dependency3.from=lion
 =======
 target1.width=80
 dependency5.type=UsesDependency
-editor.fx.0.y=0
-editor.fx.0.x=0
+editor.fx.0.y=101
+editor.fx.0.x=552
 target2.typeParameters=
 >>>>>>> 50856212a89320a9b59ff87b415434cc4f934711
 dependency3.to=PlayScreen
@@ -71,8 +78,8 @@ package.numDependencies=3
 =======
 target1.showInterface=false
 target5.showInterface=false
-target6.width=80
 target7.type=ClassTarget
+target6.width=80
 target6.height=50
 >>>>>>> 50856212a89320a9b59ff87b415434cc4f934711
 package.numTargets=4
@@ -93,13 +100,17 @@ target1.x=0
 target1.y=0
 target2.height=50
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 target2.name=cat
 target2.showInterface=false
 =======
 target4.height=50
+>>>>>>> ef025ed7134643e8aaee9b83e1d9c1670bd0d647
 target5.y=0
-class.Dog.superclass=greenfoot.Actor
+target4.height=50
 target5.x=0
+class.Dog.superclass=greenfoot.Actor
 target1.name=PlayScreen
 target4.y=0
 target4.x=0
@@ -111,6 +122,10 @@ target2.typeParameters=
 target2.width=80
 target2.x=0
 <<<<<<< HEAD
+mainWindow.y=-8
+mainWindow.x=-8
+=======
+<<<<<<< HEAD
 target2.y=0
 target3.height=50
 target3.name=dog
@@ -119,17 +134,19 @@ target3.showInterface=false
 mainWindow.y=23
 mainWindow.x=0
 dependency1.from=cat
+>>>>>>> ef025ed7134643e8aaee9b83e1d9c1670bd0d647
 target6.typeParameters=
+dependency1.from=PlayScreen
 target5.width=80
 target1.y=0
+editor.fx.0.height=738
 target1.x=0
-editor.fx.0.height=0
 dependency1.type=UsesDependency
 readme.height=58
+target2.name=Cat
 readme.name=@README
-target2.name=cat
+package.numDependencies=4
 simulation.speed=50
-package.numDependencies=3
 class.PlayScreen.superclass=greenfoot.World
 >>>>>>> 50856212a89320a9b59ff87b415434cc4f934711
 target3.type=ClassTarget
@@ -143,6 +160,9 @@ target4.showInterface=false
 target4.type=ClassTarget
 target4.typeParameters=
 target4.width=80
+<<<<<<< HEAD
+dependency2.from=Cat
+=======
 <<<<<<< HEAD
 target4.x=0
 target4.y=0
@@ -174,16 +194,17 @@ version=3.0.0
 world.lastInstantiated=PlayScreen
 =======
 dependency2.from=dog
+>>>>>>> ef025ed7134643e8aaee9b83e1d9c1670bd0d647
 dependency2.type=UsesDependency
 target5.typeParameters=
 world.lastInstantiated=PlayScreen
+mainWindow.height=1056
 target2.showInterface=false
-mainWindow.height=826
-target3.name=dog
+target3.name=Lion
 target7.height=50
 target6.showInterface=false
 class.Lion.superclass=greenfoot.Actor
-target3.width=80
 project.charset=UTF-8
+target3.width=80
 target4.showInterface=false
 >>>>>>> 50856212a89320a9b59ff87b415434cc4f934711
