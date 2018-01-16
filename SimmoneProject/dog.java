@@ -19,6 +19,7 @@ public class Dog extends Actor
    int y = 100;
    boolean walk = true; 
    boolean jump = false;
+   boolean laugh = false;
    long timeJumpedCalled = 0;
    
     public void act() 
@@ -35,6 +36,7 @@ public class Dog extends Actor
       int x = getX(); 
       int y = getY(); 
       int jumpPosition = 640;
+      int laugh POsitio
       position++;
       
       if (x < 800) 
@@ -94,11 +96,31 @@ public class Dog extends Actor
       }
    }
    
+    public void startLaugh(boolean second)
+    {
+      int x = getX();
+      int y = getY();
+      setLaughImage();
+      if(second){
+          setLocation(x, y - 50);
+        }
+      
+      if(timeJumpedCalled + 300 <= System.currentTimeMillis()){
+          ((PlayScreen)getWorld()).removeObject(this);
+          laugh = false;
+      }
+   }
+   
    public void setJumpImage() {
       currentImage = 6;
       setImage("dog" + currentImage + ".fw.png");
     }
-  
+    
+   public void setLaughImage() {
+      currentImage = 7;
+      setImage("dog" + currentImage + ".fw.png");
+    }
+    
    public int getScore(int score) 
     {
        return score;
