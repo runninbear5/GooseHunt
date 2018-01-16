@@ -26,7 +26,7 @@ public class Cat extends Actor
     {
        walk();
        if(Greenfoot.mouseClicked(this)){
-            ((PlayScreen)getWorld()).animalHit("cat");
+            ((PlayScreen)getWorld()).animalHit("Cat");
             makeDissapear();
         }
     }
