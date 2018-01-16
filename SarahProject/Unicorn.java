@@ -10,7 +10,8 @@ public class Unicorn extends Actor
 {
     int currentImage = 1; 
     int counter = 0; 
-    int stop; 
+    long timeStop = 0; 
+    int stop = 0; 
     int x; 
     int y; 
     /**
@@ -23,39 +24,42 @@ public class Unicorn extends Actor
         x = getX(); 
         y = getY();
         
-        if (x == stop) {
-            long cTime = System.currentTimeMillis(); 
-            System.out.println("CTIME: " + cTime); 
-            long endPause = cTime + 2000; 
-            while (System.currentTimeMillis() != endPause){
-                setImage("Unicorn1.fw.png"); 
-            }//pause 
+        if ((x - 10 <= stop)&&(x + 10 >= stop)) {
+            setImage("Unicorn11.fw.png"); 
+            if(timeStop + 1500 <= System.currentTimeMillis()){
+                x = stop + 11;  
+                walk(); 
+            }
+        } else {
+            walk(); 
         } 
-        walk(); 
+        if (Greenfoot.mouseClicked(this)){
+            //((PlayScreen)getWorld().animalHit("Antler")); 
+        }
     }   
     public Unicorn () {
-        stop = 555; 
+        stop = (int)(Math.random() * 1280); 
         //System.out.println(stop); 
     }
     public void walk () { //move deer across the screen 
-
         x+=5; //add level multiplier 
         counter++;
         if (counter == 5) { 
             setImage(); 
             counter = 0; 
         }
-        if (x == 1280) {
-            ((PlayScreen)getWorld()).removeObject(this); 
+        if (x >= 1270) {
+            makeDissapear(); 
         } 
-        if (x == stop) { 
+        if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
+            timeStop = System.currentTimeMillis(); 
             setImage("Unicorn1.fw.png"); 
         } 
         setLocation(x, y); 
     }
-    public int giveScore () { //score per deer is 10
-        return 10; 
-    } 
+    public void makeDissapear () {
+        ((PlayScreen)getWorld()).removeObject(this); 
+    }
     public void setImage() { //change image to create moving gif
         currentImage++; //increment image
         if (currentImage == 12) { //loop through graphics 
