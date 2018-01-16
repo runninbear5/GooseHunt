@@ -56,15 +56,15 @@ public class PlayScreen  extends World
             if(x == 1) x = 50 ;
             else if(x == 2) x = 1280;
             if(badAnimalsInRoundanimalsInRound.size() != 0){
-                if(badAnimalsInRoundanimalsInRound.get(0).equals("cat")){
+                if(badAnimalsInRoundanimalsInRound.get(0).equals("Cat")){
                     addObject(new Cat(), x, 500);
                     System.out.println("Cat");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
-                }else if(badAnimalsInRoundanimalsInRound.get(0).equals("goose")){
+                }else if(badAnimalsInRoundanimalsInRound.get(0).equals("Goose")){
                     addObject(new Cat(), x, 500);
                     System.out.println("Goose");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
-                }else if(badAnimalsInRoundanimalsInRound.get(0).equals("lion")){
+                }else if(badAnimalsInRoundanimalsInRound.get(0).equals("Lion")){
                     addObject(new Lion(), x, 500);
                     System.out.println("Lion");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
