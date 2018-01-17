@@ -1,11 +1,7 @@
 #Greenfoot project file
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
-<<<<<<< HEAD
->>>>>>>=851ae54102b124ddac6130863b0e649ce65ff200
-=======
->>>>>>>=53e7243af07c70f96850b5076074d37babb3ea85
->>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
+>>>>>>>=78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 class.AnimalCounter.image=AnimalCounter.png
 class.AnimalCounter.superclass=greenfoot.Actor
 class.Antler.superclass=greenfoot.Actor
@@ -40,13 +36,8 @@ class.Unicorn.superclass=greenfoot.Actor
 dependency1.from=PlayScreen
 dependency1.to=Score
 dependency1.type=UsesDependency
-<<<<<<< HEAD
-dependency10.from=GameOver
-dependency10.to=Score
-=======
 dependency10.from=PlayScreen
-dependency10.to=Joystick
->>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
+dependency10.to=Cat
 dependency10.type=UsesDependency
 dependency11.from=GameOver
 dependency11.to=Round
@@ -93,30 +84,19 @@ dependency23.type=UsesDependency
 dependency24.from=HelpButton
 dependency24.to=HelpScreen
 dependency24.type=UsesDependency
-<<<<<<< HEAD
-dependency25.from=Lion
+dependency25.from=HelpButton
 dependency25.to=PlayScreen
 dependency25.type=UsesDependency
-dependency26.from=Antler
+dependency26.from=Cat
 dependency26.to=PlayScreen
 dependency26.type=UsesDependency
-dependency27.from=Dog
+dependency27.from=Lion
 dependency27.to=PlayScreen
-=======
-dependency25.from=Joystick
-dependency25.to=EventCallbackHandler
-dependency25.type=UsesDependency
-dependency26.from=HelpButton
-dependency26.to=PlayScreen
-dependency26.type=UsesDependency
-dependency27.from=HelpButton
-dependency27.to=HelpScreen
->>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 dependency27.type=UsesDependency
-dependency28.from=Cat
+dependency28.from=Antler
 dependency28.to=PlayScreen
 dependency28.type=UsesDependency
-dependency29.from=Lion
+dependency29.from=Dog
 dependency29.to=PlayScreen
 dependency29.type=UsesDependency
 dependency3.from=PlayScreen
@@ -149,29 +129,16 @@ dependency8.type=UsesDependency
 dependency9.from=PlayScreen
 dependency9.to=Unicorn
 dependency9.type=UsesDependency
-<<<<<<< HEAD
 editor.fx.0.height=1056
 editor.fx.0.width=1936
-editor.fx.0.x=-32000
-editor.fx.0.y=-32000
-mainWindow.height=1048
-mainWindow.width=1938
-mainWindow.x=-8
-mainWindow.y=-8
-package.numDependencies=27
-package.numTargets=18
-=======
-editor.fx.0.height=738
-editor.fx.0.width=816
-editor.fx.0.x=535
-editor.fx.0.y=155
+editor.fx.0.x=-8
+editor.fx.0.y=-8
 mainWindow.height=1048
 mainWindow.width=1938
 mainWindow.x=-9
 mainWindow.y=-9
-package.numDependencies=31
-package.numTargets=20
->>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
+package.numDependencies=29
+package.numTargets=18
 project.charset=UTF-8
 readme.height=58
 readme.name=@README
@@ -212,11 +179,7 @@ target12.width=80
 target12.x=0
 target12.y=0
 target13.height=50
-<<<<<<< HEAD
 target13.name=HelpButton
-=======
-target13.name=Joystick
->>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 target13.showInterface=false
 target13.type=ClassTarget
 target13.typeParameters=
@@ -224,7 +187,7 @@ target13.width=80
 target13.x=0
 target13.y=0
 target14.height=50
-target14.name=HelpButton
+target14.name=Cat
 target14.showInterface=false
 target14.type=ClassTarget
 target14.typeParameters=
@@ -232,7 +195,7 @@ target14.width=80
 target14.x=0
 target14.y=0
 target15.height=50
-target15.name=Cat
+target15.name=Lion
 target15.showInterface=false
 target15.type=ClassTarget
 target15.typeParameters=
@@ -240,23 +203,15 @@ target15.width=80
 target15.x=0
 target15.y=0
 target16.height=50
-<<<<<<< HEAD
 target16.name=Round
-=======
-target16.name=EventCallbackHandler
->>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 target16.showInterface=false
 target16.type=ClassTarget
 target16.typeParameters=
-target16.width=170
+target16.width=80
 target16.x=0
 target16.y=0
 target17.height=50
-<<<<<<< HEAD
 target17.name=Antler
-=======
-target17.name=Lion
->>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 target17.showInterface=false
 target17.type=ClassTarget
 target17.typeParameters=
@@ -264,7 +219,7 @@ target17.width=80
 target17.x=0
 target17.y=0
 target18.height=50
-target18.name=Round
+target18.name=Dog
 target18.showInterface=false
 target18.type=ClassTarget
 target18.typeParameters=

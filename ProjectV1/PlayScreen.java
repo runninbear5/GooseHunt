@@ -34,7 +34,7 @@ public class PlayScreen  extends World
         ChangeMouseImage(image, 15,15);//sets the mouse image to the cursor
         addObject(playerScore, 1150, 700);//adds the player score
         addObject(roundCount, 44, 712);//adds the player round
-        //addObject(new Dog(), 10, 500);
+        addObject(new Dog(), 10, 600);
     }
 
     public void act()
@@ -42,7 +42,7 @@ public class PlayScreen  extends World
         /** Sets the Cursor Image to the New Cursor */
         Pan.setCursor(NewCursor);//used to set the cursor image
         int secondsTakenOff = 150*(roundCount.getRoundNumber()-1);//used to decrease time of animal spawning as rounds increase
-        if(animalHitCounters.size() == 10 ||(badAnimalsInRound.size() == 0 && animalHitCounters.size()>5 && lastAnimalShot)){//checks if a new round can start
+        if(animalHitCounters.size() == 10 ||(badAnimalsInRound.size() == 0 && animalHitCounters.size()>5)){//checks if a new round can start
             newRound();
         }
         if(Greenfoot.mouseClicked(this)){//checks if the world is clicked on to decrease water balloons
@@ -71,7 +71,7 @@ public class PlayScreen  extends World
                 }else if(badAnimalsInRound.get(0).equals("Lion")){
                     Lion lion = new Lion();
                     allAnimals.add(lion);
-                    addObject(lion, x, 500);
+                    addObject(lion, x, 580);
                     System.out.println("Lion");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }
@@ -84,15 +84,15 @@ public class PlayScreen  extends World
             else if(x == 2) x = 1280;//sets x to actual x location
             if(goodAnimalsInRound.size() != 0){//checks if there are animals to place still
                 if(goodAnimalsInRound.get(0).equals("Antler")){//checks what animal is being placed and adds it and sets last time animal placed
-                    Antler antler = new Antler();
+                    Antler antler = new Antler(x>=1280);
                     allAnimals.add(antler);
-                    addObject(antler, x, 500);
+                    addObject(antler, x, 580);
                     System.out.println("Antler");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRound.get(0).equals("Unicorn")){
                     Unicorn unicorn = new Unicorn(x>=1280);
                     allAnimals.add(unicorn);
-                    addObject(unicorn, x, 500);
+                    addObject(unicorn, x, 580);
                     System.out.println("Unicorn");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRound.get(0).equals("Duck")){
