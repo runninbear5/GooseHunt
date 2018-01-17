@@ -12,7 +12,7 @@ public class PlayScreen  extends World
     /** The new Cursor */
     Cursor NewCursor;//used to change mouse cursor
     int timeBetweenBadAnimals = 5000;//used for spawning bad animals and later multipled by round count
-    int timeBetweenGoodAnimals = 7500;//used for spawning good animals and later multipled by round count
+    int timeBetweenGoodAnimals = 5250;//used for spawning good animals and later multipled by round count
     ArrayList badAnimalsInRound = new ArrayList<String>();//list of all bad animals
     ArrayList goodAnimalsInRound = new ArrayList<String>();//list of all good animals
     ArrayList allAnimals = new ArrayList<Actor>();//all animal actors so everything can be removed
@@ -34,7 +34,7 @@ public class PlayScreen  extends World
         ChangeMouseImage(image, 15,15);//sets the mouse image to the cursor
         addObject(playerScore, 1150, 700);//adds the player score
         addObject(roundCount, 44, 712);//adds the player round
-        //addObject(new Dog(), 10, 500);
+        addObject(new Dog(), 10, 600);
     }
 
     public void act()
@@ -42,7 +42,7 @@ public class PlayScreen  extends World
         /** Sets the Cursor Image to the New Cursor */
         Pan.setCursor(NewCursor);//used to set the cursor image
         int secondsTakenOff = 150*(roundCount.getRoundNumber()-1);//used to decrease time of animal spawning as rounds increase
-        if(animalHitCounters.size() == 10 ||(badAnimalsInRound.size() == 0 && animalHitCounters.size()>5 && lastAnimalShot)){//checks if a new round can start
+        if(animalHitCounters.size() == 10 ||(badAnimalsInRound.size() == 0 && animalHitCounters.size()>5)){//checks if a new round can start
             newRound();
         }
         if(Greenfoot.mouseClicked(this)){//checks if the world is clicked on to decrease water balloons
@@ -63,15 +63,15 @@ public class PlayScreen  extends World
                     System.out.println("Cat");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }else if(badAnimalsInRound.get(0).equals("Goose")){
-                   // Goose goose = new Goose();
-                    allAnimals.add(new Cat());
-                    addObject(new Cat(), x, 500);
+                    Goose goose = new Goose(x>=640);
+                    allAnimals.add(goose);
+                    addObject(goose, x, 500);
                     System.out.println("Goose");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }else if(badAnimalsInRound.get(0).equals("Lion")){
                     Lion lion = new Lion();
                     allAnimals.add(lion);
-                    addObject(lion, x, 500);
+                    addObject(lion, x, 580);
                     System.out.println("Lion");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }
@@ -84,15 +84,15 @@ public class PlayScreen  extends World
             else if(x == 2) x = 1280;//sets x to actual x location
             if(goodAnimalsInRound.size() != 0){//checks if there are animals to place still
                 if(goodAnimalsInRound.get(0).equals("Antler")){//checks what animal is being placed and adds it and sets last time animal placed
-                    Antler antler = new Antler();
+                    Antler antler = new Antler(x>=640);
                     allAnimals.add(antler);
-                    addObject(antler, x, 500);
+                    addObject(antler, x, 580);
                     System.out.println("Antler");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRound.get(0).equals("Unicorn")){
-                    Unicorn unicorn = new Unicorn(x>=1280);
+                    Unicorn unicorn = new Unicorn(x>=640);
                     allAnimals.add(unicorn);
-                    addObject(unicorn, x, 500);
+                    addObject(unicorn, x, 580);
                     System.out.println("Unicorn");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRound.get(0).equals("Duck")){
@@ -108,8 +108,6 @@ public class PlayScreen  extends World
         if(badAnimalsInRound.size() == 0 && animalHitCounters.size() <=5){//checks if the game should end
             Greenfoot.setWorld(new GameOver());
         }
-        Joystick stick = new Joystick();
-        System.out.println(stick.getX());
     }
         
     public void newRound(){
