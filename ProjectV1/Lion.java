@@ -25,9 +25,6 @@ public class Lion extends Actor
    public Lion()
     {
       setImage();  
-      if(Greenfoot.mouseClicked(this)){
-            ((PlayScreen)getWorld()).animalHit("Lion");//chnage to help screen when created
-     }
     }
     
    public void size(int width, int height)
@@ -46,6 +43,11 @@ public class Lion extends Actor
       if(hunt){
             startStaring(false);
         }
+        
+      if(Greenfoot.mouseClicked(this)){
+            ((PlayScreen)getWorld()).animalHit("Lion");
+            ((PlayScreen)getWorld()).removeObject(this);
+      }
     }
     
     public void walk() {
@@ -141,7 +143,7 @@ public class Lion extends Actor
      size(1280, 769);
      setLocation (640, 385);
      if(timeJumpCalled + 300 <= System.currentTimeMillis()){
-          ((PlayScreen)getWorld()).animalHit("Lion");
+          ((PlayScreen)getWorld()).attacked("Lion");
       }
    }
     

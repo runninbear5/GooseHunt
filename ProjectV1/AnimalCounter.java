@@ -9,20 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class AnimalCounter extends Actor
 {
     public AnimalCounter(){
-        getImage().scale(45,45);
-    }
-    /**
-     * Act - do whatever the AnimalCounter wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }   
-    public int getLastX(){
+        getImage().scale(45,45);//scales the image
+    } 
+    public int getLastX(){//returns last x used to place the counters
         return getX();
     }
-    public void removeObject(){
+    public void removeObject(){//removes the current object
         ((PlayScreen)getWorld()).removeObject(this);
     }
 }

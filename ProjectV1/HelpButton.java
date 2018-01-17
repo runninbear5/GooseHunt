@@ -14,8 +14,8 @@ public class HelpButton extends Actor
      */
     public void act() 
     {
-        if(Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(new HelpScreen());//chnage to help screen when created
+        if(Greenfoot.mouseClicked(this)){//if clicked on go to help screen
+            Greenfoot.setWorld(new HelpScreen());
         }
     }    
 }

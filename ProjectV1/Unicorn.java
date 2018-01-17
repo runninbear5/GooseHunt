@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;// (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Unicorn here.
@@ -34,16 +34,17 @@ public class Unicorn extends Actor
         } else {
             walk(); 
         } 
-        if (Greenfoot.mouseClicked(this)){
-            ((PlayScreen)getWorld()).animalHit("Antler"); 
-        }
 
+        if(Greenfoot.mouseClicked(this)){
+            ((PlayScreen)getWorld()).animalHit("Unicorn");//chnage to help screen when created
+            ((PlayScreen)getWorld()).removeObject(this);
+        }
     }   
 
     public Unicorn (boolean right) {
         right = this.right;
         stop = (int)(Math.random() * 1280); 
-        
+
         //System.out.println(stop); 
     }
 
@@ -93,6 +94,7 @@ public class Unicorn extends Actor
         } 
         setImage("Unicorn" + currentImage + ".fw.png"); //call antler file
     } 
+
     public void setImageRight () { 
         currentImage++; //increment image
         if (currentImage == 12) { //loop through graphics 

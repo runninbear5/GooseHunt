@@ -14,7 +14,7 @@ public class PlayAgain extends Actor
      */
     public void act() 
     {
-        if(Greenfoot.mouseClicked(this)){
+        if(Greenfoot.mouseClicked(this)){//if clicked on go to playscreen again
             Greenfoot.setWorld(new PlayScreen());
         }
     }    
