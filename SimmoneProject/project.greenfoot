@@ -1,27 +1,18 @@
 #Greenfoot project file
-<<<<<<< HEAD
-class.Cat.superclass=greenfoot.Actor
-class.Dog.image=dog1.fw.png
-class.Dog.superclass=greenfoot.Actor
-=======
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
->>>>>>>=0250909c796b148b38b4c51dbbf97008fe3b9ca9
-class.Cat.image=cat7.fw.png
+>>>>>>>=cbaef6ac31caa7296b09da44d19cc7e3d59aafd4
 class.Cat.superclass=greenfoot.Actor
 class.Dog.image=dog1.fw.png
 class.Dog.superclass=greenfoot.Actor
-class.Lion.image=LionRight1.fw.png
->>>>>>> cbaef6ac31caa7296b09da44d19cc7e3d59aafd4
 class.Lion.superclass=greenfoot.Actor
 class.PlayScreen.image=background2.png
 class.PlayScreen.superclass=greenfoot.World
+class.cat.superclass=greenfoot.Actor
+class.dog.superclass=greenfoot.Actor
+class.lion.superclass=greenfoot.Actor
 dependency1.from=PlayScreen
-<<<<<<< HEAD
-dependency1.to=Cat
-=======
 dependency1.to=PlayScreen
->>>>>>> cbaef6ac31caa7296b09da44d19cc7e3d59aafd4
 dependency1.type=UsesDependency
 dependency2.from=Cat
 dependency2.to=PlayScreen
@@ -35,25 +26,14 @@ dependency4.type=UsesDependency
 dependency5.from=dog
 dependency5.to=PlayScreen
 dependency5.type=UsesDependency
-<<<<<<< HEAD
-editor.fx.0.height=915
-editor.fx.0.width=1042
-editor.fx.0.x=552
-editor.fx.0.y=101
+editor.fx.0.height=892
+editor.fx.0.width=1057
+editor.fx.0.x=853
+editor.fx.0.y=114
 mainWindow.height=1056
 mainWindow.width=1936
 mainWindow.x=-8
 mainWindow.y=-8
-=======
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
-mainWindow.height=822
-mainWindow.width=1440
-mainWindow.x=0
-mainWindow.y=23
->>>>>>> cbaef6ac31caa7296b09da44d19cc7e3d59aafd4
 package.numDependencies=4
 package.numTargets=4
 project.charset=UTF-8

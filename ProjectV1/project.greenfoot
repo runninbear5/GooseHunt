@@ -38,21 +38,37 @@ dependency1.from=PlayScreen
 dependency1.to=Score
 dependency1.type=UsesDependency
 dependency10.from=PlayScreen
-dependency10.to=Cat
+dependency10.to=Joystick
 dependency10.type=UsesDependency
+<<<<<<< HEAD
 dependency11.from=GameOver
-dependency11.to=Round
+dependency11.to=Score
+=======
+dependency11.from=PlayScreen
+dependency11.to=Goose
+>>>>>>> f0692373ea9b35f28b37fe1ffb864a351c7efd2c
 dependency11.type=UsesDependency
 dependency12.from=GameOver
-dependency12.to=PlayAgain
+dependency12.to=Round
 dependency12.type=UsesDependency
 dependency13.from=GameOver
-dependency13.to=Quit
+dependency13.to=PlayAgain
 dependency13.type=UsesDependency
+<<<<<<< HEAD
 dependency14.from=Goose
 dependency14.to=PlayScreen
 dependency14.type=UsesDependency
 dependency15.from=Unicorn
+=======
+dependency14.from=GameOver
+dependency14.to=Quit
+dependency14.type=UsesDependency
+<<<<<<< HEAD
+dependency15.from=Unicorn
+=======
+dependency15.from=Goose
+>>>>>>> f0692373ea9b35f28b37fe1ffb864a351c7efd2c
+>>>>>>> e156740d5a30d45cf4104d333a4dad85fb0b87ff
 dependency15.to=PlayScreen
 dependency15.type=UsesDependency
 dependency16.from=HelpScreen
@@ -85,12 +101,24 @@ dependency23.type=UsesDependency
 dependency24.from=StartScreen
 dependency24.to=HelpButton
 dependency24.type=UsesDependency
+<<<<<<< HEAD
 dependency25.from=HelpButton
 dependency25.to=HelpScreen
 dependency25.type=UsesDependency
 dependency26.from=HelpButton
+=======
+dependency25.from=Joystick
+dependency25.to=EventCallbackHandler
+dependency25.type=UsesDependency
+dependency26.from=HelpButton
+<<<<<<< HEAD
+>>>>>>> e156740d5a30d45cf4104d333a4dad85fb0b87ff
 dependency26.to=PlayScreen
+=======
+dependency26.to=HelpScreen
+>>>>>>> f0692373ea9b35f28b37fe1ffb864a351c7efd2c
 dependency26.type=UsesDependency
+<<<<<<< HEAD
 dependency27.from=Cat
 dependency27.to=PlayScreen
 dependency27.type=UsesDependency
@@ -98,6 +126,15 @@ dependency28.from=Lion
 dependency28.to=PlayScreen
 dependency28.type=UsesDependency
 dependency29.from=Antler
+=======
+dependency27.from=HelpButton
+dependency27.to=HelpScreen
+dependency27.type=UsesDependency
+dependency28.from=Cat
+dependency28.to=PlayScreen
+dependency28.type=UsesDependency
+dependency29.from=Lion
+>>>>>>> e156740d5a30d45cf4104d333a4dad85fb0b87ff
 dependency29.to=PlayScreen
 dependency29.type=UsesDependency
 dependency3.from=PlayScreen
@@ -130,16 +167,41 @@ dependency8.type=UsesDependency
 dependency9.from=PlayScreen
 dependency9.to=Unicorn
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=738
 editor.fx.0.width=816
 editor.fx.0.x=517
 editor.fx.0.y=226
+=======
+<<<<<<< HEAD
+editor.fx.0.height=847
+editor.fx.0.width=906
+editor.fx.0.x=-32000
+editor.fx.0.y=-32000
+mainWindow.height=1048
+mainWindow.width=1938
+mainWindow.x=-13
+mainWindow.y=0
+package.numDependencies=31
+package.numTargets=20
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+>>>>>>> e156740d5a30d45cf4104d333a4dad85fb0b87ff
 mainWindow.height=1048
 mainWindow.width=1938
 mainWindow.x=-9
 mainWindow.y=-9
+<<<<<<< HEAD
 package.numDependencies=30
 package.numTargets=19
+=======
+package.numDependencies=31
+package.numTargets=19
+>>>>>>> f0692373ea9b35f28b37fe1ffb864a351c7efd2c
+>>>>>>> e156740d5a30d45cf4104d333a4dad85fb0b87ff
 project.charset=UTF-8
 readme.height=58
 readme.name=@README
@@ -204,15 +266,27 @@ target15.width=80
 target15.x=0
 target15.y=0
 target16.height=50
+<<<<<<< HEAD
 target16.name=Lion
+=======
+target16.name=EventCallbackHandler
+>>>>>>> e156740d5a30d45cf4104d333a4dad85fb0b87ff
 target16.showInterface=false
 target16.type=ClassTarget
 target16.typeParameters=
-target16.width=80
+target16.width=170
 target16.x=0
 target16.y=0
 target17.height=50
+<<<<<<< HEAD
 target17.name=Round
+=======
+<<<<<<< HEAD
+target17.name=Lion
+=======
+target17.name=Round
+>>>>>>> f0692373ea9b35f28b37fe1ffb864a351c7efd2c
+>>>>>>> e156740d5a30d45cf4104d333a4dad85fb0b87ff
 target17.showInterface=false
 target17.type=ClassTarget
 target17.typeParameters=

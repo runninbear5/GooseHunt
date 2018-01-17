@@ -12,7 +12,7 @@ public class PlayScreen  extends World
     /** The new Cursor */
     Cursor NewCursor;//used to change mouse cursor
     int timeBetweenBadAnimals = 5000;//used for spawning bad animals and later multipled by round count
-    int timeBetweenGoodAnimals = 7500;//used for spawning good animals and later multipled by round count
+    int timeBetweenGoodAnimals = 5250;//used for spawning good animals and later multipled by round count
     ArrayList badAnimalsInRound = new ArrayList<String>();//list of all bad animals
     ArrayList goodAnimalsInRound = new ArrayList<String>();//list of all good animals
     ArrayList allAnimals = new ArrayList<Actor>();//all animal actors so everything can be removed
@@ -63,9 +63,9 @@ public class PlayScreen  extends World
                     System.out.println("Cat");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }else if(badAnimalsInRound.get(0).equals("Goose")){
-                   // Goose goose = new Goose();
-                    allAnimals.add(new Cat());
-                    addObject(new Cat(), x, 500);
+                    Goose goose = new Goose(x>=640);
+                    allAnimals.add(goose);
+                    addObject(goose, x, 500);
                     System.out.println("Goose");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }else if(badAnimalsInRound.get(0).equals("Lion")){
@@ -84,13 +84,13 @@ public class PlayScreen  extends World
             else if(x == 2) x = 1280;//sets x to actual x location
             if(goodAnimalsInRound.size() != 0){//checks if there are animals to place still
                 if(goodAnimalsInRound.get(0).equals("Antler")){//checks what animal is being placed and adds it and sets last time animal placed
-                    Antler antler = new Antler(x>=1280);
+                    Antler antler = new Antler(x>=640);
                     allAnimals.add(antler);
                     addObject(antler, x, 580);
                     System.out.println("Antler");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRound.get(0).equals("Unicorn")){
-                    Unicorn unicorn = new Unicorn(x>=1280);
+                    Unicorn unicorn = new Unicorn(x>=640);
                     allAnimals.add(unicorn);
                     addObject(unicorn, x, 580);
                     System.out.println("Unicorn");

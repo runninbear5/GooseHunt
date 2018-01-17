@@ -27,7 +27,7 @@ public class Unicorn extends Actor
         if (!right) {
             if ((x - 10 <= stop)&&(x + 10 >= stop)) {
                 setImage("Unicorn11.fw.png"); 
-                if(timeStop + 1500 <= System.currentTimeMillis()){
+                if(timeStop + 500 <= System.currentTimeMillis()){
                     x = stop + 11;  
                     walk(); 
                 }
@@ -38,7 +38,7 @@ public class Unicorn extends Actor
             if ((x - 10 <= stop)&&(x + 10 >= stop)) {
                 setImage("Unicorn11.fw.png"); 
                 getImage().mirrorHorizontally(); 
-                if(timeStop + 1500 <= System.currentTimeMillis()){
+                if(timeStop + 500 <= System.currentTimeMillis()){
                     x = stop - 11;  
                     walk(); 
                 }

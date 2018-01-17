@@ -13,20 +13,20 @@ public class Lion extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
    int counter = 0;
-   int currentImage = 1;
+   int currentImage = 0;
    int position = 0;
    int x = 0;
    int y = 0;
    boolean walk = true;
    boolean hunt = false;
    boolean comeBack = false;
-   boolean right = true;
+   boolean right;
    long timeJumpCalled = 0;
     
-   public Lion()
+   public Lion(boolean right)
     {
-      setImage();
-      right = this.right;
+      //setImage();
+      this.right = right;
     }
     
    public void size(int width, int height)
@@ -48,7 +48,7 @@ public class Lion extends Actor
     }
     
     public void walk() {
-      if (right) {
+      if (!right) {
       int x = getX(); 
       int y = getY(); 
       int width2 = 210;
@@ -104,7 +104,7 @@ public class Lion extends Actor
          counter = 0;
       }
        
-      if (x >= 800 && x <= 850) 
+      if (x >= 0 && x <= 500) 
       { comeBack = true;
         }
       
@@ -119,7 +119,7 @@ public class Lion extends Actor
    }
    
    public void setImage() 
-    { if (right) {
+    { if (!right) {
        if ( position < 190) {
         currentImage++;
         if (currentImage == 4) 
@@ -144,7 +144,7 @@ public class Lion extends Actor
         if (currentImage == 4) 
        {currentImage = 1;
         }       
-       setImage("LionRight" + currentImage + ".fw.png");
+       setImage("LionLeft" + currentImage + ".fw.png");
        getImage().mirrorHorizontally();
        size(210, 180);
       }
@@ -154,7 +154,7 @@ public class Lion extends Actor
         if (currentImage == 4) 
        {currentImage = 1;
         }       
-       setImage("LionLeft" + currentImage + ".fw.png");
+       setImage("LionRight" + currentImage + ".fw.png");
        getImage().mirrorHorizontally();
        size(210, 180);
       }
@@ -195,11 +195,12 @@ public class Lion extends Actor
     
    public void setGameOverImage()
    {
-      setImage("lionmouthcorrect");
-      size(1280, 769);
-      setLocation (640, 385);
+    setImage("lionmouthcorrect");
+    size(1280, 769);
+    setLocation (640, 385);
       if(timeJumpCalled + 300 <= System.currentTimeMillis()){
-       //(PlayScreen.greenfoot()).killAnimal("Lion");
+       //hunt = false;
+       //((PlayScreen)getWorld()).attacked("Lion");
     }
    }
     
