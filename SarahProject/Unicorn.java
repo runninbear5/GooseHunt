@@ -44,8 +44,7 @@ public class Unicorn extends Actor
         stop = (int)(Math.random() * 1280); 
         x = getX(); 
         right = x > 640; 
-        
-        //System.out.println(stop); 
+        //System.out.println(stop); debug 
     }
 
     public void walk () { //move deer across the screen 
