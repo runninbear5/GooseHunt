@@ -17,6 +17,6 @@ public class HelpScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1280, 769, 1);
-        addObject(new BackButton(), 640, 600);
+        addObject(new BackButton(), 640, 600);//adds the back button
     }
 }

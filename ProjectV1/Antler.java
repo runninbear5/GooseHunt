@@ -35,6 +35,7 @@ public class Antler extends Actor
         } 
         if (Greenfoot.mouseClicked(this)){
             ((PlayScreen)getWorld()).animalHit("Antler"); 
+            ((PlayScreen)getWorld()).removeObject(this);
         }
     }   
     public Antler () {

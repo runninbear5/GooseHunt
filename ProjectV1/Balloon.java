@@ -7,19 +7,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Balloon extends Actor
-{
-    /**
-     * Act - do whatever the Balloon wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }  
-    public int getLastX(){
+{ 
+    public int getLastX(){//used to place next balloon
         return getX();
     }
-    public void removeObject(){
+    public void removeObject(){//removes current object
         ((PlayScreen)getWorld()).removeObject(this);
     }
 }
