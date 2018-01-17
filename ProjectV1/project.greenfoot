@@ -1,7 +1,11 @@
 #Greenfoot project file
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
+<<<<<<< HEAD
+>>>>>>>=851ae54102b124ddac6130863b0e649ce65ff200
+=======
 >>>>>>>=53e7243af07c70f96850b5076074d37babb3ea85
+>>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 class.AnimalCounter.image=AnimalCounter.png
 class.AnimalCounter.superclass=greenfoot.Actor
 class.Antler.superclass=greenfoot.Actor
@@ -36,54 +40,69 @@ class.Unicorn.superclass=greenfoot.Actor
 dependency1.from=PlayScreen
 dependency1.to=Score
 dependency1.type=UsesDependency
+<<<<<<< HEAD
+dependency10.from=GameOver
+dependency10.to=Score
+=======
 dependency10.from=PlayScreen
 dependency10.to=Joystick
+>>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 dependency10.type=UsesDependency
 dependency11.from=GameOver
-dependency11.to=Score
+dependency11.to=Round
 dependency11.type=UsesDependency
 dependency12.from=GameOver
-dependency12.to=Round
+dependency12.to=PlayAgain
 dependency12.type=UsesDependency
 dependency13.from=GameOver
-dependency13.to=PlayAgain
+dependency13.to=Quit
 dependency13.type=UsesDependency
-dependency14.from=GameOver
-dependency14.to=Quit
+dependency14.from=Unicorn
+dependency14.to=PlayScreen
 dependency14.type=UsesDependency
-dependency15.from=Unicorn
-dependency15.to=PlayScreen
+dependency15.from=HelpScreen
+dependency15.to=BackButton
 dependency15.type=UsesDependency
-dependency16.from=HelpScreen
-dependency16.to=BackButton
+dependency16.from=AnimalCounter
+dependency16.to=PlayScreen
 dependency16.type=UsesDependency
-dependency17.from=AnimalCounter
+dependency17.from=Balloon
 dependency17.to=PlayScreen
 dependency17.type=UsesDependency
-dependency18.from=Balloon
+dependency18.from=BackButton
 dependency18.to=PlayScreen
 dependency18.type=UsesDependency
 dependency19.from=BackButton
-dependency19.to=PlayScreen
+dependency19.to=StartScreen
 dependency19.type=UsesDependency
 dependency2.from=PlayScreen
 dependency2.to=AnimalCounter
 dependency2.type=UsesDependency
-dependency20.from=BackButton
-dependency20.to=StartScreen
+dependency20.from=StartButton
+dependency20.to=PlayScreen
 dependency20.type=UsesDependency
-dependency21.from=StartButton
+dependency21.from=PlayAgain
 dependency21.to=PlayScreen
 dependency21.type=UsesDependency
-dependency22.from=PlayAgain
-dependency22.to=PlayScreen
+dependency22.from=StartScreen
+dependency22.to=StartButton
 dependency22.type=UsesDependency
 dependency23.from=StartScreen
-dependency23.to=StartButton
+dependency23.to=HelpButton
 dependency23.type=UsesDependency
-dependency24.from=StartScreen
-dependency24.to=HelpButton
+dependency24.from=HelpButton
+dependency24.to=HelpScreen
 dependency24.type=UsesDependency
+<<<<<<< HEAD
+dependency25.from=Lion
+dependency25.to=PlayScreen
+dependency25.type=UsesDependency
+dependency26.from=Antler
+dependency26.to=PlayScreen
+dependency26.type=UsesDependency
+dependency27.from=Dog
+dependency27.to=PlayScreen
+=======
 dependency25.from=Joystick
 dependency25.to=EventCallbackHandler
 dependency25.type=UsesDependency
@@ -92,6 +111,7 @@ dependency26.to=PlayScreen
 dependency26.type=UsesDependency
 dependency27.from=HelpButton
 dependency27.to=HelpScreen
+>>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 dependency27.type=UsesDependency
 dependency28.from=Cat
 dependency28.to=PlayScreen
@@ -129,6 +149,18 @@ dependency8.type=UsesDependency
 dependency9.from=PlayScreen
 dependency9.to=Unicorn
 dependency9.type=UsesDependency
+<<<<<<< HEAD
+editor.fx.0.height=1056
+editor.fx.0.width=1936
+editor.fx.0.x=-32000
+editor.fx.0.y=-32000
+mainWindow.height=1048
+mainWindow.width=1938
+mainWindow.x=-8
+mainWindow.y=-8
+package.numDependencies=27
+package.numTargets=18
+=======
 editor.fx.0.height=738
 editor.fx.0.width=816
 editor.fx.0.x=535
@@ -139,6 +171,7 @@ mainWindow.x=-9
 mainWindow.y=-9
 package.numDependencies=31
 package.numTargets=20
+>>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 project.charset=UTF-8
 readme.height=58
 readme.name=@README
@@ -179,7 +212,11 @@ target12.width=80
 target12.x=0
 target12.y=0
 target13.height=50
+<<<<<<< HEAD
+target13.name=HelpButton
+=======
 target13.name=Joystick
+>>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 target13.showInterface=false
 target13.type=ClassTarget
 target13.typeParameters=
@@ -203,7 +240,11 @@ target15.width=80
 target15.x=0
 target15.y=0
 target16.height=50
+<<<<<<< HEAD
+target16.name=Round
+=======
 target16.name=EventCallbackHandler
+>>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 target16.showInterface=false
 target16.type=ClassTarget
 target16.typeParameters=
@@ -211,7 +252,11 @@ target16.width=170
 target16.x=0
 target16.y=0
 target17.height=50
+<<<<<<< HEAD
+target17.name=Antler
+=======
 target17.name=Lion
+>>>>>>> 78db7d350b18b3a33b66fe4ec2698f95c9f64ed5
 target17.showInterface=false
 target17.type=ClassTarget
 target17.typeParameters=
