@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 #Greenfoot project file
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
->>>>>>>=4ccc420e307ba2e07cafa8f2379639e0f184faab
-=======
-<<<<<<< HEAD
-#Greenfoot project file
-=\=\=\=\=\=\=
-<<<<<<<=HEAD
->>>>>>>=ef025ed7134643e8aaee9b83e1d9c1670bd0d647
->>>>>>> 53e7243af07c70f96850b5076074d37babb3ea85
+>>>>>>>=53e7243af07c70f96850b5076074d37babb3ea85
 class.AnimalCounter.image=AnimalCounter.png
 class.AnimalCounter.superclass=greenfoot.Actor
 class.Antler.superclass=greenfoot.Actor
@@ -21,40 +13,13 @@ class.Cat.superclass=greenfoot.Actor
 class.Deer.superclass=greenfoot.Actor
 class.Dog.superclass=greenfoot.Actor
 class.GameOver.image=GameOver.png
-<<<<<<< HEAD
 class.GameOver.superclass=greenfoot.World
 class.HelpButton.image=HelpScreenButton.png
 class.HelpButton.superclass=greenfoot.Actor
 class.HelpScreen.image=HelpScreen.png
 class.HelpScreen.superclass=greenfoot.World
-=======
-=======
-#Greenfoot properties
-#Tue Jan 16 09:07:33 PST 2018
-target16.name=Cat
-target2.name=GameOver
-target9.name=Deer
-dependency11.type=UsesDependency
-dependency18.type=UsesDependency
-dependency15.from=Unicorn
-target19.width=80
-dependency8.to=Dog
-target14.type=ClassTarget
-simulation.speed=50
-dependency25.type=UsesDependency
-dependency22.from=PlayAgain
-target15.width=80
-dependency29.from=Lion
-target15.height=50
-target7.type=ClassTarget
-target15.typeParameters=
-target11.width=90
-dependency25.to=PlayScreen
-target1.typeParameters=
->>>>>>> 7104e8ae32664d4621710de56607601be9cc2a08
-class.GameOver.superclass=greenfoot.World
+class.Lion.superclass=greenfoot.Actor
 class.PlayAgain.image=Play_Again.png
-<<<<<<< HEAD
 class.PlayAgain.superclass=greenfoot.Actor
 class.PlayScreen.image=background2.png
 class.PlayScreen.superclass=greenfoot.World
@@ -72,105 +37,6 @@ class.cat.superclass=greenfoot.Actor
 dependency1.from=PlayScreen
 dependency1.to=Score
 dependency1.type=UsesDependency
-dependency10.from=GameOver
-dependency10.to=Score
-dependency10.type=UsesDependency
-dependency11.from=GameOver
-dependency11.to=Round
-dependency11.type=UsesDependency
-dependency12.from=GameOver
-dependency12.to=PlayAgain
-dependency12.type=UsesDependency
-dependency13.from=GameOver
-dependency13.to=Quit
-dependency13.type=UsesDependency
-dependency14.from=Unicorn
-dependency14.to=PlayScreen
-dependency14.type=UsesDependency
-dependency15.from=HelpScreen
-dependency15.to=BackButton
-dependency15.type=UsesDependency
-dependency16.from=AnimalCounter
-dependency16.to=PlayScreen
-dependency16.type=UsesDependency
-dependency17.from=Balloon
-dependency17.to=PlayScreen
-dependency17.type=UsesDependency
-dependency18.from=BackButton
-dependency18.to=PlayScreen
-dependency18.type=UsesDependency
-dependency19.from=BackButton
-dependency19.to=StartScreen
-dependency19.type=UsesDependency
-dependency2.from=PlayScreen
-dependency2.to=AnimalCounter
-dependency2.type=UsesDependency
-dependency20.from=StartButton
-dependency20.to=PlayScreen
-dependency20.type=UsesDependency
-dependency21.from=PlayAgain
-dependency21.to=PlayScreen
-dependency21.type=UsesDependency
-dependency22.from=StartScreen
-dependency22.to=StartButton
-dependency22.type=UsesDependency
-dependency23.from=StartScreen
-dependency23.to=HelpButton
-dependency23.type=UsesDependency
-dependency24.from=HelpButton
-dependency24.to=PlayScreen
-dependency24.type=UsesDependency
-dependency25.from=HelpButton
-dependency25.to=HelpScreen
-dependency25.type=UsesDependency
-dependency26.from=cat
-dependency26.to=PlayScreen
-dependency26.type=UsesDependency
-dependency27.from=Lion
-dependency27.to=PlayScreen
-dependency27.type=UsesDependency
-<<<<<<< HEAD
-dependency28.from=Antler
-dependency28.to=PlayScreen
-dependency28.type=UsesDependency
-dependency29.from=Dog
-=======
-dependency28.from=Cat
-dependency28.to=HelpScreen
-dependency28.type=UsesDependency
-dependency29.from=Lion
->>>>>>> 3a3bea8a5aeb0d238e7b41fd84dfe3a02eec49cb
-dependency29.to=PlayScreen
-dependency29.type=UsesDependency
-dependency3.from=PlayScreen
-dependency3.to=Round
-dependency3.type=UsesDependency
-dependency30.from=Antler
-=======
-target20.showInterface=false
-dependency2.to=AnimalCounter
-dependency1.type=UsesDependency
-target16.y=0
-target16.x=0
->>>>>>> 53e7243af07c70f96850b5076074d37babb3ea85
-class.Lion.superclass=greenfoot.Actor
-class.PlayAgain.image=Play_Again.png
-class.PlayAgain.superclass=greenfoot.Actor
-class.PlayScreen.image=background2.png
-class.PlayScreen.superclass=greenfoot.World
-class.Quit.image=Quit.png
-class.Quit.superclass=greenfoot.Actor
-class.Round.superclass=greenfoot.Actor
-class.Score.superclass=greenfoot.Actor
-class.StartButton.image=StartButton.png
-class.StartButton.superclass=greenfoot.Actor
-class.StartScreen.image=StartScreen.png
-class.StartScreen.superclass=greenfoot.World
-class.Unicorn.superclass=greenfoot.Actor
-class.Weather.superclass=
-dependency1.from=PlayScreen
-dependency1.to=Score
-dependency1.type=UsesDependency
 dependency10.from=PlayScreen
 dependency10.to=Unicorn
 dependency10.type=UsesDependency
@@ -184,121 +50,12 @@ dependency13.from=GameOver
 dependency13.to=PlayAgain
 dependency13.type=UsesDependency
 dependency14.from=GameOver
-<<<<<<< HEAD
 dependency14.to=Quit
 dependency14.type=UsesDependency
 dependency15.from=Unicorn
 dependency15.to=PlayScreen
 dependency15.type=UsesDependency
 dependency16.from=HelpScreen
-=======
-package.numTargets=20
-target13.type=ClassTarget
-dependency24.type=UsesDependency
-dependency21.from=StartButton
-dependency28.from=Cat
-dependency9.to=Antler
-target6.type=ClassTarget
-target19.height=50
->>>>>>> 7104e8ae32664d4621710de56607601be9cc2a08
-dependency30.to=PlayScreen
-target7.y=0
-target7.x=0
-target20.type=ClassTarget
-dependency31.type=UsesDependency
-<<<<<<< HEAD
-dependency4.from=PlayScreen
-dependency4.to=Balloon
-dependency4.type=UsesDependency
-dependency5.from=PlayScreen
-dependency5.to=GameOver
-dependency5.type=UsesDependency
-dependency6.from=PlayScreen
-dependency6.to=Lion
-dependency6.type=UsesDependency
-dependency7.from=PlayScreen
-dependency7.to=Dog
-dependency7.type=UsesDependency
-dependency8.from=PlayScreen
-dependency8.to=Antler
-dependency8.type=UsesDependency
-dependency9.from=PlayScreen
-dependency9.to=Unicorn
-dependency9.type=UsesDependency
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 3a3bea8a5aeb0d238e7b41fd84dfe3a02eec49cb
-editor.fx.0.height=738
-editor.fx.0.width=816
-editor.fx.0.x=552
-editor.fx.0.y=101
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
-=======
-editor.fx.0.height=1056
-editor.fx.0.width=1936
-editor.fx.0.x=-8
-editor.fx.0.y=-8
->>>>>>> ef025ed7134643e8aaee9b83e1d9c1670bd0d647
->>>>>>> 4ccc420e307ba2e07cafa8f2379639e0f184faab
->>>>>>> 3a3bea8a5aeb0d238e7b41fd84dfe3a02eec49cb
-mainWindow.height=1048
-mainWindow.width=1938
-mainWindow.x=-9
-mainWindow.y=-9
-<<<<<<< HEAD
-package.numDependencies=29
-=======
-package.numDependencies=31
->>>>>>> 3a3bea8a5aeb0d238e7b41fd84dfe3a02eec49cb
-package.numTargets=20
-project.charset=UTF-8
-readme.height=58
-readme.name=@README
-readme.width=47
-readme.x=10
-readme.y=10
-simulation.speed=50
-target1.height=50
-target1.name=PlayScreen
-target1.showInterface=false
-target1.type=ClassTarget
-target1.typeParameters=
-=======
-target3.y=0
-target3.x=0
->>>>>>>=4ccc420e307ba2e07cafa8f2379639e0f184faab
-target7.typeParameters=
-target8.height=50
-dependency26.to=HelpScreen
-mainWindow.y=-9
-mainWindow.x=-9
-target12.showInterface=false
-target3.showInterface=false
-target17.typeParameters=
-dependency3.to=Round
-class.Deer.superclass=greenfoot.Actor
->>>>>>> 7104e8ae32664d4621710de56607601be9cc2a08
-target1.width=80
-dependency7.type=UsesDependency
-dependency4.from=PlayScreen
-class.AnimalCounter.superclass=greenfoot.Actor
-dependency20.to=StartScreen
-target14.name=Score
-class.Weather.superclass=
-target9.height=50
-target11.showInterface=false
-target2.showInterface=false
-class.Score.superclass=greenfoot.Actor
-target7.name=Quit
->>>>>>> 53e7243af07c70f96850b5076074d37babb3ea85
 dependency16.to=BackButton
 dependency16.type=UsesDependency
 dependency17.from=AnimalCounter
@@ -370,10 +127,10 @@ dependency8.type=UsesDependency
 dependency9.from=PlayScreen
 dependency9.to=Antler
 dependency9.type=UsesDependency
-editor.fx.0.height=1056
-editor.fx.0.width=1936
-editor.fx.0.x=-8
-editor.fx.0.y=-8
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
 mainWindow.height=1048
 mainWindow.width=1938
 mainWindow.x=-9
@@ -424,7 +181,6 @@ target13.name=Weather
 target13.showInterface=false
 target13.type=ClassTarget
 target13.typeParameters=
-<<<<<<< HEAD
 target13.width=80
 target13.x=0
 target13.y=0
@@ -449,53 +205,6 @@ target16.name=Cat
 target16.showInterface=false
 target16.type=ClassTarget
 target16.typeParameters=
-=======
-target5.name=AnimalCounter
-class.Round.superclass=greenfoot.Actor
-dependency22.to=PlayScreen
-dependency14.type=UsesDependency
-dependency11.from=GameOver
-target18.y=0
-dependency18.from=Balloon
-target18.x=0
-class.Dog.superclass=greenfoot.Actor
-class.Balloon.superclass=greenfoot.Actor
-target14.y=0
-<<<<<<< HEAD
-target15.height=50
-target15.name=HelpButton
-target15.showInterface=false
-target15.type=ClassTarget
-target15.typeParameters=
-target15.width=80
-target15.x=0
-target15.y=0
-target16.height=50
-target16.name=cat
-target16.showInterface=false
-target16.type=ClassTarget
-target16.typeParameters=
-target16.width=80
-target16.x=0
-target16.y=0
-target17.height=50
-target17.name=Lion
-target17.showInterface=false
-=======
-target14.x=0
-target10.type=ClassTarget
-dependency18.to=PlayScreen
-dependency21.type=UsesDependency
-package.numDependencies=31
->>>>>>> 7104e8ae32664d4621710de56607601be9cc2a08
-target17.type=ClassTarget
-dependency28.type=UsesDependency
-dependency25.from=HelpButton
-target10.y=0
-target3.type=ClassTarget
-target10.x=0
-readme.name=@README
->>>>>>> 53e7243af07c70f96850b5076074d37babb3ea85
 target16.width=80
 target16.x=0
 target16.y=0
