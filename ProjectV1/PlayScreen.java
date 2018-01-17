@@ -108,8 +108,6 @@ public class PlayScreen  extends World
         if(badAnimalsInRound.size() == 0 && animalHitCounters.size() <=5){//checks if the game should end
             Greenfoot.setWorld(new GameOver());
         }
-        Joystick stick = new Joystick();
-        System.out.println(stick.getX());
     }
         
     public void newRound(){

@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.target=EventCallbackHandler
-comment1.params=j\ ev
-comment1.target=void\ callback(org.bbi.linuxjoy.LinuxJoystick,\ org.bbi.linuxjoy.LinuxJoystickEvent)
-numComments=2
