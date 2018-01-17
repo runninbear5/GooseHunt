@@ -18,90 +18,91 @@ public class Cat extends Actor
     int x = 0;
     int y = 0;
     boolean change;
-    
+
     public Cat()
     {
-     setImage();
-     if(Greenfoot.mouseClicked(this)){
-            ((PlayScreen)getWorld()).animalHit("Cat");//chnage to help screen when created
-     }
+        setImage();
+
     }
-    
-   public void size()
+
+    public void size()
     {
-      GreenfootImage image = getImage();
-      image.scale(100, 100);
-      setImage(image);
+        GreenfootImage image = getImage();
+        image.scale(100, 100);
+        setImage(image);
     }
-    
+
     public void act() 
-   { walk();
+    { 
+        walk();
+        if(Greenfoot.mouseClicked(this)){
+            ((PlayScreen)getWorld()).animalHit("Cat");//chnage to help screen when created
+            ((PlayScreen)getWorld()).removeObject(this);
+        }
     }
-    
+
     public void walk() {
-       int x = getX(); 
-       int y = getY(); 
-       position++;
-       
-      if (position < 190) 
-       { x += 5;
-         change = false;
+        int x = getX(); 
+        int y = getY(); 
+        position++;
+
+        if (position < 190) 
+        { x += 5;
+            change = false;
         }
-      if (position >= 190) 
-       { x -= 5;
-         change = true;
+        if (position >= 190) 
+        { x -= 5;
+            change = true;
         }
-        
-       setLocation(x, y); 
-       counter++;
-       
-       if (counter == 10) 
-      {  setImage();
-         counter = 0;
-      }
-      
-       if (x <= 50 && x >= 0) {
-       makeDissapear();
-      }
-   }
-   
+
+        setLocation(x, y); 
+        counter++;
+
+        if (counter == 10) 
+        {  setImage();
+            counter = 0;
+        }
+
+        if (x <= 50 && x >= 0) {
+            makeDissapear();
+        }
+    }
+
     public void setImage() 
     {
-      if (position < 190) 
-       {
-        currentImage++;
-        if (currentImage == 10) 
-       {
-          currentImage = 7;
-        }       
-       setImage("cat" + currentImage + ".fw.png");
-       size();
-      }
-      
-      
-        if (position >= 190) 
-      {
-        currentImage++;
-       if (currentImage == 13) 
+        if (position < 190) 
         {
-          currentImage = 10;
-        }   
-        setImage("cat" + currentImage + ".fw.png"); 
-        size();
-      }
-      
-   }
-   
-    
-   public void makeDissapear() 
-    {
-      int x = getX();
-      int y = getY();  
-      ((PlayScreen)getWorld()).removeObject(this);
+            currentImage++;
+            if (currentImage == 10) 
+            {
+                currentImage = 7;
+            }       
+            setImage("cat" + currentImage + ".fw.png");
+            size();
+        }
+
+        if (position >= 190) 
+        {
+            currentImage++;
+            if (currentImage == 13) 
+            {
+                currentImage = 10;
+            }   
+            setImage("cat" + currentImage + ".fw.png"); 
+            size();
+        }
+
     }
-  
-   public int getScore(int score) 
+
+    public void makeDissapear() 
+    {
+        int x = getX();
+        int y = getY();  
+        ((PlayScreen)getWorld()).removeObject(this);
+    }
+
+    public int getScore(int score) 
     { score -= 100;
-      return score;
+        return score;
     }
 }
