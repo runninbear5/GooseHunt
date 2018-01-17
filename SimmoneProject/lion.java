@@ -20,7 +20,7 @@ public class Lion extends Actor
    boolean walk = true;
    boolean hunt = false;
    boolean comeBack = false;
-   boolean right;
+   boolean right = true;
    long timeJumpCalled = 0;
     
    public Lion()
@@ -135,7 +135,6 @@ public class Lion extends Actor
        {currentImage = 1;
         }       
        setImage("LionLeft" + currentImage + ".fw.png");
-       getImage().mirrorHorizontally();
        size(210, 180);
       }
      }
@@ -200,8 +199,8 @@ public class Lion extends Actor
       size(1280, 769);
       setLocation (640, 385);
       if(timeJumpCalled + 300 <= System.currentTimeMillis()){
-          ((PlayScreen)getWorld()).animalHit("Lion");
-      }
+       //(PlayScreen.greenfoot()).killAnimal("Lion");
+    }
    }
     
    public int getScore(int score) 

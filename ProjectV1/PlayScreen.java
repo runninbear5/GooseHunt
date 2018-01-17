@@ -10,137 +10,152 @@ public class PlayScreen  extends World
 {
     JPanel Pan = WorldHandler.getInstance().getWorldCanvas();  
     /** The new Cursor */
-    Cursor NewCursor;
-    int roundNumber = 0;
-    int timeBetweenBadAnimals = 5000;
-    int timeBetweenGoodAnimals = 10000;
-    ArrayList badAnimalsInRoundanimalsInRound = new ArrayList<String>();
-    ArrayList goodAnimalsInRoundanimalsInRound = new ArrayList<String>();
-    ArrayList animalHitCounters = new ArrayList<AnimalCounter>();
-    ArrayList balloons = new ArrayList<Balloon>();
-    String[] goodAnimals = {"Duck", "Unicorn", "Antler"};
-    String[] badAnimals = {"Goose","Cat", "Lion"};
-    Score playerScore = new Score(0);
-    Round roundCount = new Round();
-    boolean lionUsed = false;
-    boolean lastAnimalShot = false;
-    long lastTimeBadAnimalPlaced = 0;
-    long lastTimeGoodAnimalPlaced = 0;
+    Cursor NewCursor;//used to change mouse cursor
+    int timeBetweenBadAnimals = 5000;//used for spawning bad animals and later multipled by round count
+    int timeBetweenGoodAnimals = 7500;//used for spawning good animals and later multipled by round count
+    ArrayList badAnimalsInRound = new ArrayList<String>();//list of all bad animals
+    ArrayList goodAnimalsInRound = new ArrayList<String>();//list of all good animals
+    ArrayList allAnimals = new ArrayList<Actor>();//all animal actors so everything can be removed
+    ArrayList animalHitCounters = new ArrayList<AnimalCounter>();//hit counters to know total amount of animals attacked
+    ArrayList balloons = new ArrayList<Balloon>();//total number of balloons
+    String[] goodAnimals = {"Duck", "Unicorn", "Antler"};//good animal names saved to be recreated
+    String[] badAnimals = {"Goose","Cat", "Lion"};//bad animal names saved to be recreated
+    Score playerScore = new Score(0);//to place player score 
+    Round roundCount = new Round();//to have the round count and place it
+    boolean lionUsed = false;// so lion can only be used once
+    boolean lastAnimalShot = false;// to know if all the animals are shot
+    long lastTimeBadAnimalPlaced = 0;//time of last bad animal placed
+    long lastTimeGoodAnimalPlaced = 0;//time of last good animal placed
     public PlayScreen()
     {
-        super(1280, 769, 1, false);
-        newRound();
-        GreenfootImage image = new GreenfootImage("crosshair.png");
-        ChangeMouseImage(image, 15,15);
-        addObject(playerScore, 1150, 700);
-        addObject(roundCount, 44, 712);
+        super(1280, 769, 1, false);//creates the world
+        newRound();//starts the new round
+        GreenfootImage image = new GreenfootImage("crosshair.png");//creates the a crosshair image
+        ChangeMouseImage(image, 15,15);//sets the mouse image to the cursor
+        addObject(playerScore, 1150, 700);//adds the player score
+        addObject(roundCount, 44, 712);//adds the player round
         //addObject(new Dog(), 10, 500);
     }
 
     public void act()
     {
         /** Sets the Cursor Image to the New Cursor */
-        Pan.setCursor(NewCursor);
-        int secondsTakenOff = 150*(roundCount.getRoundNumber()-1);
-        if(animalHitCounters.size() == 10 ||(badAnimalsInRoundanimalsInRound.size() == 0 && animalHitCounters.size()>5 && lastAnimalShot)){
+        Pan.setCursor(NewCursor);//used to set the cursor image
+        int secondsTakenOff = 150*(roundCount.getRoundNumber()-1);//used to decrease time of animal spawning as rounds increase
+        if(animalHitCounters.size() == 10 ||(badAnimalsInRound.size() == 0 && animalHitCounters.size()>5 && lastAnimalShot)){//checks if a new round can start
             newRound();
         }
-        if(Greenfoot.mouseClicked(this)){
-            removeBalloon();
+        if(Greenfoot.mouseClicked(this)){//checks if the world is clicked on to decrease water balloons
+            removeBalloon();//removes a water balloon
         }
-        if(balloons.size() == 0 && animalHitCounters.size() <= 5){
+        if(balloons.size() == 0 && animalHitCounters.size() <= 5){//checks if a game should be over
             Greenfoot.setWorld(new GameOver());
         }
-        if(lastTimeBadAnimalPlaced+(timeBetweenBadAnimals-secondsTakenOff) <= System.currentTimeMillis()){
-            int x = ((int)(Math.random() * 2)) + 1;
-            if(x == 1) x = 50 ;
-            else if(x == 2) x = 1280;
-            if(badAnimalsInRoundanimalsInRound.size() != 0){
-                if(badAnimalsInRoundanimalsInRound.get(0).equals("Cat")){
-                    addObject(new Cat(), x, 500);
+        if(lastTimeBadAnimalPlaced+(timeBetweenBadAnimals-secondsTakenOff) <= System.currentTimeMillis()){//checks if a new animal should be created
+            int x = ((int)(Math.random() * 2)) + 1;//creates random side placement
+            if(x == 1) x = 50 ;//sets x to actuall placement location
+            else if(x == 2) x = 1280;//sets x to actuall placement location
+            if(badAnimalsInRound.size() != 0){//checks if there are still bad animals to be placed
+                if(badAnimalsInRound.get(0).equals("Cat")){//checks what animal is being placed and adds it and sets last time animal placed
+                    Cat cat = new Cat();
+                    allAnimals.add(cat);
+                    addObject(cat, x, 500);
                     System.out.println("Cat");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
-                }else if(badAnimalsInRoundanimalsInRound.get(0).equals("Goose")){
+                }else if(badAnimalsInRound.get(0).equals("Goose")){
+                   // Goose goose = new Goose();
+                    allAnimals.add(new Cat());
                     addObject(new Cat(), x, 500);
                     System.out.println("Goose");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
-                }else if(badAnimalsInRoundanimalsInRound.get(0).equals("Lion")){
-                    addObject(new Lion(), x, 500);
+                }else if(badAnimalsInRound.get(0).equals("Lion")){
+                    Lion lion = new Lion();
+                    allAnimals.add(lion);
+                    addObject(lion, x, 500);
                     System.out.println("Lion");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }
-                badAnimalsInRoundanimalsInRound.remove(0);
+                badAnimalsInRound.remove(0);//remove the animal that was placed
             }
         }
-        if(lastTimeGoodAnimalPlaced+(timeBetweenGoodAnimals-secondsTakenOff) <= System.currentTimeMillis()){
-            int x = ((int)(Math.random() * 2)) + 1;
-            if(x == 1) x = 50 ;
-            else if(x == 2) x = 1280;
-            if(goodAnimalsInRoundanimalsInRound.size() != 0){
-                if(goodAnimalsInRoundanimalsInRound.get(0).equals("Deer")){
-                    addObject(new Antler(), x, 500);
+        if(lastTimeGoodAnimalPlaced+(timeBetweenGoodAnimals-secondsTakenOff) <= System.currentTimeMillis()){//checks if a new animal should be placed
+            int x = ((int)(Math.random() * 2)) + 1;//creates random x location to place animal
+            if(x == 1) x = 50; //sets x to actual x location
+            else if(x == 2) x = 1280;//sets x to actual x location
+            if(goodAnimalsInRound.size() != 0){//checks if there are animals to place still
+                if(goodAnimalsInRound.get(0).equals("Antler")){//checks what animal is being placed and adds it and sets last time animal placed
+                    Antler antler = new Antler();
+                    allAnimals.add(antler);
+                    addObject(antler, x, 500);
                     System.out.println("Antler");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
-                }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("Unicorn")){
-                    addObject(new Unicorn(x==1280), x, 500);
+                }else if(goodAnimalsInRound.get(0).equals("Unicorn")){
+                    Unicorn unicorn = new Unicorn(x>=1280);
+                    allAnimals.add(unicorn);
+                    addObject(unicorn, x, 500);
                     System.out.println("Unicorn");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
-                }else if(goodAnimalsInRoundanimalsInRound.get(0).equals("Duck")){
+                }else if(goodAnimalsInRound.get(0).equals("Duck")){
+                   // Duck duck = new Duck();
+                    allAnimals.add(new Cat());
                     addObject(new Cat(), x, 500);
                     System.out.println("Duck");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }
-                goodAnimalsInRoundanimalsInRound.remove(0);
+                goodAnimalsInRound.remove(0);//remove the animal that was placed
             }
         }
-        if(badAnimalsInRoundanimalsInRound.size() == 0 && animalHitCounters.size() <=5){
+        if(badAnimalsInRound.size() == 0 && animalHitCounters.size() <=5){//checks if the game should end
             Greenfoot.setWorld(new GameOver());
         }
+        Joystick stick = new Joystick();
+        System.out.println(stick.getX());
     }
         
     public void newRound(){
-        lionUsed = false;
-        lastAnimalShot = false;
-        for(int i=0; i<animalHitCounters.size(); i++){
+        lionUsed = false;//resests the lion used boolean
+        lastAnimalShot = false;//resets if the last animal was shot
+        for(int i=0; i<animalHitCounters.size(); i++){//removes the animal hit counters from the screen
             AnimalCounter counter = (AnimalCounter)(AnimalCounter)animalHitCounters.get(i);
             counter.removeObject();
         }
-        badAnimalsInRoundanimalsInRound.clear();
-        animalHitCounters.clear();
-        for(int i=0; i<10; i++){
-            int badAnimal = (int)(Math.random() * 11);
-            int goodAnimal = (int)(Math.random() * 3);
-            if(badAnimal <= 5){
-                badAnimalsInRoundanimalsInRound.add(badAnimals[0]);
+        badAnimalsInRound.clear();//clears all the bad animals
+        goodAnimalsInRound.clear();//clears all the good animals
+        animalHitCounters.clear();//clears the animal hit counter
+        for(int i=0; i<10; i++){//refills the good and bad animals randomly
+            int badAnimal = (int)(Math.random() * 11);//randomly chooses what bad animals to spawn with a weight on each animal
+            int goodAnimal = (int)(Math.random() * 3);//randomly chooses what good animal to spawn
+            if(badAnimal <= 5){//chooses what annimal to create accoding to the weight
+                badAnimalsInRound.add(badAnimals[0]);
             }else if(badAnimal >= 8){
-                badAnimalsInRoundanimalsInRound.add(badAnimals[1]);
+                badAnimalsInRound.add(badAnimals[1]);
             }else if ((badAnimal == 6 || badAnimal == 7) && !lionUsed){
-                badAnimalsInRoundanimalsInRound.add(badAnimals[2]);
+                badAnimalsInRound.add(badAnimals[2]);
                 lionUsed = true;
             }else if (badAnimal == 6 || badAnimal == 7){
-                badAnimalsInRoundanimalsInRound.add(badAnimals[0]);
+                badAnimalsInRound.add(badAnimals[0]);
             }
             
-            if(goodAnimal == 0){
-                goodAnimalsInRoundanimalsInRound.add(goodAnimals[0]);
+            if(goodAnimal == 0){//chooses what good animal to screate
+                goodAnimalsInRound.add(goodAnimals[0]);
             }else if(goodAnimal == 1){
-                goodAnimalsInRoundanimalsInRound.add(goodAnimals[1]);
+                goodAnimalsInRound.add(goodAnimals[1]);
             }else if ((goodAnimal == 2)){
-                goodAnimalsInRoundanimalsInRound.add(goodAnimals[2]);
+                goodAnimalsInRound.add(goodAnimals[2]);
             }
             //badAnimalsInRoundanimalsInRound.add("cat");
             balloons.add(new Balloon());
         }
         placeBalloons();
-        roundCount.increaseRound();
-        lastTimeBadAnimalPlaced = System.currentTimeMillis();
-        lastTimeGoodAnimalPlaced = System.currentTimeMillis();
+        roundCount.increaseRound();//method in round count to increment
+        lastTimeBadAnimalPlaced = System.currentTimeMillis();//resets when an animal was placed
+        lastTimeGoodAnimalPlaced = System.currentTimeMillis();//resets when an animal was placed
     }
     
     /** Or you use this Method: 
      * The image is the image, that you want the mouse to have.(The mouse has a maximum width and height for her image, if the image is too large it will be scaled on the right size)
      * XClick and YClick is the Location on the Picture where the mouse will Click */
-    public void ChangeMouseImage(GreenfootImage image, int xClick, int yClick)
+    public void ChangeMouseImage(GreenfootImage image, int xClick, int yClick)//used to change mouse image
     {
         JPanel Panel = WorldHandler.getInstance().getWorldCanvas();
         Cursor Cursor;
@@ -151,39 +166,41 @@ public class PlayScreen  extends World
         Panel.setCursor(Cursor);
     }
     
-    public void animalHit(String animal){
-        if(animal.equals("Goose")){
+    public void animalHit(String animal){//gives score and hit counter to bad animals
+        if(animal.equals("Goose")){//adds score according to the animal or negative screo if it is a good animal
             playerScore.addTotal(100);
+            addHitCount();//adds the hit counter if the animal is bad
         }else if(animal.equals("Duck")){
             playerScore.addTotal(-100);
         }else if(animal.equals("Lion")){
             playerScore.addTotal(75);
+            addHitCount();
         }else if(animal.equals("Antler")){
             playerScore.addTotal(-75);
         }else if(animal.equals("Cat")){
             playerScore.addTotal(50);
+            addHitCount();  
         }else{
             playerScore.addTotal(-50);
         }
-        if(badAnimalsInRoundanimalsInRound.size() == 0){
+        if(badAnimalsInRound.size() == 0){
             lastAnimalShot = true;
-        }
-        removeBalloon();
-        addHitCount();
+        }//used to know when the last animal was shot
+        removeBalloon();//removes a balloon when an animal is shot
     }
     
-    public void addHitCount(){
-        AnimalCounter counter = new AnimalCounter();
-        if(animalHitCounters.size() == 0){
+    public void addHitCount(){//used to place and create hitCounters
+        AnimalCounter counter = new AnimalCounter();//creates new hit counter
+        if(animalHitCounters.size() == 0){//places first counter
             addObject( counter, 445, 720);
-        }else{
+        }else{//places the rest of the counters
             AnimalCounter oldCounter = (AnimalCounter)animalHitCounters.get(animalHitCounters.size()-1);
             addObject(counter, oldCounter.getLastX()+45, 720);
         }
-        animalHitCounters.add(counter);
+        animalHitCounters.add(counter);//adds new counter to array
     }
     
-    public void placeBalloons(){
+    public void placeBalloons(){//places balloons according to the balloons in the array
         for(int i=0; i<balloons.size(); i++){
             if(i == 0){
                 addObject((Balloon)balloons.get(i), 102, 710);
@@ -194,20 +211,23 @@ public class PlayScreen  extends World
         }
     }
     
-    public void removeBalloon(){
-        for(int i=0; i<balloons.size(); i++){
-            removeObject((Balloon)balloons.get(i));
+    public void removeBalloon(){//removes the last balloon in the array
+        if(balloons.size() > 1){
+            for(int i=0; i<balloons.size(); i++){
+                removeObject((Balloon)balloons.get(i));
+            }       
+            balloons.remove(balloons.size()-1);
+            placeBalloons();
         }
-        balloons.remove(balloons.size()-1);
-        placeBalloons();
     }
     
-    public void attacked(String animal){
-        if(animal.equals("Cat")){
+    public void attacked(String animal){//is called when an animal attacks the player
+        if(animal.equals("Cat")){//decides what to do depending on the animal
             balloons.remove(balloons.size());
             balloons.remove(balloons.size());
         }else if(animal.equals("Lion")){
             Greenfoot.setWorld(new GameOver());
         }
     }
+
 }

@@ -14,7 +14,7 @@ public class StartButton extends Actor
      */
     public void act() 
     {
-        if(Greenfoot.mouseClicked(this)){
+        if(Greenfoot.mouseClicked(this)){//if clicked on go to play screen
             Greenfoot.setWorld(new PlayScreen());
         }
     }    

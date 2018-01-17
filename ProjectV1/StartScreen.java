@@ -24,24 +24,24 @@ public class StartScreen extends World
     public StartScreen()
     {    
         super(1280, 769, 1, false);
-        GreenfootImage image = new GreenfootImage("crosshair.png");
-        ChangeMouseImage(image, 15,15);
-        addObject(new StartButton(), 675, 400);
-        addObject(new HelpButton(), 675, 300);
+        GreenfootImage image = new GreenfootImage("crosshair.png");//creates the greenfoot image 
+        ChangeMouseImage(image, 15,15);//sets the image
+        addObject(new StartButton(), 675, 400);//adds the start button 
+        addObject(new HelpButton(), 675, 300);//adds the help button
     }
     
 
     public void act()
     {
         /** Sets the Cursor Image to the New Cursor */
-        Pan.setCursor(NewCursor);
+        Pan.setCursor(NewCursor);//sets the cursor
     }
     
     
     /** Or you use this Method: 
      * The image is the image, that you want the mouse to have.(The mouse has a maximum width and height for her image, if the image is too large it will be scaled on the right size)
      * XClick and YClick is the Location on the Picture where the mouse will Click */
-    public void ChangeMouseImage(GreenfootImage image, int XClick, int yClick)
+    public void ChangeMouseImage(GreenfootImage image, int XClick, int yClick)//used to set the crosshair image
     {
         JPanel Panel = WorldHandler.getInstance().getWorldCanvas();
         Cursor Cursor;

@@ -17,9 +17,12 @@ public class Cat extends Actor
     int position = 0;
     int x = 0;
     int y = 0;
+    boolean walk = true;
+    boolean stare = false;
     boolean change;
-    boolean right;
+    boolean right = true;
     boolean comeBack = false;
+    long timeJumpCalled = 0;
     
    public Cat()
     {
@@ -35,7 +38,13 @@ public class Cat extends Actor
     }
     
     public void act() 
-   { walk();
+   { if(walk){
+         walk();   
+        }
+        
+     if(stare){
+            startStaring(false);
+        }
     }
     
     public void walk() {
@@ -65,13 +74,20 @@ public class Cat extends Actor
       if (x >= 800 && x <= 850) 
       { comeBack = true;
         }
+        
+      if ((comeBack == true) && (x >= starePosition - 30 && x <= starePosition + 30))
+      { walk = false;
+        stare = true;
+        timeJumpCalled = System.currentTimeMillis();
+        startStaring(true);
+        }
       
        if (x <= 50 && x >= 0) {
        makeDissapear();
       }
      }
      else {
-     
+       int starePosition = 650;
        int x = getX(); 
        int y = getY(); 
        position++;
@@ -100,7 +116,7 @@ public class Cat extends Actor
       
       if ((comeBack == true) && (x >= starePosition - 30 && x <= starePosition + 30))
       { walk = false;
-        hunt = true;
+        stare = true;
         timeJumpCalled = System.currentTimeMillis();
         startStaring(true);
         }
@@ -165,6 +181,36 @@ public class Cat extends Actor
      }
    }
    
+   public void startStaring(boolean first)
+   {
+      int x = getX();
+      int y = getY();
+      counter++;
+      
+      if (counter == 10) 
+      { setStareImage();
+        counter = 0;
+          }
+      if (first) 
+      { setLocation(x, y);
+          }   
+          
+      if(timeJumpCalled + 1000 <= System.currentTimeMillis()){
+          //stare = false;
+          //makeDissapear();
+      }
+    }
+   
+   public void setStareImage()
+   {
+     currentImage++;
+     if(currentImage == 16) 
+     {
+       currentImage = 13;
+        }
+     setImage("cat" + currentImage + ".fw.png");
+     size();
+    }
     
    public void makeDissapear() 
     {

@@ -13,16 +13,14 @@ public class Round extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int round = 0; 
-    public Round(){
+    public Round(){//used to initally create the round
         setImage(new GreenfootImage("R="+round, 50, greenfoot.Color.GREEN, greenfoot.Color.BLACK));
     }
-    public void act(){
-    }
-    public void increaseRound(){
+    public void increaseRound(){//increases the round by one
         round ++;
         setImage(new GreenfootImage("R="+round, 50, greenfoot.Color.GREEN, greenfoot.Color.BLACK));
     }      
-    public int getRoundNumber(){
+    public int getRoundNumber(){// returns the round number
         return round;
     }
 }

@@ -36,7 +36,6 @@ public class Dog extends Actor
       int x = getX(); 
       int y = getY(); 
       int jumpPosition = 640;
-      int laugh POsitio
       position++;
       
       if (x < 800) 
@@ -59,6 +58,11 @@ public class Dog extends Actor
        timeJumpedCalled = System.currentTimeMillis();
        jumpOver(true);
       }
+      if(timeJumpedCalled == 10000) 
+      { 
+          getWorld().addObject(this, x, y);
+          startLaugh(true);
+        }
    }
    
     public void setImage() 
@@ -97,7 +101,7 @@ public class Dog extends Actor
    }
    
     public void startLaugh(boolean second)
-    {
+    { 
       int x = getX();
       int y = getY();
       setLaughImage();
