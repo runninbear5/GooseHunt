@@ -10,13 +10,17 @@ public class Joystick
 {
     // instance variables - replace the example below with your own
     private int x;
-    LinuxJoystick j = JoyFactory.get(0);  // get first device
+    LinuxJoystick j;  // get first device
     /**
      * Constructor for objects of class Joystick
      */
     public Joystick()
     {
-        
+        int[] joyInfo = JoyFactory.enumerate();
+        for(int i=0; i<joyInfo.length; i++){
+            System.out.println(i);
+        }
+        j = JoyFactory.getFirstUsableDevice();
         if(j != null) {
             j.setCallback(new EventCallbackHandler());
             j.startPollingThread(5); // sleep for 5 ms between polls
@@ -31,14 +35,14 @@ public class Joystick
      */
     public double getX()
     {
-        int[] joyInfo = JoyFactory.enumerate();
-        double x = -1;
-        if(joyInfo != null) {
-            LinuxJoystick j = JoyFactory.get(0);  // get first device
-            j.open();
-            j.startPollingThread(5);
-            x = j.getAxisState(0);
-        }       
-        return x;
+        
+        // double x = -1;
+        // if(joyInfo != null) {
+            // LinuxJoystick j = JoyFactory.get(0);  // get first device
+            // j.open();
+            // j.startPollingThread(5);
+            // x = j.getAxisState(0);
+        // }       
+        return 0;
     }
 }
