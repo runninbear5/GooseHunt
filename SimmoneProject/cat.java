@@ -12,25 +12,23 @@ public class Cat extends Actor
      * Act - do whatever the cat wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int counter = 0;
-    int currentImage = 7;
-    int position = 0;
-    int x = 0;
+    int counter = 0; //variable used later for setting speed of image changes
+    int currentImage = 7; //variable used later for setting image of object
+    int position = 0; //vriable used later to dictate the timr at which the object changes direction
+    int x = 0;  
     int y = 0;
     boolean walk = true;
     boolean stare = false;
-    boolean change;
-    boolean right = true;
+    boolean right;
     boolean comeBack = false;
     long timeJumpCalled = 0;
     
-   public Cat()
+   public Cat(boolean right)
     {
-     setImage();
-     right = this.right;
+     this.right = right; //boolean given to Cat class to let the object know whether or not it is spawning on the L or R
     }
     
-   public void size()
+   public void size() //method increased size of the images, called throughout the code
     {
       GreenfootImage image = getImage();
       image.scale(100, 100);
@@ -38,17 +36,17 @@ public class Cat extends Actor
     }
     
     public void act() 
-   { if(walk){
+   { if(walk){ //if boolean walk is true, the walk class is continously called
          walk();   
         }
         
-     if(stare){
+     if(stare){ //if boolean stare is true, the startStaring class is called
             startStaring(false);
         }
     }
     
     public void walk() {
-      if (right) {
+      if (!right) {
       int x = getX(); 
       int y = getY(); 
       int starePosition = 640;
@@ -56,19 +54,17 @@ public class Cat extends Actor
        
       if (position < 190) 
        { x += 5;
-         change = false;
         }
       if (position >= 190) 
        { x -= 5;
-         change = true;
         }
         
-       setLocation(x, y); 
-       counter++;
-       
+      setLocation(x, y); 
+      counter++;
        if (counter == 10) 
-      {  setImage();
-         counter = 0;
+      {  
+          setImageLeft();
+          counter = 0;
       }
       
       if (x >= 800 && x <= 850) 
@@ -87,30 +83,27 @@ public class Cat extends Actor
       }
      }
      else {
-       int starePosition = 650;
-       int x = getX(); 
-       int y = getY(); 
-       position++;
+      int starePosition = 640;
+      int x = getX(); 
+      int y = getY(); 
+      position++;
        
       if (position < 190) 
        { x -= 5;
-         change = false;
         }
       if (position >= 190) 
        { x += 5;
-         change = true;
         }
         
-       setLocation(x, y); 
-       counter++;
-       
+      setLocation(x, y); 
+      counter++;
        if (counter == 10) 
-      {  setImage();
-         getImage().mirrorHorizontally();
-         counter = 0;
+          {setImageLeft();
+           getImage().mirrorHorizontally();
+           counter = 0;
       }
       
-      if (x >= 800 && x <= 850) 
+      if (x >= 0 && x <= 500) 
       { comeBack = true;
         }
       
@@ -121,27 +114,25 @@ public class Cat extends Actor
         startStaring(true);
         }
         
-       if (x <= 50 && x >= 0) {
+       if (x <= 1200 && x >= 1250) {
        makeDissapear();
       }
      }
    }
    
-   
-    public void setImage() 
-    { if (right) {
+   public void setImageLeft() 
+    { 
       if (position < 190) 
        {
         currentImage++;
-        if (currentImage == 10) 
+        if (currentImage >= 10) 
        {
-          currentImage = 7;
+          currentImage = 8;
         }       
        setImage("cat" + currentImage + ".fw.png");
        size();
       }
-      
-      
+    
         if (position >= 190) 
       {
         currentImage++;
@@ -153,33 +144,32 @@ public class Cat extends Actor
         size();
       }
      }
-     else {
+   
+   public void setImageRight() {
       if (position < 190) 
        {
         currentImage++;
-        if (currentImage == 10) 
+        if (currentImage >= 13) 
        {
-          currentImage = 7;
+          currentImage = 10;
         }       
        setImage("cat" + currentImage + ".fw.png");
        getImage().mirrorHorizontally();
        size();
       }
-      
-      
+    
         if (position >= 190) 
       {
         currentImage++;
-       if (currentImage == 13) 
+       if (currentImage == 10) 
         {
-          currentImage = 10;
+          currentImage = 8;
         }   
-        setImage("cat" + currentImage + ".fw.png"); 
-        getImage().mirrorHorizontally();
-        size();
+       setImage("cat" + currentImage + ".fw.png"); 
+       getImage().mirrorHorizontally();
+       size();
       }
      }
-   }
    
    public void startStaring(boolean first)
    {
@@ -197,14 +187,14 @@ public class Cat extends Actor
           
       if(timeJumpCalled + 1000 <= System.currentTimeMillis()){
           //stare = false;
-          //makeDissapear();
+          //((PlayScreen)getWorld()).attacked("Cat");
       }
     }
    
    public void setStareImage()
    {
      currentImage++;
-     if(currentImage == 16) 
+     if(currentImage >= 16) 
      {
        currentImage = 13;
         }
@@ -220,7 +210,7 @@ public class Cat extends Actor
     }
   
    public int getScore(int score) 
-    { score -= 100;
+    { score += 100;
       return score;
     }
 }
