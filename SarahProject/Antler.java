@@ -1,7 +1,7 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;// (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Deer here.
+ * Write a description of class Unicorn here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -14,6 +14,7 @@ public class Antler extends Actor
     int stop = 0; 
     int x; 
     int y; 
+    boolean right; 
     /**
      * Act - do whatever the Deer wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,48 +24,100 @@ public class Antler extends Actor
         // Add your action code here.
         x = getX(); 
         y = getY();
-        
-        if ((x - 10 <= stop)&&(x + 10 >= stop)) {
-            setImage("Antler1.fw.png"); 
-            if(timeStop + 1500 <= System.currentTimeMillis()){
-                x = stop + 11;  
+        if (!right) {
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) {
+                setImage("Antler1.fw.png"); 
+                if(timeStop + 1500 <= System.currentTimeMillis()){
+                    x = stop + 11;  
+                    walk(); 
+                }
+            } else {
                 walk(); 
-            }
+            } 
         } else {
-            walk(); 
-        } 
-        if (Greenfoot.mouseClicked(this)){
-            //((PlayScreen)getWorld().animalHit("Antler")); 
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) {
+                setImage("Antler1.fw.png"); 
+                getImage().mirrorHorizontally(); 
+                if(timeStop + 1500 <= System.currentTimeMillis()){
+                    x = stop - 11;  
+                    walk(); 
+                }
+            } else {
+                walk(); 
+            } 
+        }
+       
+        if(Greenfoot.mouseClicked(this)){
+            ((PlayScreen)getWorld()).animalHit("Antler");//chnage to help screen when created
+            ((PlayScreen)getWorld()).removeObject(this);
         }
     }   
-    public Antler () {
+
+    public Antler (boolean right) {
+        this.right = right;
         stop = (int)(Math.random() * 1280); 
+        
         //System.out.println(stop); 
     }
+
     public void walk () { //move deer across the screen 
-        x+=5; //add level multiplier 
-        counter++;
-        if (counter == 5) { 
-            setImage(); 
-            counter = 0; 
+        if(!right){
+            x+=5; //add level multiplier 
+            counter++;
+            if (counter == 5) { 
+                setImageLeft(); 
+                counter = 0; 
+            }
+            if (x >= 1265) {
+                makeDissapear(); 
+            } 
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
+                timeStop = System.currentTimeMillis(); 
+                setImage("Antler1.fw.png"); 
+            } 
+            setLocation(x, y); 
+        } else {
+            x-=5; 
+            counter++; 
+            if (counter == 5) { 
+                setImageRight(); 
+                counter = 0; 
+            }
+            if (x <= 10) {
+                makeDissapear(); 
+            } 
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
+                timeStop = System.currentTimeMillis(); 
+                setImageRightArg("Antler1.fw.png"); 
+                //getImage().mirrorHorizontally(); 
+            } 
+            setLocation(x, y); 
         }
-        if (x >= 1270) {
-            makeDissapear(); 
-        } 
-        if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
-            timeStop = System.currentTimeMillis(); 
-            setImage("Antler1.fw.png"); 
-        } 
-        setLocation(x, y); 
     }
+
     public void makeDissapear () {
         ((PlayScreen)getWorld()).removeObject(this); 
     }
-    public void setImage() { //change image to create moving gif
+
+    public void setImageLeft() { //change image to create moving gif
         currentImage++; //increment image
         if (currentImage == 12) { //loop through graphics 
             currentImage = 1; 
         } 
         setImage("Antler" + currentImage + ".fw.png"); //call antler file
     } 
+
+    public void setImageRight () { 
+        currentImage++; //increment image
+        if (currentImage == 12) { //loop through graphics 
+            currentImage = 1; 
+        } 
+        setImage("Antler" + currentImage + ".fw.png"); //call antler file
+        getImage().mirrorHorizontally(); 
+    }
+    
+    public void setImageRightArg (String file){//face the right way when stopped
+        setImage(file); 
+        getImage().mirrorHorizontally(); 
+    }
 }

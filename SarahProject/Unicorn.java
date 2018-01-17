@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;// (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Unicorn here.
@@ -24,27 +24,40 @@ public class Unicorn extends Actor
         // Add your action code here.
         x = getX(); 
         y = getY();
-
-        if ((x - 10 <= stop)&&(x + 10 >= stop)) {
-            setImage("Unicorn11.fw.png"); 
-            if(timeStop + 1500 <= System.currentTimeMillis()){
-                x = stop + 11;  
+        if (!right) {
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) {
+                setImage("Unicorn11.fw.png"); 
+                if(timeStop + 1500 <= System.currentTimeMillis()){
+                    x = stop + 11;  
+                    walk(); 
+                }
+            } else {
                 walk(); 
-            }
+            } 
         } else {
-            walk(); 
-        } 
-        if (Greenfoot.mouseClicked(this)){
-            //((PlayScreen)getWorld().animalHit("Antler")); 
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) {
+                setImage("Unicorn11.fw.png"); 
+                getImage().mirrorHorizontally(); 
+                if(timeStop + 1500 <= System.currentTimeMillis()){
+                    x = stop - 11;  
+                    walk(); 
+                }
+            } else {
+                walk(); 
+            } 
+        }
+       
+        if(Greenfoot.mouseClicked(this)){
+            ((PlayScreen)getWorld()).animalHit("Unicorn");//chnage to help screen when created
+            ((PlayScreen)getWorld()).removeObject(this);
         }
     }   
 
     public Unicorn (boolean right) {
-        right = this.right; 
+        this.right = right;
         stop = (int)(Math.random() * 1280); 
-        x = getX(); 
-        right = x > 640; 
-        //System.out.println(stop); debug 
+        
+        //System.out.println(stop); 
     }
 
     public void walk () { //move deer across the screen 
@@ -55,19 +68,19 @@ public class Unicorn extends Actor
                 setImageLeft(); 
                 counter = 0; 
             }
-            if (x >= 1270) {
+            if (x >= 1265) {
                 makeDissapear(); 
             } 
             if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
                 timeStop = System.currentTimeMillis(); 
-                setImage("Unicorn1.fw.png"); 
+                setImage("Unicorn11.fw.png"); 
             } 
             setLocation(x, y); 
         } else {
             x-=5; 
             counter++; 
             if (counter == 5) { 
-                setImageLeft(); 
+                setImageRight(); 
                 counter = 0; 
             }
             if (x <= 10) {
@@ -75,8 +88,8 @@ public class Unicorn extends Actor
             } 
             if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
                 timeStop = System.currentTimeMillis(); 
-                setImage("Unicorn11.fw.png"); 
-                getImage().mirrorHorizontally(); 
+                setImageRightArg("Unicorn11.fw.png"); 
+                //getImage().mirrorHorizontally(); 
             } 
             setLocation(x, y); 
         }
@@ -93,12 +106,18 @@ public class Unicorn extends Actor
         } 
         setImage("Unicorn" + currentImage + ".fw.png"); //call antler file
     } 
+
     public void setImageRight () { 
         currentImage++; //increment image
         if (currentImage == 12) { //loop through graphics 
             currentImage = 1; 
         } 
         setImage("Unicorn" + currentImage + ".fw.png"); //call antler file
+        getImage().mirrorHorizontally(); 
+    }
+    
+    public void setImageRightArg (String file){//face the right way when stopped
+        setImage(file); 
         getImage().mirrorHorizontally(); 
     }
 }
