@@ -16,6 +16,7 @@ public class Goose extends Actor
     long deathTime = System.currentTimeMillis();  
     boolean dead = false; 
     boolean atBottom = false; 
+    int deathCounter; 
     /**
      * Act - do whatever the Deer wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -30,7 +31,9 @@ public class Goose extends Actor
                 ((PlayScreen)getWorld()).animalHit("Goose");//change to help screen when created
                 deathTime = System.currentTimeMillis(); 
                 setImage("goose10.fw.png"); 
+                resize(100,100); 
                 getImage().mirrorHorizontally(); 
+                dead = true; 
                 death(); 
             }
         } else {
@@ -39,13 +42,17 @@ public class Goose extends Actor
                 deathTime = System.currentTimeMillis(); 
                 System.out.println("shot");
                 setImage("goose10.fw.png"); 
+                resize(100,100); 
+                dead = true; 
                 death(); 
             }
         }
         if (!dead) { //continue movement if not shot 
             walk(); 
             deathTime = System.currentTimeMillis(); 
-                            System.out.println("walk");
+        }
+        if (dead) {
+            death(); 
         }
     }   
 
@@ -61,6 +68,7 @@ public class Goose extends Actor
             counter++;
             if (counter == 5) { 
                 setImageLeft(); 
+                resize(100,100);
                 counter = 0; 
             }
             if (x >= 1265) {
@@ -73,6 +81,7 @@ public class Goose extends Actor
             counter++; 
             if (counter == 5) { 
                 setImageRight(); 
+                resize(100,100);
                 counter = 0; 
             }
             if (x <= 10) {
@@ -82,13 +91,28 @@ public class Goose extends Actor
         }
     }
     
+    public void resize (int width, int height) {
+        GreenfootImage image = getImage(); 
+        image.scale(width, height); 
+        setImage(image); 
+    }
+    
     public void death() {
         if (dead) {
             setImage("goose11.fw.png"); 
-            if (755 <= y) {
+            resize(100,100);
+            if (y >= 755) {
                 makeDissapear();  
             } 
-            y -= 15; 
+            if (y <= 755) {  
+                deathCounter++;
+                if (deathCounter == 2) { 
+                    y+=15; 
+                    setLocation(x,y); 
+                    resize(100,100);
+                    deathCounter = 0; 
+                }
+            }
         } 
     } 
 
@@ -98,7 +122,7 @@ public class Goose extends Actor
 
     public void setImageLeft() { //change image to create moving gif
         currentImage++; //increment image
-        if (currentImage == 10) { //loop through graphics 
+        if (currentImage == 7) { //loop through graphics 
             currentImage = 1; 
         } 
         setImage("goose" + currentImage + ".fw.png"); //call antler file
@@ -106,7 +130,7 @@ public class Goose extends Actor
 
     public void setImageRight () { 
         currentImage++; //increment image
-        if (currentImage == 10) { //loop through graphics 
+        if (currentImage == 7) { //loop through graphics 
             currentImage = 1; 
         } 
         setImage("goose" + currentImage + ".fw.png"); //call antler file
