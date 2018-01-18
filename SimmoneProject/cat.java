@@ -1,8 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class cat here.
- * 
+ * This class is for the cat in Goose Hunt. The cat walks accross the screen and back before changing to face the user and walk toward them. 
+ * If, after one second of the cat walking forward, the cat is not hit with a waterballoon, the game is ended. The cat has the ability to 
+ * spawn on either side of the screen, walking in the correct direction accordingly
  * @author (Simmone Stearn) 
  * @version (a version number or a date)
  */
@@ -86,16 +87,19 @@ public class Cat extends Actor
       position++; //position, which starts at zero, is continously increasing
        
       if (position < 190) 
-       { x -= 5; //the signs are switched here since the cat will be going the opposite direction when it spawns on the right
+       { 
+         x -= 5; //the signs are switched here since the cat will be going the opposite direction when it spawns on the right
         }
       if (position >= 190) 
-       { x += 5; //walks to the right when position is greater than or equal to 190
+       {
+         x += 5; //walks to the right when position is greater than or equal to 190
         }
         
       setLocation(x, y); 
       counter++;
        if (counter == 10) //slows the speed at which the images of the cat walking change
-          {setImage(); //calls the setImage method which dictates the images that will depict the cat walking
+       {
+           setImage(); //calls the setImage method which dictates the images that will depict the cat walking
            getImage().mirrorHorizontally(); //flips the images so that they face in the opposite direction
            counter = 0;
       }
@@ -111,8 +115,9 @@ public class Cat extends Actor
         startStaring(true); //calls startStaring
         }
         
-       if (x <= 1200 && x >= 1250) {
-       makeDissapear();
+       if (x <= 1200 && x >= 1250) 
+      {
+        makeDissapear();
       }
      }
    }
@@ -149,11 +154,13 @@ public class Cat extends Actor
       counter++;
       
       if (counter == 10) //slows the speed at which the images of the cat change
-      { setStareImage(); //calls method setStareImage below which changes the images of the cat
+      { 
+        setStareImage(); //calls method setStareImage below which changes the images of the cat
         counter = 0;
           }
       if (first) 
-      { setLocation(x, y + 10); //moves the cat down 10 pixels when it begins to stare
+      { 
+        setLocation(x, y + 10); //moves the cat down 10 pixels when it begins to stare
           }   
           
       if(timeJumpCalled + 1000 <= System.currentTimeMillis()){ //after one second (1000 milliseconds), stare boolean becomes false and startStaring 
