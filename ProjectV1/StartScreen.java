@@ -17,7 +17,9 @@ public class StartScreen extends World
     /** The new Cursor */
     Cursor NewCursor;
     int currentSong = 0;
-    String[] songs = {"24k_Puffs_-_Reeces_Puffs_24k_Magic_remix[Mp3Converter.net].mp3", "Gustav_Holst_-_The_Planets_-_Mars_the_Bringer_of_War[Mp3Converter.net].mp3", "Nyan_Cat_original[Mp3Converter.net].mp3",
+    boolean musicPlaying = false;
+    int currentVolume = 25;
+    String[] songs = {"24k_Puffs_-_Reeces_Puffs_24k_Magic_remix[Mp3Converter.net].mp3", "Nyan_Cat_original[Mp3Converter.net].mp3",
         "Pirates_Of_The_Caribbean_Theme_Song[Mp3Converter.net].mp3", "Rick_Astley_-_Never_Gonna_Give_You_Up[Mp3Converter.net].mp3", "Star_Wars-_The_Imperial_March_Darth_Vaders_Theme[Mp3Converter.net].mp3"};
     GreenfootSound backgroundMusic = new GreenfootSound(songs[currentSong]);
     /**
@@ -31,14 +33,22 @@ public class StartScreen extends World
         ChangeMouseImage(image, 15,15);//sets the image
         addObject(new StartButton(), 675, 400);//adds the start button 
         addObject(new HelpButton(), 675, 300);//adds the help button
+        addObject(new MuteMusicButton(), 300, 700);//adds decrase button
+        addObject(new UnmuteButton(), 450, 700);
+        addObject(new ChangeSongButton(), 100, 700);
+        addObject(new DecreaseVolumeButton(), 120, 650);
+        addObject(new IncreaseVolumeButton(), 350, 650);
     }
     
 
     public void act()
     {
         /** Sets the Cursor Image to the New Cursor */
-        Pan.setCursor(NewCursor);//sets the cursor
-        backgroundMusic.playLoop();
+       Pan.setCursor(NewCursor);//sets the cursor
+       if(!musicPlaying){
+           startMusic();
+           musicPlaying = true;
+       }
     }
     
     
@@ -57,6 +67,31 @@ public class StartScreen extends World
     }
     
     public void changeSong(){
-        
+        currentSong++;
+        if(currentSong == 5) currentSong = 0;
+        backgroundMusic.stop();
+        backgroundMusic = new GreenfootSound(songs[currentSong]);
+        backgroundMusic.setVolume(currentVolume);
+        backgroundMusic.playLoop();
+    }
+    
+    public void muteMusic(){
+        backgroundMusic.stop();
+    }
+    
+    public void decreaseVolume(){
+        currentVolume -= 5;
+        if(currentVolume < 0) currentVolume = 0;
+        backgroundMusic.setVolume(currentVolume);
+    }
+    
+    public void increaseVolume(){
+        currentVolume += 5;
+        if(currentVolume > 100) currentVolume = 100;
+        backgroundMusic.setVolume(currentVolume);
+    }
+    
+    public void startMusic(){
+        backgroundMusic.playLoop();
     }
 }
