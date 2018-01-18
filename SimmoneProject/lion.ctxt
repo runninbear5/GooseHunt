@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Lion
-comment0.text=\n\ Write\ a\ description\ of\ class\ cat\ here.\n\ \n\ @author\ (Simmone\ Stearn)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ This\ class\ is\ for\ the\ lion\ in\ Goose\ Hunt\ which\ walks\ across\ the\ screen\ and\ back\ before\ changing\ to\ face\ the\ user\ and\ run\ toward\ them.\r\n\ After\ one\ second,\ the\ screen\ fills\ with\ an\ image\ of\ a\ lion\ mouth\ and\ the\ game\ is\ over.\ The\ lion\ has\ the\ ability\ to\ spawn\ on\ either\ side\r\n\ of\ the\ screen\ and,\ walking\ in\ the\ correct\ direction\ accordingly\r\n\ @author\ (Simmone\ Stearn)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=right
 comment1.target=Lion(boolean)
 comment2.params=width\ height

@@ -9,4 +9,6 @@ comment2.target=void\ act()
 comment3.params=image\ XClick\ yClick
 comment3.target=void\ ChangeMouseImage(greenfoot.GreenfootImage,\ int,\ int)
 comment3.text=\ Or\ you\ use\ this\ Method\:\ \r\n\ The\ image\ is\ the\ image,\ that\ you\ want\ the\ mouse\ to\ have.(The\ mouse\ has\ a\ maximum\ width\ and\ height\ for\ her\ image,\ if\ the\ image\ is\ too\ large\ it\ will\ be\ scaled\ on\ the\ right\ size)\r\nXClick\ and\ YClick\ is\ the\ Location\ on\ the\ Picture\ where\ the\ mouse\ will\ Click
-numComments=4
+comment4.params=
+comment4.target=void\ changeSong()
+numComments=5

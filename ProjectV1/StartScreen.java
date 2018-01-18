@@ -16,7 +16,10 @@ public class StartScreen extends World
     JPanel Pan = WorldHandler.getInstance().getWorldCanvas();  
     /** The new Cursor */
     Cursor NewCursor;
-    
+    int currentSong = 0;
+    String[] songs = {"24k_Puffs_-_Reeces_Puffs_24k_Magic_remix[Mp3Converter.net].mp3", "Gustav_Holst_-_The_Planets_-_Mars_the_Bringer_of_War[Mp3Converter.net].mp3", "Nyan_Cat_original[Mp3Converter.net].mp3",
+        "Pirates_Of_The_Caribbean_Theme_Song[Mp3Converter.net].mp3", "Rick_Astley_-_Never_Gonna_Give_You_Up[Mp3Converter.net].mp3", "Star_Wars-_The_Imperial_March_Darth_Vaders_Theme[Mp3Converter.net].mp3"};
+    GreenfootSound backgroundMusic = new GreenfootSound(songs[currentSong]);
     /**
      * Constructor for objects of class StartScreen.
      * 
@@ -35,6 +38,7 @@ public class StartScreen extends World
     {
         /** Sets the Cursor Image to the New Cursor */
         Pan.setCursor(NewCursor);//sets the cursor
+        backgroundMusic.playLoop();
     }
     
     
@@ -50,5 +54,9 @@ public class StartScreen extends World
         Cursor = Tk.createCustomCursor(image.getAwtImage(),CursorPoint,"Crosshair");
         NewCursor = Cursor;
         Panel.setCursor(Cursor);
+    }
+    
+    public void changeSong(){
+        
     }
 }
