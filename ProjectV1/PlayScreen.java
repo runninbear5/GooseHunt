@@ -57,9 +57,9 @@ public class PlayScreen  extends World
             else if(x == 2) x = 1280;//sets x to actuall placement location
             if(badAnimalsInRound.size() != 0){//checks if there are still bad animals to be placed
                 if(badAnimalsInRound.get(0).equals("Cat")){//checks what animal is being placed and adds it and sets last time animal placed
-                    Cat cat = new Cat();
+                    Cat cat = new Cat(x>=640);
                     allAnimals.add(cat);
-                    addObject(cat, x, 500);
+                    addObject(cat, x, 600);
                     //System.out.println("Cat");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }else if(badAnimalsInRound.get(0).equals("Goose")){
@@ -69,7 +69,7 @@ public class PlayScreen  extends World
                     //System.out.println("Goose");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }else if(badAnimalsInRound.get(0).equals("Lion")){
-                    Lion lion = new Lion();
+                    Lion lion = new Lion(x>=640);
                     allAnimals.add(lion);
                     addObject(lion, x, 580);
                    // System.out.println("Lion");
@@ -96,9 +96,9 @@ public class PlayScreen  extends World
                     //System.out.println("Unicorn");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRound.get(0).equals("Duck")){
-                   // Duck duck = new Duck();
-                    allAnimals.add(new Cat());
-                    addObject(new Cat(), x, 500);
+                    Duck duck = new Duck(x>=640);
+                    allAnimals.add(duck);
+                    addObject(duck, x, 500);
                     //System.out.println("Duck");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }
@@ -221,8 +221,8 @@ public class PlayScreen  extends World
     
     public void attacked(String animal){//is called when an animal attacks the player
         if(animal.equals("Cat")){//decides what to do depending on the animal
-            balloons.remove(balloons.size());
-            balloons.remove(balloons.size());
+            removeBalloon();
+            removeBalloon();
         }else if(animal.equals("Lion")){
             Greenfoot.setWorld(new GameOver());
         }

@@ -1,9 +1,8 @@
 #BlueJ class context
 comment0.target=Goose
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Goose\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Unicorn\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
-<<<<<<< HEAD
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Deer\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=right
 comment2.target=Goose(boolean)
@@ -20,7 +19,3 @@ comment7.target=void\ setImageLeft()
 comment8.params=
 comment8.target=void\ setImageRight()
 numComments=9
-=======
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Goose\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
->>>>>>> 500cf1c0440720c0defe1c6fab4829bbc0097206

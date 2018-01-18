@@ -54,7 +54,7 @@ public class Duck extends Actor
         }
     }   
 
-    public Goose (boolean right) { //takes which side entering to determing mvmt patterns
+    public Duck (boolean right) { //takes which side entering to determing mvmt patterns
         this.right = right;
         //System.out.println(stop); debug 
     }
