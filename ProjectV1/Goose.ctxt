@@ -8,14 +8,24 @@ comment2.params=right
 comment2.target=Goose(boolean)
 comment3.params=
 comment3.target=void\ walk()
+<<<<<<< HEAD
 comment4.params=width\ height
 comment4.target=void\ resize(int,\ int)
+=======
+comment4.params=
+comment4.target=void\ death()
+>>>>>>> edf4c33164ba6654ce1e3c3d6befeccec3f7d09a
 comment5.params=
 comment5.target=void\ death()
 comment6.params=
 comment6.target=void\ makeDissapear()
 comment7.params=
+<<<<<<< HEAD
 comment7.target=void\ setImageLeft()
 comment8.params=
 comment8.target=void\ setImageRight()
 numComments=9
+=======
+comment7.target=void\ setImageRight()
+numComments=8
+>>>>>>> edf4c33164ba6654ce1e3c3d6befeccec3f7d09a
