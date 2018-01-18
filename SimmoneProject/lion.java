@@ -216,8 +216,8 @@ public class Lion extends Actor
       setLocation (640, 385); //located to the middle of the screen
         if(timeJumpCalled + 300 <= System.currentTimeMillis())
       { //after 1/3 scecond, the staring ceases and attcked is called from playscreen
-        //hunt = false;
-        //((PlayScreen)getWorld()).attacked("Lion");
+        hunt = false;
+        ((PlayScreen)getWorld()).attacked("Lion");
       }
    }
     
