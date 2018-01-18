@@ -60,19 +60,19 @@ public class PlayScreen  extends World
                     Cat cat = new Cat();
                     allAnimals.add(cat);
                     addObject(cat, x, 500);
-                    System.out.println("Cat");
+                    //System.out.println("Cat");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }else if(badAnimalsInRound.get(0).equals("Goose")){
                     Goose goose = new Goose(x>=640);
                     allAnimals.add(goose);
                     addObject(goose, x, 500);
-                    System.out.println("Goose");
+                    //System.out.println("Goose");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }else if(badAnimalsInRound.get(0).equals("Lion")){
                     Lion lion = new Lion();
                     allAnimals.add(lion);
                     addObject(lion, x, 580);
-                    System.out.println("Lion");
+                   // System.out.println("Lion");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }
                 badAnimalsInRound.remove(0);//remove the animal that was placed
@@ -87,19 +87,19 @@ public class PlayScreen  extends World
                     Antler antler = new Antler(x>=640);
                     allAnimals.add(antler);
                     addObject(antler, x, 580);
-                    System.out.println("Antler");
+                   // System.out.println("Antler");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRound.get(0).equals("Unicorn")){
                     Unicorn unicorn = new Unicorn(x>=640);
                     allAnimals.add(unicorn);
                     addObject(unicorn, x, 580);
-                    System.out.println("Unicorn");
+                    //System.out.println("Unicorn");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRound.get(0).equals("Duck")){
                    // Duck duck = new Duck();
                     allAnimals.add(new Cat());
                     addObject(new Cat(), x, 500);
-                    System.out.println("Duck");
+                    //System.out.println("Duck");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }
                 goodAnimalsInRound.remove(0);//remove the animal that was placed
@@ -210,7 +210,7 @@ public class PlayScreen  extends World
     }
     
     public void removeBalloon(){//removes the last balloon in the array
-        if(balloons.size() > 1){
+        if(balloons.size() >= 1){
             for(int i=0; i<balloons.size(); i++){
                 removeObject((Balloon)balloons.get(i));
             }       
