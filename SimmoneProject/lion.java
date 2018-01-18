@@ -60,32 +60,38 @@ public class Lion extends Actor
       int starePosition = 640; //the lion will stare when x is 640 pixels
       position++;
       if (position < 190) //lion walks forward until position reaches 190 (a certain amount of time)
-       { x += 5;
+       { 
+         x += 5;
         }
         
       if (position >= 190) //when postion is greater than 190, the lion walks in the opposite direction
-      { x -= 5;
+      { 
+        x -= 5;
         }
       
       setLocation(x, y); 
       counter++;
        if (counter == 10) //this slows the speed at which the images of the lion walking change
-      {  setImage(); //calls the setImage method which dictates the images that will depict the lion walking
+      {  
+        setImage(); //calls the setImage method which dictates the images that will depict the lion walking
          counter = 0;  //on the left side of the screen
       }
        
       if (x >= 800 && x <= 850) //this boolean and if statement make it so the lion walks across the screen and back before
-      { comeBack = true;        //it stops and faces forward at x = 640
+      {
+        comeBack = true;        //it stops and faces forward at x = 640
         }
       
       if ((comeBack == true) && (x >= starePosition - 30 && x <= starePosition + 30))
-      { walk = false; //if the lion has walked accross the screen and back to the middle, the walk method ceases to be called
+      { 
+        walk = false; //if the lion has walked accross the screen and back to the middle, the walk method ceases to be called
         hunt = true; //and the hunt boolean becomes true, allowing method startStaring to be executed
         timeJumpCalled = System.currentTimeMillis(); //amount of time since startStaring is called
         startStaring(true); //calls method startStaring
         }
      }
-     else{
+     else
+     {
       int x = getX(); //gets the current horizontal orientation of the object
       int y = getY(); //gets the current verticle orientation of the object
       int width2 = 210; //scale for walking images
@@ -93,27 +99,32 @@ public class Lion extends Actor
       int starePosition = 640; //the lion will stare when x is 640 pixels
       position++;
       if (position < 190) 
-       { x -= 5;
+       {
+         x -= 5;
         }
         
       if (position >= 190)
-      { x += 5;
+      {
+        x += 5;
         }
       
       setLocation(x, y); 
       counter++;
        if (counter == 10)  //this slows the speed at which the images of the lion walking change
-      {  setImage(); //calls the setImage method which dictates the images that will depict the lion walking
+      { 
+        setImage(); //calls the setImage method which dictates the images that will depict the lion walking
          getImage().mirrorHorizontally(); //flips the images so that they face the opposite direction
          counter = 0;
       }
        
       if (x >= 0 && x <= 500)//this boolean and if statement make it so that the lion walks across the screen and back before
-      { comeBack = true;     //it stops and faces forward at x = 640
+      { 
+        comeBack = true;     //it stops and faces forward at x = 640
         }
       
       if ((comeBack == true) && (x >= starePosition - 30 && x <= starePosition + 30))
-      { walk = false; //if the lion has walked across the screen and back to the middle, the walk method ceases to be called
+      { 
+        walk = false; //if the lion has walked across the screen and back to the middle, the walk method ceases to be called
         hunt = true; //and the hunt boolean becomes true, allowing the method startStaring to be executed
         timeJumpCalled = System.currentTimeMillis(); //amount of time since startStaring is called
         startStaring(true); //calls method startStaring
@@ -129,7 +140,8 @@ public class Lion extends Actor
        { //when the variable position is less than 190 (walking to the right if spawned on the left or to the left
         currentImage++;      // if spawned on the right) the object switches between the images LionRight(1,2,3).fw.png
         if (currentImage == 4) 
-       {currentImage = 1; //starts at LionRight1.fw.png
+       {
+         currentImage = 1; //starts at LionRight1.fw.png
         }       
        setImage("LionRight" + currentImage + ".fw.png"); //file name
        size(210, 180); //calls size method and scales it
@@ -139,7 +151,8 @@ public class Lion extends Actor
       { //when the variable position is less than 190 (walking to the right if spawned on the left or to the left
         currentImage++;       // if spawned on the right) the object switches between the images LionLeft(1,2,3).fw.png
         if (currentImage == 4) 
-       {currentImage = 1; //starts at LionLeft1.fw.png
+       {
+         currentImage = 1; //starts at LionLeft1.fw.png
         }       
        setImage("LionLeft" + currentImage + ".fw.png"); //file name
        size(210, 180); //calls size method and scales it

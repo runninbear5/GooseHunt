@@ -37,27 +37,33 @@ public class Cat extends Actor
     }
     
     public void act() 
-   { if(walk){ //if boolean walk is true, the walk class is continously called
+   { if(walk)
+       { //if boolean walk is true, the walk class is continously called
          walk();   
         }
         
-     if(stare){ //if boolean stare is true, the startStaring class is called
+     if(stare)
+       { //if boolean stare is true, the startStaring class is called
             startStaring(false);
         }
     }
     
-    public void walk() { //this method is called continuosly while the walk boolean is true
-      if (!right) { //if the cat spawns from the left side of the screen, this if statement is executed
+    public void walk() 
+    { //this method is called continuosly while the walk boolean is true
+      if (!right) 
+      { //if the cat spawns from the left side of the screen, this if statement is executed
       int x = getX(); //gets the current horizontal orientation of the object
       int y = getY(); //gets the current verticle orientation of the object
       int starePosition = 640; //the cat will stare when x is 640 pixels
       position++; //position, which starts at zero, is continously increasing
        
       if (position < 190) //cat walks forward until position reaches 190 (a certain amount of time)
-       { x += 5;
+       {
+         x += 5;
         }
       if (position >= 190) //when postion is greater than 190, cat walks in the opposite direction
-       { x -= 5;
+       { 
+          x -= 5;
         }
         
       setLocation(x, y); 
@@ -69,18 +75,21 @@ public class Cat extends Actor
       }
       
       if (x >= 800 && x <= 850) //this boolean and if statement make it so the cat walks across the screen and back before
-      { comeBack = true;        //it stops and faces forward at x = 640
+      { 
+        comeBack = true;        //it stops and faces forward at x = 640
         }
         
       if ((comeBack == true) && (x >= starePosition - 30 && x <= starePosition + 30))
-      { walk = false; //if the cat has walked accross the acreen and back to the middle, the walk method ceases to be called
+      { 
+        walk = false; //if the cat has walked accross the acreen and back to the middle, the walk method ceases to be called
         stare = true; //and the stare boolean becomes true, allowing method startStaring to be executed
         timeJumpCalled = System.currentTimeMillis(); //amount of time since startStaring is called
         startStaring(true); //calls method startStaring
         }
       
      }
-     else { //if the cat spawns from the right side of the screen, this else statement is executed
+     else 
+     { //if the cat spawns from the right side of the screen, this else statement is executed
       int starePosition = 640; //the cat will stare when x is 640 pixels
       int x = getX(); //gets the current horizontal orientation of the object
       int y = getY(); //gets the current verticle orientation of the object
@@ -105,11 +114,13 @@ public class Cat extends Actor
       }
       
       if (x >= 0 && x <= 500) //this boolean and if statement make it so that the cat walks accross the screen and back before 
-      { comeBack = true;      //beginning to stare when x is 640 pixles
+      { 
+        comeBack = true;      //beginning to stare when x is 640 pixles
         }
       
       if ((comeBack == true) && (x >= starePosition - 30 && x <= starePosition + 30))
-      { walk = false; //if the cat has walked across the screen and back to the middle, the walk method ceases to be called
+      { 
+        walk = false; //if the cat has walked across the screen and back to the middle, the walk method ceases to be called
         stare = true; //and the stare boolean becomes true, allowing method startStaring to be executed
         timeJumpCalled = System.currentTimeMillis(); //amount of time since startStaring is called
         startStaring(true); //calls startStaring
@@ -163,8 +174,9 @@ public class Cat extends Actor
         setLocation(x, y + 10); //moves the cat down 10 pixels when it begins to stare
           }   
           
-      if(timeJumpCalled + 1000 <= System.currentTimeMillis()){ //after one second (1000 milliseconds), stare boolean becomes false and startStaring 
-          stare = false;                                     //ceases to be called and the attcked method from PlayScreen is called indicating that the
+      if(timeJumpCalled + 1000 <= System.currentTimeMillis())
+      {                                                        //after one second (1000 milliseconds), stare boolean becomes false and startStaring 
+          stare = false;                                      //ceases to be called and the attcked method from PlayScreen is called indicating that the
           ((PlayScreen)getWorld()).attacked("Cat");          //animal has attacked after the one second of "staring"
       }
     }
