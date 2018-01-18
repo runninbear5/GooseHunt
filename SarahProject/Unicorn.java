@@ -8,6 +8,7 @@ import greenfoot.*;// (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Unicorn extends Actor
 {
+    //instance variables 
     int currentImage = 1; 
     int counter = 0; 
     long timeStop = 0; 
@@ -21,81 +22,80 @@ public class Unicorn extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        //declare vars 
         x = getX(); 
         y = getY();
-        if (!right) {
-            if ((x - 10 <= stop)&&(x + 10 >= stop)) {
+        if (!right) { //comes in from left 
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) { //if is w/in the randomly selected stop window
                 setImage("Unicorn11.fw.png"); 
-                if(timeStop + 1500 <= System.currentTimeMillis()){
-                    x = stop + 11;  
-                    walk(); 
+                if(timeStop + 500 <= System.currentTimeMillis()){//stops for # or milliseconds
+                    x = stop + 11;  //gets out of the stop window 
+                    walk(); //keeps moving 
                 }
             } else {
-                walk(); 
+                walk(); //keeps moving if not in that window 
             } 
         } else {
-            if ((x - 10 <= stop)&&(x + 10 >= stop)) {
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) {//if creature is w/in zone 
                 setImage("Unicorn11.fw.png"); 
-                getImage().mirrorHorizontally(); 
-                if(timeStop + 1500 <= System.currentTimeMillis()){
-                    x = stop - 11;  
-                    walk(); 
+                getImage().mirrorHorizontally(); //reflect b/c opposite side entrance 
+                if(timeStop + 500 <= System.currentTimeMillis()){ //stop for set time 
+                    x = stop - 11;  //get out of stop zone 
+                    walk(); //keep moving 
                 }
             } else {
-                walk(); 
+                walk(); //keep moving 
             } 
         }
        
-        if(Greenfoot.mouseClicked(this)){
+        if(Greenfoot.mouseClicked(this)){//if shot 
             ((PlayScreen)getWorld()).animalHit("Unicorn");//chnage to help screen when created
             ((PlayScreen)getWorld()).removeObject(this);
         }
     }   
 
-    public Unicorn (boolean right) {
+    public Unicorn (boolean right) {//which side does it spawn on? 
         this.right = right;
         stop = (int)(Math.random() * 1280); 
-        
-        //System.out.println(stop); 
+        //System.out.println(stop); debug 
     }
 
-    public void walk () { //move deer across the screen 
-        if(!right){
+    public void walk () { //move across the screen 
+        if(!right){//start left 
             x+=5; //add level multiplier 
-            counter++;
+            counter++;//slow movement (so visible) 
             if (counter == 5) { 
-                setImageLeft(); 
+                setImageLeft(); //specific to left side 
                 counter = 0; 
             }
-            if (x >= 1265) {
+            if (x >= 1265) {//if at boundary 
                 makeDissapear(); 
             } 
-            if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) { //w/in this zone, stop and keep going 
                 timeStop = System.currentTimeMillis(); 
-                setImage("Unicorn11.fw.png"); 
+                setImage("Unicorn11.fw.png"); //stop image 
             } 
-            setLocation(x, y); 
-        } else {
-            x-=5; 
-            counter++; 
+            setLocation(x, y); //set to above increment (x+=5) 
+        } else {//start right 
+            x-=5; //move left
+            counter++; //slow movement for visibility 
             if (counter == 5) { 
-                setImageRight(); 
-                counter = 0; 
+                setImageRight(); //call for right entrance 
+                counter = 0; //restart counter 
             }
-            if (x <= 10) {
+            if (x <= 10) {//if reached boundary 
                 makeDissapear(); 
             } 
-            if ((x - 10 <= stop)&&(x + 10 >= stop)) { 
+            if ((x - 10 <= stop)&&(x + 10 >= stop)) { //if w/in window, stop and continue 
                 timeStop = System.currentTimeMillis(); 
-                setImageRightArg("Unicorn11.fw.png"); 
+                setImageRightArg("Unicorn11.fw.png"); //stopping image 
                 //getImage().mirrorHorizontally(); 
             } 
-            setLocation(x, y); 
+            setLocation(x, y); //set location to the above increment 
         }
     }
 
-    public void makeDissapear () {
+    public void makeDissapear () {//if shot or reached boundary 
         ((PlayScreen)getWorld()).removeObject(this); 
     }
 
@@ -107,12 +107,12 @@ public class Unicorn extends Actor
         setImage("Unicorn" + currentImage + ".fw.png"); //call antler file
     } 
 
-    public void setImageRight () { 
+    public void setImageRight () { //if spawned on right 
         currentImage++; //increment image
         if (currentImage == 12) { //loop through graphics 
             currentImage = 1; 
         } 
-        setImage("Unicorn" + currentImage + ".fw.png"); //call antler file
+        setImage("Unicorn" + currentImage + ".fw.png"); //call file
         getImage().mirrorHorizontally(); 
     }
     
