@@ -6,7 +6,7 @@ import greenfoot.*;// (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Goose extends Actor
+public class Duck extends Actor
 {
     //instance variables 
     int currentImage = 1; 
@@ -29,8 +29,8 @@ public class Goose extends Actor
         y = getY(); 
         if (right) {//spawned on right side 
             if(Greenfoot.mouseClicked(this)){ //if shot 
-                ((PlayScreen)getWorld()).animalHit("Goose");//add score  
-                setImage("goose10.fw.png"); 
+                ((PlayScreen)getWorld()).animalHit("duck");//add score  
+                setImage("duck10.fw.png"); 
                 resize(100,100); //scale up 
                 getImage().mirrorHorizontally(); //mirror depending on side 
                 dead = true; //allow death() to run 
@@ -38,9 +38,9 @@ public class Goose extends Actor
             }
         } else { //spawned on left 
             if(Greenfoot.mouseClicked(this)){
-                ((PlayScreen)getWorld()).animalHit("Goose");//add score
+                ((PlayScreen)getWorld()).animalHit("duck");//add score
                 //System.out.println("shot"); debug 
-                setImage("goose10.fw.png"); //set death image briefly
+                setImage("duck10.fw.png"); //set death image briefly
                 resize(100,100); //scale up 
                 dead = true; //to run death()
                 death(); 
@@ -97,7 +97,7 @@ public class Goose extends Actor
     
     public void death() { //run if object clicked 
         if (dead) {
-            setImage("goose11.fw.png"); //upside-down image 
+            setImage("duck11.fw.png"); //upside-down image 
             resize(100,100);
             if (y >= 755) { //if reaches the bottom 
                 makeDissapear();  
@@ -123,7 +123,7 @@ public class Goose extends Actor
         if (currentImage == 7) { //loop through graphics 
             currentImage = 1; 
         } 
-        setImage("goose" + currentImage + ".fw.png"); //call antler file
+        setImage("duck" + currentImage + ".fw.png"); //call antler file
     } 
 
     public void setImageRight () { 
@@ -131,7 +131,7 @@ public class Goose extends Actor
         if (currentImage == 7) { //loop through graphics 
             currentImage = 1; 
         } 
-        setImage("goose" + currentImage + ".fw.png"); //call antler file
+        setImage("duck" + currentImage + ".fw.png"); //call antler file
         getImage().mirrorHorizontally(); 
     }
 }
