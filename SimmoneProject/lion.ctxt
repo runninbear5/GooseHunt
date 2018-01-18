@@ -1,10 +1,8 @@
 #BlueJ class context
 comment0.target=Lion
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ cat\ here.\r\n\ \r\n\ @author\ (Simmone\ Stearn)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ cat\ here.\n\ \n\ @author\ (Simmone\ Stearn)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=right
 comment1.target=Lion(boolean)
-comment10.params=gaming
-comment10.target=boolean\ gameOver(boolean)
 comment2.params=width\ height
 comment2.target=void\ size(int,\ int)
 comment3.params=
@@ -21,4 +19,4 @@ comment8.params=
 comment8.target=void\ setGameOverImage()
 comment9.params=score
 comment9.target=int\ getScore(int)
-numComments=11
+numComments=10

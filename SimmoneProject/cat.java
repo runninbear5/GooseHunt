@@ -45,73 +45,70 @@ public class Cat extends Actor
         }
     }
     
-    public void walk() {
-      if (!right) {
-      int x = getX(); 
-      int y = getY(); 
-      int starePosition = 640;
-      position++;
+    public void walk() { //this method is called continuosly while the walk boolean is true
+      if (!right) { //if the cat spawns from the left side of the screen, this if statement is executed
+      int x = getX(); //gets the current horizontal orientation of the object
+      int y = getY(); //gets the current verticle orientation of the object
+      int starePosition = 640; //the cat will stare when x is 640 pixels
+      position++; //position, which starts at zero, is continously increasing
        
-      if (position < 190) 
+      if (position < 190) //cat walks forward until position reaches 190 (a certain amount of time)
        { x += 5;
         }
-      if (position >= 190) 
+      if (position >= 190) //when postion is greater than 190, cat walks in the opposite direction
        { x -= 5;
         }
         
       setLocation(x, y); 
-      counter++;
-       if (counter == 10) 
+      counter++; 
+       if (counter == 10) //this slows the speed at which the images of the cat walking change
       {  
-          setImageLeft();
-          counter = 0;
+          setImage(); //calls the setImage method which dictates the images that will depict the cat walking
+          counter = 0;    //on the left side of the screen
       }
       
-      if (x >= 800 && x <= 850) 
-      { comeBack = true;
+      if (x >= 800 && x <= 850) //this boolean and if statement make it so the cat walks across the screen and back before
+      { comeBack = true;        //it stops and faces forward at x = 640
         }
         
       if ((comeBack == true) && (x >= starePosition - 30 && x <= starePosition + 30))
-      { walk = false;
-        stare = true;
-        timeJumpCalled = System.currentTimeMillis();
-        startStaring(true);
+      { walk = false; //if the cat has walked accross the acreen and back to the middle, the walk method ceases to be called
+        stare = true; //and the stare boolean becomes true, allowing method startStaring to be executed
+        timeJumpCalled = System.currentTimeMillis(); //amount of time since startStaring is called
+        startStaring(true); //calls method startStaring
         }
       
-       if (x <= 50 && x >= 0) {
-       makeDissapear();
-      }
      }
-     else {
-      int starePosition = 640;
-      int x = getX(); 
-      int y = getY(); 
-      position++;
+     else { //if the cat spawns from the right side of the screen, this else statement is executed
+      int starePosition = 640; //the cat will stare when x is 640 pixels
+      int x = getX(); //gets the current horizontal orientation of the object
+      int y = getY(); //gets the current verticle orientation of the object
+      position++; //position, which starts at zero, is continously increasing
        
       if (position < 190) 
-       { x -= 5;
+       { x -= 5; //the signs are switched here since the cat will be going the opposite direction when it spawns on the right
         }
       if (position >= 190) 
-       { x += 5;
+       { x += 5; //walks to the right when position is greater than or equal to 190
         }
         
       setLocation(x, y); 
       counter++;
-       if (counter == 10) 
-          {setImageLeft();
-           getImage().mirrorHorizontally();
+       if (counter == 10) //slows the speed at which the images of the cat walking change
+          {setImage(); //calls the setImage method which dictates the images that will depict the cat walking
+           getImage().mirrorHorizontally(); //flips the images so that they face in the opposite direction
            counter = 0;
       }
       
-      if (x >= 0 && x <= 500) 
-      { comeBack = true;
+      if (x >= 0 && x <= 500) //this boolean and if statement make it so that the cat walks accross the screen and back before 
+      { comeBack = true;      //beginning to stare when x is 640 pixles
         }
       
       if ((comeBack == true) && (x >= starePosition - 30 && x <= starePosition + 30))
-      { walk = false;
-        stare = true;
-        timeJumpCalled = System.currentTimeMillis();
-        startStaring(true);
+      { walk = false; //if the cat has walked across the screen and back to the middle, the walk method ceases to be called
+        stare = true; //and the stare boolean becomes true, allowing method startStaring to be executed
+        timeJumpCalled = System.currentTimeMillis(); //amount of time since startStaring is called
+        startStaring(true); //calls startStaring
         }
         
        if (x <= 1200 && x >= 1250) {
@@ -120,96 +117,70 @@ public class Cat extends Actor
      }
    }
    
-   public void setImageLeft() 
+   public void setImage() 
     { 
-      if (position < 190) 
-       {
+      if (position < 190) //when the variable position is less than 190 (walking to the right if spawned on the left or to the left
+       {                  //if spawned on the right) the object switches between the images cat8.fw.png and cat9.fw.png
         currentImage++;
         if (currentImage >= 10) 
        {
-          currentImage = 8;
+          currentImage = 8; //begins at cat8.fw.png
         }       
-       setImage("cat" + currentImage + ".fw.png");
-       size();
+       setImage("cat" + currentImage + ".fw.png"); //file name
+       size(); //calls method size to resize each image
       }
     
-        if (position >= 190) 
-      {
+        if (position >= 190) //when the variable position is geater than or equals to 190 (walking to the left if spawned on the left
+      {                      //or to the right when spawned on the right) the object switches between the images cat(10,11,12).fw.png
         currentImage++;
        if (currentImage == 13) 
         {
-          currentImage = 10;
+          currentImage = 10; //begins at cat10.fw.png
         }   
         setImage("cat" + currentImage + ".fw.png"); 
-        size();
+        size(); //calls method size to resize each image
       }
-     }
+    }
    
-   public void setImageRight() {
-      if (position < 190) 
-       {
-        currentImage++;
-        if (currentImage >= 13) 
-       {
-          currentImage = 10;
-        }       
-       setImage("cat" + currentImage + ".fw.png");
-       getImage().mirrorHorizontally();
-       size();
-      }
-    
-        if (position >= 190) 
-      {
-        currentImage++;
-       if (currentImage == 10) 
-        {
-          currentImage = 8;
-        }   
-       setImage("cat" + currentImage + ".fw.png"); 
-       getImage().mirrorHorizontally();
-       size();
-      }
-     }
-   
-   public void startStaring(boolean first)
+   public void startStaring(boolean first) //when first is true (in walk mehtod) the cat stops walking and this method is executed
    {
-      int x = getX();
-      int y = getY();
+      int x = getX(); //gets current horizontal orientation of the object
+      int y = getY(); //gets current verticle orientation of the object
       counter++;
       
-      if (counter == 10) 
-      { setStareImage();
+      if (counter == 10) //slows the speed at which the images of the cat change
+      { setStareImage(); //calls method setStareImage below which changes the images of the cat
         counter = 0;
           }
       if (first) 
-      { setLocation(x, y);
+      { setLocation(x, y + 10); //moves the cat down 10 pixels when it begins to stare
           }   
           
-      if(timeJumpCalled + 1000 <= System.currentTimeMillis()){
-          //stare = false;
-          //((PlayScreen)getWorld()).attacked("Cat");
+      if(timeJumpCalled + 1000 <= System.currentTimeMillis()){ //after one second (1000 milliseconds), stare boolean becomes false and startStaring 
+          //stare = false;                                     //ceases to be called and the attcked method from PlayScreen is called indicating that the
+          //((PlayScreen)getWorld()).attacked("Cat");          //animal has attacked after the one second of "staring"
       }
     }
    
-   public void setStareImage()
-   {
+   public void setStareImage() //sets the images for the cat when it is staring and no longer walking
+   {                           //switches between the images cat(13,14,15).fw.png
      currentImage++;
      if(currentImage >= 16) 
      {
-       currentImage = 13;
+       currentImage = 13; //begins at cat13.fw.png
         }
      setImage("cat" + currentImage + ".fw.png");
-     size();
+     size(); //calls method size to resize image
     }
     
-   public void makeDissapear() 
+   public void makeDissapear() //this method would potentially make the cat dissapear, but is included in the called attacked mthod
     {
       int x = getX();
       int y = getY();  
       ((PlayScreen)getWorld()).removeObject(this);
     }
   
-   public int getScore(int score) 
+   public int getScore(int score) //changes score
     { score += 100;
       return score;
     }
