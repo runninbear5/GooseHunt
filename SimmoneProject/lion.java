@@ -203,14 +203,14 @@ public class Lion extends Actor
           }
           
       if(timeJumpCalled + 1000 <= System.currentTimeMillis())
-      {                                                         //after 1/3 second (300 milliseconds), stare boolean becomes false and startStaring 
-          hunt = false;                                        //ceases to be called and the attcked method from PlayScreen is called indicating that the
-          setGameOverImage();                                   //animal has attacked after the 1/3 second of "staring"
+      {                                               //after 1/3 second (300 milliseconds), stare boolean becomes false and startStaring 
+          hunt = false;                              //ceases to be called and the attcked method from PlayScreen is called indicating that the
+          setGameOverImage();                       //animal has attacked after the 1/3 second of "staring"
       }  //sets screen to new image
     }
    
    public void setStareImage() //sets the images for the cat when it is staring and no longer walking
-     {                         //switches between the images LionFront(1,2,3).fw.png
+     {                        //switches between the images LionFront(1,2,3).fw.png
       int width1 = 180; //new scale for front images of the lion
       int height1 = 250;
       currentImage++;
@@ -230,7 +230,7 @@ public class Lion extends Actor
         if(timeJumpCalled + 300 <= System.currentTimeMillis())
       { //after 1/3 scecond, the staring ceases and attcked is called from playscreen
         hunt = false;
-        ((PlayScreen)getWorld()).attacked("Lion");
+        ((PlayScreen)getWorld()).attacked("Lion"); //called from playScreen
       }
    }
     
