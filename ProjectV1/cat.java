@@ -212,3 +212,4 @@ public class Cat extends Actor
         return score;
     }
 }
+

@@ -50,7 +50,7 @@ public class Unicorn extends Actor
        
         if(Greenfoot.mouseClicked(this)){//if shot 
             ((PlayScreen)getWorld()).animalHit("Unicorn");//chnage to help screen when created
-            ((PlayScreen)getWorld()).removeObject(this);
+            makeDisappear(); 
         }
     }   
 
@@ -69,7 +69,7 @@ public class Unicorn extends Actor
                 counter = 0; 
             }
             if (x >= 1265) {//if at boundary 
-                makeDissapear(); 
+                makeDisappear(); 
             } 
             if ((x - 10 <= stop)&&(x + 10 >= stop)) { //w/in this zone, stop and keep going 
                 timeStop = System.currentTimeMillis(); 
@@ -84,7 +84,7 @@ public class Unicorn extends Actor
                 counter = 0; //restart counter 
             }
             if (x <= 10) {//if reached boundary 
-                makeDissapear(); 
+                makeDisappear(); 
             } 
             if ((x - 10 <= stop)&&(x + 10 >= stop)) { //if w/in window, stop and continue 
                 timeStop = System.currentTimeMillis(); 
@@ -95,7 +95,7 @@ public class Unicorn extends Actor
         }
     }
 
-    public void makeDissapear () {//if shot or reached boundary 
+    public void makeDisappear () {//if shot or reached boundary 
         ((PlayScreen)getWorld()).removeObject(this); 
     }
 
