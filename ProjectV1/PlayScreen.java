@@ -26,15 +26,18 @@ public class PlayScreen  extends World
     boolean lastAnimalShot = false;// to know if all the animals are shot
     long lastTimeBadAnimalPlaced = 0;//time of last bad animal placed
     long lastTimeGoodAnimalPlaced = 0;//time of last good animal placed
+    boolean firstRound = true;
+    Dog dog = new Dog();
     public PlayScreen()
     {
         super(1280, 769, 1, false);//creates the world
-        newRound();//starts the new round
         GreenfootImage image = new GreenfootImage("crosshair.png");//creates the a crosshair image
         ChangeMouseImage(image, 15,15);//sets the mouse image to the cursor
         addObject(playerScore, 1150, 700);//adds the player score
         addObject(roundCount, 44, 712);//adds the player round
-        addObject(new Dog(), 10, 600);
+        addObject(dog, 10, 600);
+        newRound();//starts the new round
+        firstRound = false;
     }
 
     public void act()
@@ -62,7 +65,7 @@ public class PlayScreen  extends World
                 if(badAnimalsInRound.get(0).equals("Cat")){//checks what animal is being placed and adds it and sets last time animal placed
                     Cat cat = new Cat(x>=640);
                     allAnimals.add(cat);
-                    addObject(cat, x, 600);
+                    addObject(cat, x, 620);
                     //System.out.println("Cat");
                     lastTimeBadAnimalPlaced = System.currentTimeMillis();
                 }else if(badAnimalsInRound.get(0).equals("Goose")){
@@ -89,7 +92,7 @@ public class PlayScreen  extends World
                 if(goodAnimalsInRound.get(0).equals("Antler")){//checks what animal is being placed and adds it and sets last time animal placed
                     Antler antler = new Antler(x>=640);
                     allAnimals.add(antler);
-                    addObject(antler, x, 580);
+                    addObject(antler, x, 550);
                    // System.out.println("Antler");
                     lastTimeGoodAnimalPlaced = System.currentTimeMillis();
                 }else if(goodAnimalsInRound.get(0).equals("Unicorn")){
@@ -111,13 +114,17 @@ public class PlayScreen  extends World
     }
         
     public void newRound(){
+        if(!firstRound){
+            addObject(dog, 640, 650);
+            dog.startLaugh();
+        }
         lionUsed = false;//resests the lion used boolean
         lastAnimalShot = false;//resets if the last animal was shot
         for(int i=0; i<animalHitCounters.size(); i++){//removes the animal hit counters from the screen
             AnimalCounter counter = (AnimalCounter)(AnimalCounter)animalHitCounters.get(i);
             counter.removeObject();
         }
-        badAnimalsInRound.clear();//clears all the bad animals
+        badAnimalsInRound.clear();//clears all the bad amals
         goodAnimalsInRound.clear();//clears all the good animals
         animalHitCounters.clear();//clears the animal hit counter
         for(int i=0; i<10; i++){//refills the good and bad animals randomly

@@ -32,6 +32,9 @@ public class Dog extends Actor
       {
          jumpOver(false); //if boolean hunt is true, the jumpOver class is called
         }
+      if(laugh){
+          startLaugh();
+      }
     }
     
     public void walk() 
@@ -98,7 +101,7 @@ public class Dog extends Actor
       if(first)
       {
           setLocation(x, y - 50); //moves the dog up 50 pixels as it jumps
-        }
+      }
       
       if(timeJumpedCalled + 300 <= System.currentTimeMillis())
       { //this if statement makes it so the dog dissapears after 300 milliseconds
@@ -112,9 +115,9 @@ public class Dog extends Actor
       int x = getX(); //gets the current horizontal orientation of the object
       int y = getY(); //gets the current veticle orientation of the object
       setLaughImage(); //calls setLaughImage which dictates the image of the dog laughing
-      setLocation(x, y - 50); //this if statement makes it so the dog dissapears after 300 milliseconds
-      
-      if(timeJumpedCalled + 300 <= System.currentTimeMillis())
+      //setLocation(x, y - 50); 
+      laugh = true;//used so act will call this function again
+      if(timeJumpedCalled + 300 <= System.currentTimeMillis())//this if statement makes it so the dog dissapears after 300 milliseconds
       {
           ((PlayScreen)getWorld()).removeObject(this); //after the amount of time, the object is removed
           laugh = false; //laugh becomes false and method startLaugh becomes false
