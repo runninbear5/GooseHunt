@@ -15,7 +15,7 @@ public class BackButton extends Actor
     public void act() 
     {
         if(Greenfoot.mouseClicked(this)){//if clicked on go back to start screen
-            ((StartScreen)getWorld()).muteMusic();
+            Greenfoot.setWorld(new StartScreen());
         }
     }    
 }
