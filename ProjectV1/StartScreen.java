@@ -18,7 +18,7 @@ public class StartScreen extends World
     Cursor NewCursor;
     int currentSong = 0;//keeps track of current song
     boolean musicPlaying = false;//used to check if music playing
-    int currentVolume = 25;//used to set the volume
+    int currentVolume = 15;//used to set the volume
     String[] songs = {"Pirates_Of_The_Caribbean_Theme_Song[Mp3Converter.net].mp3", "Rick_Astley_-_Never_Gonna_Give_You_Up[Mp3Converter.net].mp3", 
         "Star_Wars-_The_Imperial_March_Darth_Vaders_Theme[Mp3Converter.net].mp3", "24k_Puffs_-_Reeces_Puffs_24k_Magic_remix[Mp3Converter.net].mp3", "Nyan_Cat_original[Mp3Converter.net].mp3"};
     GreenfootSound backgroundMusic = new GreenfootSound(songs[currentSong]);
@@ -76,7 +76,7 @@ public class StartScreen extends World
     }
     
     public void muteMusic(){//used to mute the music
-        backgroundMusic.stop();
+        backgroundMusic.pause();
     }
     
     public void decreaseVolume(){//used to decrease volume

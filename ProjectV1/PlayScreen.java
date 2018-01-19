@@ -115,8 +115,8 @@ public class PlayScreen  extends World
         
     public void newRound(){
         if(!firstRound){
-            addObject(dog, 640, 650);
-            dog.startLaugh();
+            addObject(dog, 640, 540);
+            dog.setLaugh();
         }
         lionUsed = false;//resests the lion used boolean
         lastAnimalShot = false;//resets if the last animal was shot
