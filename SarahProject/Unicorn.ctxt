@@ -14,4 +14,6 @@ comment5.params=
 comment5.target=void\ setImageLeft()
 comment6.params=
 comment6.target=void\ setImageRight()
-numComments=7
+comment7.params=file
+comment7.target=void\ setImageRightArg(java.lang.String)
+numComments=8
