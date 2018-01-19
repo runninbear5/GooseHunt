@@ -42,13 +42,16 @@ public class PlayScreen  extends World
         /** Sets the Cursor Image to the New Cursor */
         Pan.setCursor(NewCursor);//used to set the cursor image
         int secondsTakenOff = 150*(roundCount.getRoundNumber()-1);//used to decrease time of animal spawning as rounds increase
-        if(animalHitCounters.size() == 10 ||(badAnimalsInRound.size() == 0 && animalHitCounters.size()>5)){//checks if a new round can start
+        if(animalHitCounters.size() == 10 ||(badAnimalsInRound.size() == 0 && animalHitCounters.size()>5) || balloons.size() == 0){//checks if a new round can start
             newRound();
         }
         if(Greenfoot.mouseClicked(this)){//checks if the world is clicked on to decrease water balloons
             removeBalloon();//removes a water balloon
         }
         if(balloons.size() == 0 && animalHitCounters.size() <= 5){//checks if a game should be over
+            Greenfoot.setWorld(new GameOver());
+        }
+        if(badAnimalsInRound.size() == 0 && animalHitCounters.size() <=5){//checks if the game should end
             Greenfoot.setWorld(new GameOver());
         }
         if(lastTimeBadAnimalPlaced+(timeBetweenBadAnimals-secondsTakenOff) <= System.currentTimeMillis()){//checks if a new animal should be created
@@ -104,9 +107,6 @@ public class PlayScreen  extends World
                 }
                 goodAnimalsInRound.remove(0);//remove the animal that was placed
             }
-        }
-        if(badAnimalsInRound.size() == 0 && animalHitCounters.size() <=5){//checks if the game should end
-            Greenfoot.setWorld(new GameOver());
         }
     }
         

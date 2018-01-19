@@ -16,9 +16,9 @@ public class StartScreen extends World
     JPanel Pan = WorldHandler.getInstance().getWorldCanvas();  
     /** The new Cursor */
     Cursor NewCursor;
-    int currentSong = 0;
-    boolean musicPlaying = false;
-    int currentVolume = 25;
+    int currentSong = 0;//keeps track of current song
+    boolean musicPlaying = false;//used to check if music playing
+    int currentVolume = 25;//used to set the volume
     String[] songs = {"24k_Puffs_-_Reeces_Puffs_24k_Magic_remix[Mp3Converter.net].mp3", "Nyan_Cat_original[Mp3Converter.net].mp3",
         "Pirates_Of_The_Caribbean_Theme_Song[Mp3Converter.net].mp3", "Rick_Astley_-_Never_Gonna_Give_You_Up[Mp3Converter.net].mp3", "Star_Wars-_The_Imperial_March_Darth_Vaders_Theme[Mp3Converter.net].mp3"};
     GreenfootSound backgroundMusic = new GreenfootSound(songs[currentSong]);
@@ -33,11 +33,11 @@ public class StartScreen extends World
         ChangeMouseImage(image, 15,15);//sets the image
         addObject(new StartButton(), 675, 400);//adds the start button 
         addObject(new HelpButton(), 675, 300);//adds the help button
-        addObject(new MuteMusicButton(), 300, 700);//adds decrase button
-        addObject(new UnmuteButton(), 450, 700);
-        addObject(new ChangeSongButton(), 100, 700);
-        addObject(new DecreaseVolumeButton(), 120, 650);
-        addObject(new IncreaseVolumeButton(), 350, 650);
+        addObject(new MuteMusicButton(), 300, 700);//adds muute button
+        addObject(new UnmuteButton(), 450, 700);//adds unmute button
+        addObject(new ChangeSongButton(), 100, 700);//adds change song button
+        addObject(new DecreaseVolumeButton(), 120, 650);//adds decrease volume
+        addObject(new IncreaseVolumeButton(), 350, 650);//adds increase volume
     }
     
 
@@ -45,7 +45,7 @@ public class StartScreen extends World
     {
         /** Sets the Cursor Image to the New Cursor */
        Pan.setCursor(NewCursor);//sets the cursor
-       if(!musicPlaying){
+       if(!musicPlaying){//checks if they should play the music
            startMusic();
            musicPlaying = true;
        }
@@ -66,7 +66,7 @@ public class StartScreen extends World
         Panel.setCursor(Cursor);
     }
     
-    public void changeSong(){
+    public void changeSong(){//used to change the song
         currentSong++;
         if(currentSong == 5) currentSong = 0;
         backgroundMusic.stop();
@@ -75,23 +75,23 @@ public class StartScreen extends World
         backgroundMusic.playLoop();
     }
     
-    public void muteMusic(){
+    public void muteMusic(){//used to mute the music
         backgroundMusic.stop();
     }
     
-    public void decreaseVolume(){
+    public void decreaseVolume(){//used to decrease volume
         currentVolume -= 5;
         if(currentVolume < 0) currentVolume = 0;
         backgroundMusic.setVolume(currentVolume);
     }
     
-    public void increaseVolume(){
+    public void increaseVolume(){//used to increase volume
         currentVolume += 5;
         if(currentVolume > 100) currentVolume = 100;
         backgroundMusic.setVolume(currentVolume);
     }
     
-    public void startMusic(){
+    public void startMusic(){//used to start music again
         backgroundMusic.playLoop();
     }
 }

@@ -11,7 +11,7 @@ public class ChangeSongButton extends Actor
 
     public void act() 
     {
-        if(Greenfoot.mouseClicked(this)){//if clicked on go back to start screen
+        if(Greenfoot.mouseClicked(this)){//if clicked on change song
             ((StartScreen)getWorld()).changeSong();
         }
     }    

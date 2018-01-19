@@ -14,7 +14,7 @@ public class DecreaseVolumeButton extends Actor
      */
     public void act() 
     {
-        if(Greenfoot.mouseClicked(this)){//if clicked on go back to start screen
+        if(Greenfoot.mouseClicked(this)){//if clicked on decrease the volume
             ((StartScreen)getWorld()).decreaseVolume();
         }
     }    
