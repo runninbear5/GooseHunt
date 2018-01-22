@@ -178,6 +178,7 @@ dependency8.type=UsesDependency
 dependency9.from=Dog
 dependency9.to=PlayScreen
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=1056
 editor.fx.0.width=1936
 editor.fx.0.x=-8
@@ -187,6 +188,17 @@ mainWindow.width=1936
 mainWindow.x=-8
 mainWindow.y=-8
 package.numDependencies=44
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+mainWindow.height=1048
+mainWindow.width=1938
+mainWindow.x=-9
+mainWindow.y=-9
+package.numDependencies=43
+>>>>>>> f88525d857206108bf42e05ae5acfaa84cb0d265
 package.numTargets=25
 project.charset=UTF-8
 readme.height=58

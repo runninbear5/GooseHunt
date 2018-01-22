@@ -113,14 +113,30 @@ public class Dog extends Actor
       // int x = getX(); //gets the current horizontal orientation of the object
       // int y = getY(); //gets the current veticle orientation of the object
       setLaughImage(); //calls setLaughImage which dictates the image of the dog laughing
+<<<<<<< HEAD
      // setLocation(x, y); //this if statement makes it so the dog dissapears after 300 milliseconds
       
       if(timeJumpedCalled + 300 <= System.currentTimeMillis())
+=======
+      //setLocation(x, y - 50); 
+
+
+      if(timeJumpedCalled + 2000 <= System.currentTimeMillis())//this if statement makes it so the dog dissapears after 300 milliseconds
+
+>>>>>>> f88525d857206108bf42e05ae5acfaa84cb0d265
       {
           ((PlayScreen)getWorld()).removeObject(this); //after the amount of time, the object is removed
       }
    }
    
+<<<<<<< HEAD
+=======
+   public void setLaugh(){
+       //laugh = true;
+       timeJumpedCalled = System.currentTimeMillis();
+   }
+   
+>>>>>>> f88525d857206108bf42e05ae5acfaa84cb0d265
    public void setJumpImage() 
    {
       currentImage = 6; //the image of the dog jumping is dog6.fw.png
