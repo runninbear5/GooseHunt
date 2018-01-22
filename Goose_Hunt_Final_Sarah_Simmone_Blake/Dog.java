@@ -20,6 +20,7 @@ public class Dog extends Actor
    boolean walk = true; //booleans used later to turn methods on or off
    boolean jump = false;
    long timeJumpedCalled = 0;
+   long timeDissCalled = 0;
    
     public void act() 
    {
@@ -97,34 +98,27 @@ public class Dog extends Actor
       if(first)
       {
           setLocation(x, y - 50); //moves the dog up 50 pixels as it jumps
-      }
+        }
       
       if(timeJumpedCalled + 300 <= System.currentTimeMillis())
       { //this if statement makes it so the dog dissapears after 300 milliseconds
           ((PlayScreen)getWorld()).removeObject(this); //after the amount of time, the object is removed
           jump = false; //jump becomes false and method jumpOver ceases to work
+          startLaugh();
       }
    }
    
     public void startLaugh()
     { //this method is called when the round changes and the dog jumps up and laughs
-      int x = getX(); //gets the current horizontal orientation of the object
-      int y = getY(); //gets the current veticle orientation of the object
+      // int x = getX(); //gets the current horizontal orientation of the object
+      // int y = getY(); //gets the current veticle orientation of the object
       setLaughImage(); //calls setLaughImage which dictates the image of the dog laughing
-      //setLocation(x, y - 50); 
-<<<<<<< HEAD:ProjectV1/Dog.java
-      if(timeJumpedCalled + 300 <= System.currentTimeMillis())//this if statement makes it so the dog dissapears after 300 milliseconds
-=======
-      if(timeJumpedCalled + 2000 <= System.currentTimeMillis())//this if statement makes it so the dog dissapears after 300 milliseconds
->>>>>>> d9134798ab8c45a61539fe7bf0a2b3d5cbfb899e:Goose_Hunt_Final_Sarah_Simmone_Blake/Dog.java
+     // setLocation(x, y); //this if statement makes it so the dog dissapears after 300 milliseconds
+      
+      if(timeJumpedCalled + 300 <= System.currentTimeMillis())
       {
           ((PlayScreen)getWorld()).removeObject(this); //after the amount of time, the object is removed
       }
-   }
-   
-   public void setLaugh(){
-       laugh = true;
-       timeJumpedCalled = System.currentTimeMillis();
    }
    
    public void setJumpImage() 

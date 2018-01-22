@@ -37,7 +37,7 @@ public class PlayScreen  extends World
         addObject(roundCount, 44, 712);//adds the player round
         addObject(dog, 10, 600);
         newRound();//starts the new round
-        firstRound = false;
+        firstRound = true;
     }
 
     public void act()
@@ -52,10 +52,10 @@ public class PlayScreen  extends World
             removeBalloon();//removes a water balloon
         }
         if(balloons.size() == 0 && animalHitCounters.size() <= 5){//checks if a game should be over
-            Greenfoot.setWorld(new GameOver());
+            Greenfoot.setWorld(new GameOver(roundCount, playerScore));
         }
         if(badAnimalsInRound.size() == 0 && animalHitCounters.size() <=5){//checks if the game should end
-            Greenfoot.setWorld(new GameOver());
+            Greenfoot.setWorld(new GameOver(roundCount, playerScore));
         }
         if(lastTimeBadAnimalPlaced+(timeBetweenBadAnimals-secondsTakenOff) <= System.currentTimeMillis()){//checks if a new animal should be created
             int x = ((int)(Math.random() * 2)) + 1;//creates random side placement
@@ -116,7 +116,7 @@ public class PlayScreen  extends World
     public void newRound(){
         if(!firstRound){
             addObject(dog, 640, 540);
-            dog.setLaugh();
+            dog.startLaugh();
         }
         lionUsed = false;//resests the lion used boolean
         lastAnimalShot = false;//resets if the last animal was shot
@@ -155,6 +155,7 @@ public class PlayScreen  extends World
         roundCount.increaseRound();//method in round count to increment
         lastTimeBadAnimalPlaced = System.currentTimeMillis();//resets when an animal was placed
         lastTimeGoodAnimalPlaced = System.currentTimeMillis();//resets when an animal was placed
+        firstRound = false;
     }
     
     /** Or you use this Method: 
@@ -231,7 +232,7 @@ public class PlayScreen  extends World
             removeBalloon();
             removeBalloon();
         }else if(animal.equals("Lion")){
-            Greenfoot.setWorld(new GameOver());
+            Greenfoot.setWorld(new GameOver(roundCount, playerScore));
         }
     }
 
