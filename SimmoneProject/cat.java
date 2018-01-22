@@ -177,7 +177,7 @@ public class Cat extends Actor
       if(timeJumpCalled + 1000 <= System.currentTimeMillis())
       {                                                        //after one second (1000 milliseconds), stare boolean becomes false and startStaring 
           stare = false;                                      //ceases to be called and the attcked method from PlayScreen is called indicating that the
-          ((PlayScreen)getWorld()).attacked("Cat");          //animal has attacked after the one second of "staring"
+         // ((PlayScreen)getWorld()).attacked("Cat");          //animal has attacked after the one second of "staring"
       }
     }
    

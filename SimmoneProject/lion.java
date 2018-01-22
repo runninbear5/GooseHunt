@@ -230,7 +230,7 @@ public class Lion extends Actor
         if(timeJumpCalled + 300 <= System.currentTimeMillis())
       { //after 1/3 scecond, the staring ceases and attcked is called from playscreen
         hunt = false;
-        ((PlayScreen)getWorld()).attacked("Lion"); //called from playScreen
+        //((PlayScreen)getWorld()).attacked("Lion"); //called from playScreen
       }
    }
     

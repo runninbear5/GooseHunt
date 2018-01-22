@@ -19,8 +19,8 @@ public class Dog extends Actor
    int y = 100;
    boolean walk = true; //booleans used later to turn methods on or off
    boolean jump = false;
-   boolean laugh = false;
    long timeJumpedCalled = 0;
+   long timeDissCalled = 0;
    
     public void act() 
    {
@@ -104,6 +104,7 @@ public class Dog extends Actor
       { //this if statement makes it so the dog dissapears after 300 milliseconds
           ((PlayScreen)getWorld()).removeObject(this); //after the amount of time, the object is removed
           jump = false; //jump becomes false and method jumpOver ceases to work
+          startLaugh();
       }
    }
    
@@ -112,12 +113,11 @@ public class Dog extends Actor
       int x = getX(); //gets the current horizontal orientation of the object
       int y = getY(); //gets the current veticle orientation of the object
       setLaughImage(); //calls setLaughImage which dictates the image of the dog laughing
-      setLocation(x, y - 50); //this if statement makes it so the dog dissapears after 300 milliseconds
+      setLocation(x, y); //this if statement makes it so the dog dissapears after 300 milliseconds
       
       if(timeJumpedCalled + 300 <= System.currentTimeMillis())
       {
           ((PlayScreen)getWorld()).removeObject(this); //after the amount of time, the object is removed
-          laugh = false; //laugh becomes false and method startLaugh becomes false
       }
    }
    
