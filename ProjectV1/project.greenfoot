@@ -1,7 +1,11 @@
 #Greenfoot project file
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
+<<<<<<< HEAD
 >>>>>>>=e156740d5a30d45cf4104d333a4dad85fb0b87ff
+=======
+>>>>>>>=f533730e1e55f06fe0ec397bcc3121c2b94e014f
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
 class.AnimalCounter.image=AnimalCounter.png
 class.AnimalCounter.superclass=greenfoot.Actor
 class.Antler.superclass=greenfoot.Actor
@@ -45,6 +49,10 @@ class.StartScreen.superclass=greenfoot.World
 class.Unicorn.superclass=greenfoot.Actor
 class.UnmuteButton.image=UnmuteButton.png
 class.UnmuteButton.superclass=greenfoot.Actor
+<<<<<<< HEAD
+=======
+class.cat.superclass=greenfoot.Actor
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
 dependency1.from=HelpScreen
 dependency1.to=BackButton
 dependency1.type=UsesDependency
@@ -114,7 +122,12 @@ dependency29.type=UsesDependency
 dependency3.from=HelpButton
 dependency3.to=HelpScreen
 dependency3.type=UsesDependency
+<<<<<<< HEAD
 dependency30.from=MuteMusicButton
+=======
+<<<<<<< HEAD
+dependency30.from=IncreaseVolumeButton
+>>>>>>> d9134798ab8c45a61539fe7bf0a2b3d5cbfb899e
 dependency30.to=StartScreen
 dependency30.type=UsesDependency
 dependency31.from=StartButton
@@ -142,13 +155,54 @@ dependency38.from=StartScreen
 dependency38.to=IncreaseVolumeButton
 dependency38.type=UsesDependency
 dependency39.from=StartScreen
+<<<<<<< HEAD
 dependency39.to=UnmuteButton
+=======
+dependency39.to=IncreaseVolumeButton
+=======
+dependency30.from=BackButton
+dependency30.to=HelpScreen
+dependency30.type=UsesDependency
+dependency31.from=IncreaseVolumeButton
+dependency31.to=StartScreen
+dependency31.type=UsesDependency
+dependency32.from=MuteMusicButton
+dependency32.to=StartScreen
+dependency32.type=UsesDependency
+dependency33.from=StartButton
+dependency33.to=PlayScreen
+dependency33.type=UsesDependency
+dependency34.from=PlayAgain
+dependency34.to=PlayScreen
+dependency34.type=UsesDependency
+dependency35.from=StartScreen
+dependency35.to=StartButton
+dependency35.type=UsesDependency
+dependency36.from=StartScreen
+dependency36.to=HelpButton
+dependency36.type=UsesDependency
+dependency37.from=StartScreen
+dependency37.to=MuteMusicButton
+dependency37.type=UsesDependency
+dependency38.from=StartScreen
+dependency38.to=ChangeSongButton
+dependency38.type=UsesDependency
+dependency39.from=StartScreen
+dependency39.to=DecreaseVolumeButton
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
+>>>>>>> d9134798ab8c45a61539fe7bf0a2b3d5cbfb899e
 dependency39.type=UsesDependency
 dependency4.from=UnmuteButton
 dependency4.to=StartScreen
 dependency4.type=UsesDependency
+<<<<<<< HEAD
 dependency40.from=Cat
 dependency40.to=PlayScreen
+=======
+dependency40.from=StartScreen
+<<<<<<< HEAD
+dependency40.to=UnmuteButton
+>>>>>>> d9134798ab8c45a61539fe7bf0a2b3d5cbfb899e
 dependency40.type=UsesDependency
 dependency41.from=Duck
 dependency41.to=PlayScreen
@@ -156,6 +210,19 @@ dependency41.type=UsesDependency
 dependency42.from=Duck
 dependency42.to=PlayScreen
 dependency42.type=UsesDependency
+=======
+dependency40.to=IncreaseVolumeButton
+dependency40.type=UsesDependency
+dependency41.from=StartScreen
+dependency41.to=UnmuteButton
+dependency41.type=UsesDependency
+dependency42.from=Cat
+dependency42.to=PlayScreen
+dependency42.type=UsesDependency
+dependency43.from=Duck
+dependency43.to=PlayScreen
+dependency43.type=UsesDependency
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
 dependency5.from=ChangeSongButton
 dependency5.to=StartScreen
 dependency5.type=UsesDependency
@@ -171,6 +238,7 @@ dependency8.type=UsesDependency
 dependency9.from=Dog
 dependency9.to=PlayScreen
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
@@ -180,6 +248,22 @@ mainWindow.width=1938
 mainWindow.x=-9
 mainWindow.y=0
 package.numDependencies=41
+=======
+editor.fx.0.height=738
+editor.fx.0.width=816
+<<<<<<< HEAD
+editor.fx.0.x=1011
+editor.fx.0.y=64
+=======
+editor.fx.0.x=552
+editor.fx.0.y=101
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
+mainWindow.height=1048
+mainWindow.width=1938
+mainWindow.x=-9
+mainWindow.y=-9
+package.numDependencies=43
+>>>>>>> d9134798ab8c45a61539fe7bf0a2b3d5cbfb899e
 package.numTargets=25
 project.charset=UTF-8
 readme.height=58
@@ -332,6 +416,17 @@ target25.typeParameters=
 target25.width=80
 target25.x=0
 target25.y=0
+<<<<<<< HEAD
+=======
+target26.height=50
+target26.name=Duck
+target26.showInterface=false
+target26.type=ClassTarget
+target26.typeParameters=
+target26.width=80
+target26.x=0
+target26.y=0
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
 target3.height=50
 target3.name=Quit
 target3.showInterface=false
