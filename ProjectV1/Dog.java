@@ -19,6 +19,7 @@ public class Dog extends Actor
    int y = 100;
    boolean walk = true; //booleans used later to turn methods on or off
    boolean jump = false;
+   boolean laugh = false;
    long timeJumpedCalled = 0;
    long timeDissCalled = 0;
    
@@ -32,6 +33,9 @@ public class Dog extends Actor
       {
          jumpOver(false); //if boolean hunt is true, the jumpOver class is called
         }
+      if(laugh){
+          startLaugh();
+      }
     }
     
     public void walk() 
@@ -119,13 +123,19 @@ public class Dog extends Actor
       if(timeJumpedCalled + 300 <= System.currentTimeMillis())
 =======
       //setLocation(x, y - 50); 
+<<<<<<< HEAD
 
 
       if(timeJumpedCalled + 2000 <= System.currentTimeMillis())//this if statement makes it so the dog dissapears after 300 milliseconds
 
 >>>>>>> f88525d857206108bf42e05ae5acfaa84cb0d265
+=======
+      laugh = true;//used so act will call this function again
+      if(timeJumpedCalled + 300 <= System.currentTimeMillis())//this if statement makes it so the dog dissapears after 300 milliseconds
+>>>>>>> parent of d14376c... changes
       {
           ((PlayScreen)getWorld()).removeObject(this); //after the amount of time, the object is removed
+          laugh = false; //laugh becomes false and method startLaugh becomes false
       }
    }
    
