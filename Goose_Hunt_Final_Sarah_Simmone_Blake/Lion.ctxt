@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Lion
+comment0.text=\r\n\ This\ class\ is\ for\ the\ lion\ in\ Goose\ Hunt\ which\ walks\ across\ the\ screen\ and\ back\ before\ changing\ to\ face\ the\ user\ and\ run\ toward\ them.\r\n\ After\ one\ second,\ the\ screen\ fills\ with\ an\ image\ of\ a\ lion\ mouth\ and\ the\ game\ is\ over.\ The\ lion\ has\ the\ ability\ to\ spawn\ on\ either\ side\r\n\ of\ the\ screen\ and,\ walking\ in\ the\ correct\ direction\ accordingly\r\n\ @author\ (Simmone\ Stearn)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=right
+comment1.target=Lion(boolean)
+comment10.params=score
+comment10.target=int\ getScore(int)
+comment2.params=width\ height
+comment2.target=void\ size(int,\ int)
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ walk()
+comment5.params=
+comment5.target=void\ setImage()
+comment6.params=first
+comment6.target=void\ startStaring(boolean)
+comment7.params=
+comment7.target=void\ setStareImage()
+comment8.params=
+comment8.target=void\ setGameOverImage()
+comment9.params=
+comment9.target=void\ makeDissapear()
+numComments=11

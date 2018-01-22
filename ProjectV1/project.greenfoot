@@ -1,7 +1,11 @@
 #Greenfoot project file
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
->>>>>>>=e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
+<<<<<<< HEAD
+>>>>>>>=e156740d5a30d45cf4104d333a4dad85fb0b87ff
+=======
+>>>>>>>=f533730e1e55f06fe0ec397bcc3121c2b94e014f
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
 class.AnimalCounter.image=AnimalCounter.png
 class.AnimalCounter.superclass=greenfoot.Actor
 class.Antler.superclass=greenfoot.Actor
@@ -45,9 +49,12 @@ class.StartScreen.superclass=greenfoot.World
 class.Unicorn.superclass=greenfoot.Actor
 class.UnmuteButton.image=UnmuteButton.png
 class.UnmuteButton.superclass=greenfoot.Actor
+<<<<<<< HEAD
+=======
 class.cat.superclass=greenfoot.Actor
-dependency1.from=Cat
-dependency1.to=PlayScreen
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
+dependency1.from=HelpScreen
+dependency1.to=BackButton
 dependency1.type=UsesDependency
 dependency10.from=PlayScreen
 dependency10.to=Score
@@ -116,36 +123,6 @@ dependency3.from=HelpButton
 dependency3.to=HelpScreen
 dependency3.type=UsesDependency
 <<<<<<< HEAD
-dependency30.from=BackButton
-dependency30.to=HelpScreen
-dependency30.type=UsesDependency
-dependency31.from=IncreaseVolumeButton
-dependency31.to=StartScreen
-dependency31.type=UsesDependency
-dependency32.from=MuteMusicButton
-dependency32.to=StartScreen
-dependency32.type=UsesDependency
-dependency33.from=StartButton
-dependency33.to=PlayScreen
-dependency33.type=UsesDependency
-dependency34.from=PlayAgain
-dependency34.to=PlayScreen
-dependency34.type=UsesDependency
-dependency35.from=StartScreen
-dependency35.to=StartButton
-dependency35.type=UsesDependency
-dependency36.from=StartScreen
-dependency36.to=HelpButton
-dependency36.type=UsesDependency
-dependency37.from=StartScreen
-dependency37.to=MuteMusicButton
-dependency37.type=UsesDependency
-dependency38.from=StartScreen
-dependency38.to=ChangeSongButton
-dependency38.type=UsesDependency
-dependency39.from=StartScreen
-dependency39.to=DecreaseVolumeButton
-=======
 dependency30.from=IncreaseVolumeButton
 dependency30.to=StartScreen
 dependency30.type=UsesDependency
@@ -175,23 +152,56 @@ dependency38.to=DecreaseVolumeButton
 dependency38.type=UsesDependency
 dependency39.from=StartScreen
 dependency39.to=IncreaseVolumeButton
->>>>>>> parent of d14376c... changes
+=======
+dependency30.from=BackButton
+dependency30.to=HelpScreen
+dependency30.type=UsesDependency
+dependency31.from=IncreaseVolumeButton
+dependency31.to=StartScreen
+dependency31.type=UsesDependency
+dependency32.from=MuteMusicButton
+dependency32.to=StartScreen
+dependency32.type=UsesDependency
+dependency33.from=StartButton
+dependency33.to=PlayScreen
+dependency33.type=UsesDependency
+dependency34.from=PlayAgain
+dependency34.to=PlayScreen
+dependency34.type=UsesDependency
+dependency35.from=StartScreen
+dependency35.to=StartButton
+dependency35.type=UsesDependency
+dependency36.from=StartScreen
+dependency36.to=HelpButton
+dependency36.type=UsesDependency
+dependency37.from=StartScreen
+dependency37.to=MuteMusicButton
+dependency37.type=UsesDependency
+dependency38.from=StartScreen
+dependency38.to=ChangeSongButton
+dependency38.type=UsesDependency
+dependency39.from=StartScreen
+dependency39.to=DecreaseVolumeButton
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
 dependency39.type=UsesDependency
 dependency4.from=UnmuteButton
 dependency4.to=StartScreen
 dependency4.type=UsesDependency
 dependency40.from=StartScreen
 <<<<<<< HEAD
-dependency40.to=IncreaseVolumeButton
-dependency40.type=UsesDependency
-dependency41.from=StartScreen
-dependency41.to=UnmuteButton
-=======
 dependency40.to=UnmuteButton
 dependency40.type=UsesDependency
 dependency41.from=Cat
 dependency41.to=PlayScreen
->>>>>>> parent of d14376c... changes
+dependency41.type=UsesDependency
+dependency42.from=Duck
+dependency42.to=PlayScreen
+dependency42.type=UsesDependency
+=======
+dependency40.to=IncreaseVolumeButton
+dependency40.type=UsesDependency
+dependency41.from=StartScreen
+dependency41.to=UnmuteButton
 dependency41.type=UsesDependency
 dependency42.from=Cat
 dependency42.to=PlayScreen
@@ -199,6 +209,7 @@ dependency42.type=UsesDependency
 dependency43.from=Duck
 dependency43.to=PlayScreen
 dependency43.type=UsesDependency
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
 dependency5.from=ChangeSongButton
 dependency5.to=StartScreen
 dependency5.type=UsesDependency
@@ -214,26 +225,20 @@ dependency8.type=UsesDependency
 dependency9.from=Dog
 dependency9.to=PlayScreen
 dependency9.type=UsesDependency
-<<<<<<< HEAD
 editor.fx.0.height=738
 editor.fx.0.width=816
+<<<<<<< HEAD
+editor.fx.0.x=1011
+editor.fx.0.y=64
+=======
 editor.fx.0.x=552
 editor.fx.0.y=101
-=======
-editor.fx.0.height=1048
-editor.fx.0.width=1938
-editor.fx.0.x=-9
-editor.fx.0.y=-9
->>>>>>> parent of d14376c... changes
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
 mainWindow.height=1048
 mainWindow.width=1938
 mainWindow.x=-9
 mainWindow.y=-9
-<<<<<<< HEAD
-package.numDependencies=1
-=======
-package.numDependencies=42
->>>>>>> parent of d14376c... changes
+package.numDependencies=43
 package.numTargets=25
 project.charset=UTF-8
 readme.height=58
@@ -247,7 +252,7 @@ target1.name=HelpScreen
 target1.showInterface=false
 target1.type=ClassTarget
 target1.typeParameters=
-target1.width=80
+target1.width=100
 target1.x=0
 target1.y=0
 target10.height=50
@@ -279,7 +284,7 @@ target13.name=GameOver
 target13.showInterface=false
 target13.type=ClassTarget
 target13.typeParameters=
-target13.width=80
+target13.width=90
 target13.x=0
 target13.y=0
 target14.height=50
@@ -311,7 +316,7 @@ target17.name=BackButton
 target17.showInterface=false
 target17.type=ClassTarget
 target17.typeParameters=
-target17.width=80
+target17.width=100
 target17.x=0
 target17.y=0
 target18.height=50
@@ -351,7 +356,7 @@ target21.name=PlayAgain
 target21.showInterface=false
 target21.type=ClassTarget
 target21.typeParameters=
-target21.width=80
+target21.width=90
 target21.x=0
 target21.y=0
 target22.height=50
@@ -386,6 +391,8 @@ target25.typeParameters=
 target25.width=80
 target25.x=0
 target25.y=0
+<<<<<<< HEAD
+=======
 target26.height=50
 target26.name=Duck
 target26.showInterface=false
@@ -394,6 +401,7 @@ target26.typeParameters=
 target26.width=80
 target26.x=0
 target26.y=0
+>>>>>>> e9e590e0d8bd8e06941d0811aa04ce770c40ed2a
 target3.height=50
 target3.name=Quit
 target3.showInterface=false
