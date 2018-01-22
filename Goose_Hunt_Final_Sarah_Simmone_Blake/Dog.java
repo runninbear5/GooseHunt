@@ -112,18 +112,17 @@ public class Dog extends Actor
       int y = getY(); //gets the current veticle orientation of the object
       setLaughImage(); //calls setLaughImage which dictates the image of the dog laughing
       //setLocation(x, y - 50); 
-<<<<<<< HEAD:ProjectV1/Dog.java
-      if(timeJumpedCalled + 300 <= System.currentTimeMillis())//this if statement makes it so the dog dissapears after 300 milliseconds
-=======
+
+
       if(timeJumpedCalled + 2000 <= System.currentTimeMillis())//this if statement makes it so the dog dissapears after 300 milliseconds
->>>>>>> d9134798ab8c45a61539fe7bf0a2b3d5cbfb899e:Goose_Hunt_Final_Sarah_Simmone_Blake/Dog.java
+
       {
           ((PlayScreen)getWorld()).removeObject(this); //after the amount of time, the object is removed
       }
    }
    
    public void setLaugh(){
-       laugh = true;
+       //laugh = true;
        timeJumpedCalled = System.currentTimeMillis();
    }
    
